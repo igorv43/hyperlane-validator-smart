@@ -1,0 +1,1228 @@
+# 🔐 Complete Guide: AWS S3 Configuration and Private Key Creation
+
+This document provides a complete step-by-step guide for:
+1. Configure the S3 bucket on AWS for the Hyperlane validator
+2. Create private keys in hexadecimal format for Terra Classic, BSC, Ethereum, and Solana
+
+**⚠️ IMPORTANT**: This guide uses **CLI (Command Line Interface) methods** to generate all private keys, following best practices and official Hyperlane documentation.
+
+**Required CLI tools:**
+- `terrad` - For Terra Classic (Cosmos)
+- `cast` (Foundry) - For BSC and Ethereum (EVM)
+- `solana-keygen` - For Solana (Sealevel)
+- `openssl` - Alternative for generating random keys
+
+---
+
+## 📋 Index
+
+1. [AWS S3 Configuration](#1-aws-s3-configuration)
+2. [Private Key Creation in Hex](#2-private-key-creation-in-hex)
+   - [Terra Classic](#21-terra-classic)
+   - [BSC (Binance Smart Chain)](#22-bsc-binance-smart-chain)
+   - [Ethereum (ETH)](#23-ethereum-eth)
+   - [Solana](#24-solana)
+3. [JSON File Configuration](#3-json-file-configuration)
+4. [Verification and Testing](#4-verification-and-testing)
+5. [Troubleshooting](#5-troubleshooting)
+
+---
+
+## 1. AWS S3 Configuration
+
+### 1.1. Prerequisites
+
+- Active AWS account
+- AWS CLI installed and configured
+- Administrator or IAM permissions for S3 and IAM
+
+### 1.2. Create IAM User
+
+#### Step 1: Access IAM Console
+
+1. Access: https://console.aws.amazon.com/iam/
+2. In the left sidebar, click **"Users"**
+3. Click the **"Add users"** button
+
+#### Step 2: Configure User
+
+1. **Username**: `hyperlane-validator`
+2. Click **"Next"**
+3. **DO NOT** select any policies yet
+4. Click **"Next"** again
+5. Click **"Create user"**
+
+#### Step 3: Create Access Keys
+
+1. Click on the newly created user
+2. Go to the **"Security credentials"** tab
+3. Scroll to **"Access keys"**
+4. Click **"Create access key"**
+5. Select **"Application running outside AWS"**
+6. Click **"Next"**
+7. (Optional) Add a description: "Hyperlane Validator Keys"
+8. Click **"Create access key"**
+9. **⚠️ IMPORTANT**: Copy and save in a secure location:
+   - `Access key ID` (starts with `AKIA...`)
+   - `Secret access key` (long string)
+10. Click **"Done"**
+
+#### Step 4: Configure IAM Permissions
+
+1. Still on the user page, click **"Add permissions"**
+2. Select **"Create inline policy"**
+3. Click the **"JSON"** tab
+4. Paste the following policy:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kms:CreateKey",
+        "kms:DescribeKey",
+        "kms:GetPublicKey",
+        "kms:Sign",
+        "kms:CreateAlias",
+        "kms:ListAliases",
+        "kms:ListKeys"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:DeleteObject",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::hyperlane-validator-signatures-*",
+        "arn:aws:s3:::hyperlane-validator-signatures-*/*"
+      ]
+    }
+  ]
+}
+```
+
+5. Click **"Next"**
+6. **Policy name**: `HyperlaneValidatorPolicy`
+7. Click **"Create policy"**
+
+#### Step 5: Save Credentials to .env
+
+```bash
+cd /home/lunc/tc-hyperlane-validator
+
+# Create .env file if it does not exist
+cat > .env << EOF
+AWS_ACCESS_KEY_ID=AKIAXXXXXXXXXXXXXXXXXXXX
+AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+AWS_REGION=us-east-1
+EOF
+
+# Protect the file
+chmod 600 .env
+```
+
+**⚠️ IMPORTANT**: Replace the values with your actual Access Key ID and Secret Access Key.
+
+### 1.3. Create S3 Bucket
+
+#### Step 1: Access S3 Console
+
+1. Access: https://s3.console.aws.amazon.com/s3/home?region=us-east-1
+2. Click **"Create bucket"**
+
+#### Step 2: Configure Bucket
+
+1. **Bucket name**:
+   ```
+   hyperlane-validator-signatures-YOUR-NAME
+   ```
+   
+   **Example:**
+   ```
+   hyperlane-validator-signatures-joao-terraclassic
+   ```
+   
+   **⚠️ IMPORTANT**: 
+   - The bucket name must be globally unique on AWS
+   - Replace `YOUR-NAME` with a unique identifier (your name, username, etc.)
+   - Use only lowercase letters, numbers, and hyphens
+
+2. **AWS Region**: `US East (N. Virginia) us-east-1`
+
+3. **Object Ownership**: `ACLs disabled (recommended)`
+
+4. **Block Public Access settings**:
+   - ⚠️ **UNCHECK** "Block all public access"
+   - ✅ **CHECK** the box "I acknowledge that the current settings might result in this bucket and the objects within it becoming public"
+
+5. **Bucket Versioning**: `Disable`
+
+6. **Default encryption**: `Server-side encryption with Amazon S3 managed keys (SSE-S3)`
+
+7. Click **"Create bucket"**
+
+#### Step 3: Configure Bucket Policy
+
+1. Click on the newly created bucket
+2. Go to the **"Permissions"** tab
+3. Scroll to **"Bucket policy"**
+4. Click **"Edit"**
+
+**Paste the following policy** (replace the values):
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": [
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::YOUR-BUCKET-NAME",
+        "arn:aws:s3:::YOUR-BUCKET-NAME/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::YOUR-ACCOUNT-ID:user/hyperlane-validator"
+      },
+      "Action": [
+        "s3:PutObject",
+        "s3:DeleteObject"
+      ],
+      "Resource": "arn:aws:s3:::YOUR-BUCKET-NAME/*"
+    }
+  ]
+}
+```
+
+**⚠️ Replace:**
+- `YOUR-BUCKET-NAME` → Your bucket name (e.g., `hyperlane-validator-signatures-john-terraclassic`)
+- `YOUR-ACCOUNT-ID` → Your AWS Account ID (12 digits)
+
+**Complete example:**
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": [
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::hyperlane-validator-signatures-joao-terraclassic",
+        "arn:aws:s3:::hyperlane-validator-signatures-joao-terraclassic/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::123456789012:user/hyperlane-validator"
+      },
+      "Action": [
+        "s3:PutObject",
+        "s3:DeleteObject"
+      ],
+      "Resource": "arn:aws:s3:::hyperlane-validator-signatures-joao-terraclassic/*"
+    }
+  ]
+}
+```
+
+5. Click **"Save changes"**
+
+#### Step 4: Get AWS Account ID
+
+To find your AWS Account ID:
+
+1. Access: https://console.aws.amazon.com/billing/
+2. The Account ID appears in the top right corner
+3. Or use the command:
+   ```bash
+   aws sts get-caller-identity --query Account --output text
+   ```
+
+#### Step 5: Test Bucket Access
+
+```bash
+# Configure AWS credentials (if not yet configured)
+export AWS_ACCESS_KEY_ID="AKIAXXXXXXXXXXXXXXXXXXXX"
+export AWS_SECRET_ACCESS_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+export AWS_REGION="us-east-1"
+
+# Test listing
+aws s3 ls s3://YOUR-BUCKET-NAME/
+
+# Test writing
+echo "test" > test.txt
+aws s3 cp test.txt s3://YOUR-BUCKET-NAME/
+rm test.txt
+
+# Test public read (without credentials)
+curl https://YOUR-BUCKET-NAME.s3.us-east-1.amazonaws.com/test.txt
+
+# Clean up
+aws s3 rm s3://YOUR-BUCKET-NAME/test.txt
+```
+
+---
+
+## 2. Private Key Creation in Hex
+
+### 2.1. Terra Classic
+
+Terra Classic uses the Cosmos format (bech32), but the private key is stored in hexadecimal. **Use the `terrad` CLI to generate and manage keys.**
+
+#### Step 1: Install terrad CLI
+
+**Option 1: Binary Download (Recommended)**
+
+```bash
+# Download latest terrad binary
+TERRA_VERSION="v3.0.1"  # Check the latest version at: https://github.com/classic-terra/core/releases
+wget https://github.com/classic-terra/core/releases/download/${TERRA_VERSION}/terrad-${TERRA_VERSION}-linux-amd64
+chmod +x terrad-${TERRA_VERSION}-linux-amd64
+sudo mv terrad-${TERRA_VERSION}-linux-amd64 /usr/local/bin/terrad
+
+# Verify installation
+terrad version
+```
+
+**Option 2: Build from Source**
+
+```bash
+# Clone repository
+git clone https://github.com/classic-terra/core.git
+cd core
+git checkout v3.0.1
+make install
+
+# Verify installation
+terrad version
+```
+
+#### Step 2: Generate New Private Key
+
+**Option A: Generate New Key (New Wallet)**
+
+```bash
+# Generate new key (you will be prompted to enter a password)
+terrad keys add validator-key --keyring-backend file
+
+# Or without password prompt (less secure, for testing only)
+terrad keys add validator-key --keyring-backend file --no-backup
+```
+
+**Example output:**
+```
+- name: validator-key
+  type: local
+  address: terra1j0paqg235l7fhjkez8z55kg83snant95jqq0z7
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"AqBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmNoPqRsTuVwXyZa"}'
+  mnemonic: ""
+
+**Important write this mnemonic phrase in a safe place.**
+It is the only way to recover your account if you ever forget your password.
+
+word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12
+word13 word14 word15 word16 word17 word18 word19 word20 word21 word22 word23 word24
+```
+
+**⚠️ IMPORTANT**: 
+- **Save the mnemonic phrase immediately** - you will need it to recover your key!
+- Store in a secure location (password manager, encrypted file, etc.)
+- Never share or commit the mnemonic phrase to Git
+
+#### Step 3: Export Private Key in Hexadecimal Format
+
+```bash
+# Export private key as hex (you will need the keyring password)
+terrad keys export validator-key --keyring-backend file --unarmored-hex --unsafe
+
+# Or save to file
+terrad keys export validator-key --keyring-backend file --unarmored-hex --unsafe > ~/.terra-private-key-hex
+chmod 600 ~/.terra-private-key-hex
+```
+
+**Example output:**
+```
+abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890
+```
+
+**Add 0x prefix:**
+```bash
+# Add 0x prefix
+echo "0x$(cat ~/.terra-private-key-hex)" > ~/.terra-private-key
+chmod 600 ~/.terra-private-key
+```
+
+#### Step 4: Get Terra Classic Address
+
+```bash
+# Show address
+terrad keys show validator-key --keyring-backend file --address
+```
+
+**Example output:**
+```
+terra1j0paqg235l7fhjkez8z55kg83snant95jqq0z7
+```
+
+**Or get complete key information:**
+```bash
+terrad keys show validator-key --keyring-backend file
+```
+
+#### Option B: Import Existing Key
+
+If you already have a Terra Classic private key (hexadecimal format) or mnemonic phrase, you can import it.
+
+**Method 1: Import from Hexadecimal Private Key**
+
+```bash
+# Import from hex key (you will be prompted to enter a password)
+echo "0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890" | terrad keys import validator-key --keyring-backend file
+
+# Or from file
+cat ~/.terra-private-key | terrad keys import validator-key --keyring-backend file
+```
+
+**Method 2: Import from Mnemonic Phrase**
+
+```bash
+# Import from mnemonic (you will be prompted to enter the phrase)
+terrad keys add validator-key --recover --keyring-backend file
+```
+
+**Exemplo:**
+```
+> Enter your bip39 mnemonic
+word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12 word13 word14 word15 word16 word17 word18 word19 word20 word21 word22 word23 word24
+
+- name: validator-key
+  type: local
+  address: terra1j0paqg235l7fhjkez8z55kg83snant95jqq0z7
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"AqBcDeFgHiJkLmNoPqRsTuVwXyZaBcDeFgHiJkLmNoPqRsTuVwXyZa"}'
+```
+
+**Export private key in hex (if needed for config):**
+```bash
+# Export as hex for use in configuration files
+terrad keys export validator-key --keyring-backend file --unarmored-hex --unsafe
+
+# Save to file with 0x prefix
+echo "0x$(terrad keys export validator-key --keyring-backend file --unarmored-hex --unsafe)" > ~/.terra-private-key
+chmod 600 ~/.terra-private-key
+```
+
+#### Step 5: Verify Wallet
+
+```bash
+# Show address
+terrad keys show validator-key --keyring-backend file --address
+
+# Check balance
+curl "https://lcd.terraclassic.community/cosmos/bank/v1beta1/balances/terra1j0paqg235l7fhjkez8z55kg83snant95jqq0z7"
+```
+
+**⚠️ IMPORTANT**: 
+- Save the private key in a secure location
+- Use the Terra address to receive LUNC
+- The private key in hex (with `0x` prefix) will be used in JSON configuration files
+
+---
+
+### 2.2. BSC (Binance Smart Chain)
+
+BSC uses the same private key format as Ethereum (ECDSA). **Use `cast` (Foundry) or `openssl` to generate keys via CLI.**
+
+#### Method 1: Using cast (Foundry) - Recommended
+
+**Step 1: Install Foundry**
+
+```bash
+# Install Foundry
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
+
+# Verify installation
+cast --version
+```
+
+**Step 2: Generate New Key and Get Address**
+
+```bash
+# Generate new key (generates private key and address)
+cast wallet new
+```
+
+**Example output:**
+```
+Private Key: 0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890
+Address:     0x8ba1f109551bD432803012645Hac136c22C929E
+```
+
+**Step 3: Get Address from Existing Key**
+
+```bash
+# Get address from an existing private key
+cast wallet address --private-key 0xYOUR_PRIVATE_KEY
+```
+
+**Example output:**
+```
+0x8ba1f109551bD432803012645Hac136c22C929E
+```
+
+#### Method 2: Using OpenSSL
+
+```bash
+# Generate random private key (32 bytes)
+echo "0x$(openssl rand -hex 32)"
+```
+
+**Example output:**
+```
+0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890
+```
+
+**Get address using cast:**
+```bash
+# Get address using cast
+cast wallet address --private-key 0xYOUR_PRIVATE_KEY
+```
+
+**Example output:**
+```
+Private Key (hex): 0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890
+BSC Address:       0x8ba1f109551bD432803012645Hac136c22C929E
+```
+
+**📋 Next steps:**
+1. Send BNB to this address
+2. Explorer BSC Testnet: https://testnet.bscscan.com/address/YOUR_ADDRESS
+3. Explorer BSC Mainnet: https://bscscan.com/address/YOUR_ADDRESS
+
+---
+
+### 2.3. Ethereum (ETH)
+
+Ethereum uses the same private key format as BSC (ECDSA). **Use `cast` (Foundry) or `openssl` to generate keys via CLI.**
+
+#### Method 1: Using cast (Foundry) - Recommended
+
+**Step 1: Install Foundry (if not yet installed)**
+
+```bash
+# Install Foundry
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
+
+# Verify installation
+cast --version
+```
+
+**Step 2: Generate New Key and Get Address**
+
+```bash
+# Generate new key (generates private key and address)
+cast wallet new
+```
+
+**Example output:**
+```
+Private Key: 0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef
+Address:     0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb0
+```
+
+**Step 3: Get Address from Existing Key**
+
+```bash
+# Get address from an existing private key
+cast wallet address --private-key 0xYOUR_PRIVATE_KEY
+```
+
+**Example output:**
+```
+0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb0
+```
+
+#### Method 2: Using OpenSSL
+
+```bash
+# Generate random private key (32 bytes)
+echo "0x$(openssl rand -hex 32)"
+```
+
+**Get address using cast:**
+```bash
+# Get address using cast
+cast wallet address --private-key 0xYOUR_PRIVATE_KEY
+```
+
+**Example output:**
+```
+Private Key (hex): 0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef
+Ethereum Address:  0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb0
+```
+
+**📋 Next steps:**
+1. Send ETH to this address
+2. Explorer Sepolia Testnet: https://sepolia.etherscan.io/address/YOUR_ADDRESS
+3. Explorer Mainnet: https://etherscan.io/address/YOUR_ADDRESS
+
+---
+
+### 2.4. Solana
+
+Solana uses ED25519, which requires a private key of 32 bytes (64 hex characters).
+
+#### Check Existing Solana Keys
+
+**Before generating a new key, check if Solana keys already exist on your machine:**
+
+**Method 1: Check specific file in current directory (quick)**
+
+```bash
+# Check if keypair exists in current directory
+if [ -f "./solana-keypair.json" ]; then
+    echo "✅ Keypair found: ./solana-keypair.json"
+    echo "   Address: $(solana-keygen pubkey ./solana-keypair.json 2>/dev/null)"
+    
+    # Extract private key in hex using repository script
+    if [ -f "/home/lunc/hyperlane-validator/get-solana-hexkey.py" ]; then
+        echo "   Private Key (hex): $(python3 /home/lunc/hyperlane-validator/get-solana-hexkey.py ./solana-keypair.json 2>/dev/null)"
+    else
+        # Use Python inline if script does not exist
+        echo "   Private Key (hex): $(python3 << 'PYEOF'
+import json
+try:
+    with open('./solana-keypair.json', 'r') as f:
+        keypair = json.load(f)
+    if isinstance(keypair, list) and len(keypair) == 64:
+        private_key_bytes = bytes(keypair[:32])
+        print(f"0x{private_key_bytes.hex()}")
+except:
+    pass
+PYEOF
+)"
+    fi
+else
+    echo "❌ No keypair found in current directory"
+    echo "💡 Execute: solana-keygen new --outfile ./solana-keypair.json"
+fi
+```
+
+**Method 2: Search for all Solana keypairs on the machine (complete)**
+
+```bash
+# Script to list all found Solana keys
+cat > list-solana-keys.sh << 'EOF'
+#!/bin/bash
+
+echo "============================================================"
+echo "  🔍 SEARCHING FOR SOLANA KEYS ON MACHINE"
+echo "============================================================"
+echo ""
+
+COUNT=0
+
+# Function to check if a file is a valid Solana keypair
+check_keypair() {
+    local file="$1"
+    if [ ! -f "$file" ]; then
+        return 1
+    fi
+    
+    # Check if it is valid JSON and has keypair format (array of 64 numbers)
+    if command -v jq >/dev/null 2>&1; then
+        if jq -e 'type == "array" and length == 64' "$file" >/dev/null 2>&1; then
+            # Try to get public address
+            local pubkey=$(solana-keygen pubkey "$file" 2>/dev/null)
+            if [ $? -eq 0 ] && [ -n "$pubkey" ]; then
+                COUNT=$((COUNT + 1))
+                echo "✅ Keypair #$COUNT found:"
+                echo "   File: $file"
+                echo "   Address: $pubkey"
+                
+                # Try to get private key in hex
+                if command -v python3 >/dev/null 2>&1; then
+                    local hexkey=$(python3 << PYEOF
+import json
+import sys
+try:
+    with open("$file", 'r') as f:
+        keypair = json.load(f)
+    if isinstance(keypair, list) and len(keypair) == 64:
+        private_key_bytes = bytes(keypair[:32])
+        print(f"0x{private_key_bytes.hex()}")
+except:
+    pass
+PYEOF
+)
+                    if [ -n "$hexkey" ]; then
+                        echo "   Private Key (hex): $hexkey"
+                    fi
+                fi
+                echo ""
+                return 0
+            fi
+        fi
+    fi
+    return 1
+}
+
+# Search in current directory
+echo "🔍 Searching in current directory..."
+find . -maxdepth 2 -type f -name "*.json" 2>/dev/null | while read file; do
+    check_keypair "$file"
+done
+
+# Search in common directories
+DIRS=(
+    "$HOME"
+    "$HOME/.config/solana"
+    "$HOME/.local/share/solana"
+)
+
+for dir in "${DIRS[@]}"; do
+    if [ -d "$dir" ]; then
+        echo "🔍 Searching in: $dir"
+        find "$dir" -maxdepth 3 -type f \( -name "*.json" -o -name "*keypair*" -o -name "*solana*" -o -name "id.json" \) 2>/dev/null | while read file; do
+            check_keypair "$file"
+        done
+    fi
+done
+
+if [ $COUNT -eq 0 ]; then
+    echo "❌ No Solana keys found."
+    echo ""
+    echo "💡 To generate a new key, execute:"
+    echo "   solana-keygen new --outfile ./solana-keypair.json"
+else
+    echo "============================================================"
+    echo "  ✅ Total keys found: $COUNT"
+    echo "============================================================"
+fi
+EOF
+
+chmod +x list-solana-keys.sh
+./list-solana-keys.sh
+```
+
+**Method 3: Check Solana CLI default directory**
+
+```bash
+# Check if Solana configuration directory exists
+if [ -d "$HOME/.config/solana" ]; then
+    echo "📁 Solana configuration directory found: $HOME/.config/solana"
+    ls -la "$HOME/.config/solana/"
+    
+    # Check default keypair
+    if [ -f "$HOME/.config/solana/id.json" ]; then
+        echo ""
+        echo "✅ Default keypair found: $HOME/.config/solana/id.json"
+        echo "   Address: $(solana-keygen pubkey "$HOME/.config/solana/id.json")"
+        
+        # Extract private key in hex
+        if [ -f "/home/lunc/hyperlane-validator/get-solana-hexkey.py" ]; then
+            echo "   Private Key (hex): $(python3 /home/lunc/hyperlane-validator/get-solana-hexkey.py "$HOME/.config/solana/id.json")"
+        fi
+    fi
+else
+    echo "❌ Solana configuration directory not found"
+fi
+```
+
+**Method 4: Quick command to check multiple locations**
+
+```bash
+# Check multiple common locations at once
+for file in "./solana-keypair.json" "$HOME/.config/solana/id.json" "./id.json"; do
+    if [ -f "$file" ]; then
+        echo "✅ Keypair found: $file"
+        if solana-keygen pubkey "$file" >/dev/null 2>&1; then
+            echo "   Address: $(solana-keygen pubkey "$file")"
+            if [ -f "/home/lunc/hyperlane-validator/get-solana-hexkey.py" ]; then
+                echo "   Private Key (hex): $(python3 /home/lunc/hyperlane-validator/get-solana-hexkey.py "$file")"
+            fi
+        else
+            echo "   ⚠️  Not a valid Solana keypair"
+        fi
+        echo ""
+    fi
+done
+```
+
+#### Generate New Solana Key (if necessary)
+
+**If no keys were found or you want to generate a new one:**
+
+#### Method 1: Using Solana CLI (Recommended)
+
+```bash
+# Install Solana CLI (if not installed)
+sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
+
+# Verify installation
+solana --version
+
+# Generate new keypair
+solana-keygen new --outfile ./solana-keypair.json
+
+# You will be prompted to enter a passphrase (optional but recommended)
+# Enter passphrase: [your-passphrase]
+# Confirm passphrase: [your-passphrase]
+```
+
+**Example output:**
+```
+Generating a new keypair
+
+For added security, enter a passphrase (empty for no passphrase): 
+Wrote new keypair to ./solana-keypair.json
+
+================================================================================
+pubkey: 7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU
+================================================================================
+Save this seed phrase to recover your new keypair:
+word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12
+
+================================================================================
+```
+
+**⚠️ IMPORTANT**: 
+- Save the seed phrase immediately!
+- Store in a secure location (password manager, encrypted file, etc.)
+- Never share or commit the seed phrase to Git
+
+#### Step 2: Extract Private Key in Hex
+
+**Use repository script (recommended):**
+
+```bash
+# Use hyperlane-validator repository script
+python3 /home/lunc/hyperlane-validator/get-solana-hexkey.py ./solana-keypair.json
+```
+
+**Example output:**
+```
+0x7c2d098a2870db43d142c87586c62d1252c97aff002176a15d87940d41c79e27
+```
+
+**Alternative: Extract manually using CLI commands:**
+
+```bash
+# Extract private key using jq and xxd (if available)
+# The keypair JSON contains 64 bytes: first 32 are the private key
+jq -r '.[:32] | @json' ./solana-keypair.json | jq -r 'map(sprintf "%02x") | join("")' | sed 's/^/0x/'
+```
+
+**Or using Python inline (without creating file):**
+
+```bash
+python3 << 'EOF'
+import json
+with open('./solana-keypair.json', 'r') as f:
+    keypair = json.load(f)
+private_key_bytes = bytes(keypair[:32])
+print(f"0x{private_key_bytes.hex()}")
+EOF
+```
+
+#### Step 3: Get Public Address
+
+```bash
+# Get public address
+solana-keygen pubkey ./solana-keypair.json
+
+# For testnet
+solana-keygen pubkey ./solana-keypair.json --url https://api.testnet.solana.com
+```
+
+**Example output:**
+```
+7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU
+```
+
+**⚠️ IMPORTANT**: 
+- Solana uses ED25519 (32 bytes)
+- The private key must have exactly 64 hex characters (not counting the `0x`)
+- Save the private key and seed phrase in a secure location
+- The `solana-keypair.json` file contains the complete key - protect it with `chmod 600`
+
+---
+
+## 3. JSON File Configuration
+
+### 3.1. Configure Validator (Terra Classic)
+
+Edit the file `hyperlane/validator.terraclassic.json`:
+
+```bash
+cp hyperlane/validator.terraclassic.json.example hyperlane/validator.terraclassic.json
+nano hyperlane/validator.terraclassic.json
+```
+
+**Configuration:**
+
+```json
+{
+  "db": "/etc/data/db",
+  "checkpointSyncer": {
+    "type": "s3",
+    "bucket": "hyperlane-validator-signatures-YOUR-NAME",
+    "region": "us-east-1"
+  },
+  "originChainName": "terraclassic",
+  "validator": {
+    "type": "hexKey",
+    "key": "0xYOUR_PRIVATE_KEY_TERRA"
+  },
+  "chains": {
+    "terraclassic": {
+      "signer": {
+        "type": "cosmosKey",
+        "key": "0xYOUR_PRIVATE_KEY_TERRA",
+        "prefix": "terra"
+      }
+    }
+  }
+}
+```
+
+**⚠️ Replace:**
+- `YOUR-NAME` → Your S3 bucket name
+- `YOUR_PRIVATE_KEY_TERRA` → Generated private key (without the `0x` in the value, but keep it in JSON)
+
+**Protect file:**
+```bash
+chmod 600 hyperlane/validator.terraclassic.json
+```
+
+### 3.2. Configure Relayer
+
+Edit the file `hyperlane/relayer.json` or `hyperlane/relayer-testnet.json`:
+
+```bash
+cp hyperlane/relayer.json.example hyperlane/relayer.json
+nano hyperlane/relayer.json
+```
+
+**Configuration example (Terra Classic + BSC + Solana):**
+
+```json
+{
+  "db": "/etc/data/db",
+  "relayChains": "terraclassic,bsctestnet,solanatestnet",
+  "allowLocalCheckpointSyncers": "false",
+  "gasPaymentEnforcement": [{ "type": "none" }],
+  "whitelist": [
+    {
+      "originDomain": [1325],
+      "destinationDomain": [97]
+    },
+    {
+      "originDomain": [97],
+      "destinationDomain": [1325]
+    },
+    {
+      "originDomain": [1325],
+      "destinationDomain": [1399811150]
+    },
+    {
+      "originDomain": [1399811150],
+      "destinationDomain": [1325]
+    }
+  ],
+  "chains": {
+    "bsctestnet": {
+      "signer": {
+        "type": "hexKey",
+        "key": "0xYOUR_PRIVATE_KEY_BSC"
+      }
+    },
+    "solanatestnet": {
+      "signer": {
+        "type": "hexKey",
+        "key": "0xYOUR_PRIVATE_KEY_SOLANA"
+      }
+    },
+    "terraclassictestnet": {
+      "signer": {
+        "type": "cosmosKey",
+        "key": "0xYOUR_PRIVATE_KEY_TERRA",
+        "prefix": "terra"
+      }
+    }
+  }
+}
+```
+
+**⚠️ Replace:**
+- `YOUR_PRIVATE_KEY_BSC` → Generated BSC private key
+- `YOUR_PRIVATE_KEY_SOLANA` → Generated Solana private key
+- `YOUR_PRIVATE_KEY_TERRA` → Generated Terra Classic private key
+
+**Protect file:**
+```bash
+chmod 600 hyperlane/relayer.json
+```
+
+---
+
+## 4. Verification and Testing
+
+### 4.1. Verify S3 Configuration
+
+```bash
+# List objects in bucket
+aws s3 ls s3://hyperlane-validator-signatures-YOUR-NAME/ --recursive
+
+# Verify bucket policy
+aws s3api get-bucket-policy --bucket hyperlane-validator-signatures-YOUR-NAME
+
+# Test writing
+echo "test" > test.txt
+aws s3 cp test.txt s3://hyperlane-validator-signatures-YOUR-NAME/
+aws s3 rm s3://hyperlane-validator-signatures-YOUR-NAME/test.txt
+rm test.txt
+```
+
+### 4.2. Verify Private Keys
+
+#### Terra Classic
+
+```bash
+# Get address using terrad
+terrad keys show validator-key --keyring-backend file --address
+
+# Or if you only have the hex private key, use helper script
+python3 /home/lunc/hyperlane-validator/get-address-from-hexkey.py 0xYOUR_PRIVATE_KEY
+
+# Check balance
+curl -s "https://lcd.terraclassic.community/cosmos/bank/v1beta1/balances/YOUR_TERRA_ADDRESS" | jq .
+```
+
+#### BSC
+
+```bash
+# Get address using cast
+cast wallet address --private-key 0xYOUR_PRIVATE_KEY
+
+# Check balance (testnet)
+curl -s "https://api-testnet.bscscan.com/api?module=account&action=balance&address=YOUR_BSC_ADDRESS&tag=latest" | jq -r '.result' | awk '{print $1/10^18 " BNB"}'
+
+# Check balance (mainnet)
+cast balance YOUR_BSC_ADDRESS --rpc-url https://bsc.drpc.org
+```
+
+#### Ethereum
+
+```bash
+# Get address using cast
+cast wallet address --private-key 0xYOUR_PRIVATE_KEY
+
+# Check balance (Sepolia testnet)
+curl -s "https://api-sepolia.etherscan.io/api?module=account&action=balance&address=YOUR_ETH_ADDRESS&tag=latest" | jq -r '.result' | awk '{print $1/10^18 " ETH"}'
+
+# Check balance (mainnet)
+cast balance YOUR_ETH_ADDRESS --rpc-url https://eth.llamarpc.com
+```
+
+#### Solana
+
+```bash
+# Verify keypair
+solana-keygen verify YOUR_PUBLIC_ADDRESS ./solana-keypair.json
+
+# Get public address
+solana-keygen pubkey ./solana-keypair.json
+
+# Check balance (testnet)
+solana balance YOUR_PUBLIC_ADDRESS --url https://api.testnet.solana.com
+
+# Check balance (mainnet)
+solana balance YOUR_PUBLIC_ADDRESS
+```
+
+### 4.3. Test Validator
+
+```bash
+# Start validator
+docker-compose up -d validator-terraclassic
+
+# View logs
+docker logs -f hpl-validator-terraclassic
+
+# Look for success messages:
+# - "Successfully announced validator"
+# - "Checkpoint synced to S3"
+```
+
+### 4.4. Verify Checkpoints in S3
+
+```bash
+# List checkpoints
+aws s3 ls s3://hyperlane-validator-signatures-YOUR-NAME/ --recursive
+
+# View last checkpoint
+aws s3 ls s3://hyperlane-validator-signatures-YOUR-NAME/ --recursive | tail -1
+
+# Download and view checkpoint
+aws s3 cp s3://hyperlane-validator-signatures-YOUR-NAME/checkpoint_0x...json - | jq .
+```
+
+---
+
+## 5. Troubleshooting
+
+### 5.1. Error: "AccessDenied" on S3
+
+**Cause**: Incorrect bucket policy or invalid AWS credentials.
+
+**Solution:**
+1. Verify bucket policy in AWS Console
+2. Verify `.env` file with correct credentials
+3. Verify IAM user ARN in policy
+
+```bash
+# Verify credentials
+aws sts get-caller-identity
+
+# Verify bucket access
+aws s3 ls s3://hyperlane-validator-signatures-YOUR-NAME/
+```
+
+### 5.2. Error: "Invalid key format"
+
+**Cause**: Private key in incorrect format.
+
+**Solution:**
+- Terra Classic/BSC/Ethereum: Key must have 64 hex characters (32 bytes)
+- Solana: Key must have 64 hex characters (32 bytes for ED25519)
+- All must start with `0x`
+
+```bash
+# Verify format
+echo "0xYOUR_KEY" | wc -c
+# Should return 66 (0x + 64 characters)
+```
+
+### 5.3. Error: "Container won't start"
+
+**Cause**: Invalid JSON configuration or missing credentials.
+
+**Solution:**
+```bash
+# Verify complete logs
+docker logs hpl-validator-terraclassic
+
+# Verify JSON
+cat hyperlane/validator.terraclassic.json | jq .
+
+# Verify environment variables
+docker exec hpl-validator-terraclassic env | grep AWS
+```
+
+### 5.4. Error: "Checkpoint not found"
+
+**Cause**: Validator is not writing checkpoints to S3.
+
+**Solution:**
+1. Verify `checkpointSyncer` configuration in JSON
+2. Verify S3 bucket permissions
+3. Verify validator logs
+
+```bash
+# Verify configuration
+cat hyperlane/validator.terraclassic.json | jq '.checkpointSyncer'
+
+# Verify permissions
+aws s3api get-bucket-policy --bucket hyperlane-validator-signatures-YOUR-NAME
+
+# View logs
+docker logs hpl-validator-terraclassic | grep -i checkpoint
+```
+
+### 5.5. Error: "InvalidSignatureException"
+
+**Cause**: Incorrect private key or address does not match.
+
+**Solution:**
+1. Verify if the private key is correct
+2. Verify if the address derived from the key is correct
+3. Verify if the address has sufficient balance
+
+```bash
+# Verify address derived from key
+python3 /home/lunc/hyperlane-validator/get-address-from-hexkey.py 0xYOUR_PRIVATE_KEY
+
+# Check balance
+# (use the commands from section 4.2)
+```
+
+---
+
+## 📚 Additional Resources
+
+- [Hyperlane Documentation](https://docs.hyperlane.xyz/)
+- [AWS S3 Best Practices](https://docs.aws.amazon.com/AmazonS3/latest/userguide/best-practices.html)
+- [Solana CLI Documentation](https://docs.solana.com/cli)
+- [Foundry (cast) Documentation](https://book.getfoundry.sh/reference/cast/)
+
+---
+
+## ✅ Final Checklist
+
+### S3 AWS:
+- [ ] IAM user created: `hyperlane-validator`
+- [ ] Access Keys created and saved in `.env`
+- [ ] IAM permissions configured
+- [ ] S3 bucket created
+- [ ] Bucket policy configured (public read + IAM write)
+- [ ] Bucket access tested
+
+### Private Keys:
+- [ ] Terra Classic private key generated
+- [ ] Terra Classic address obtained
+- [ ] BSC private key generated
+- [ ] BSC address obtained
+- [ ] Ethereum private key generated
+- [ ] Ethereum address obtained
+- [ ] Solana private key generated
+- [ ] Solana address obtained
+- [ ] All keys saved in secure location
+
+### Configuration:
+- [ ] `validator.terraclassic.json` configured
+- [ ] `relayer.json` configured
+- [ ] JSON files protected (chmod 600)
+- [ ] JSON files validated (jq)
+
+### Tests:
+- [ ] Validator starts without errors
+- [ ] Checkpoints appear in S3
+- [ ] Relayer reads checkpoints from S3
+- [ ] All addresses have sufficient balance
+
+---
+
+**🎉 Configuration complete! Now you are ready to run the Hyperlane validator.**
+

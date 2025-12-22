@@ -1,0 +1,177 @@
+{
+  "chains": {
+    "bsctestnet": {
+      "blockExplorers": [
+        {
+          "apiKey": "GP69JEAP2W7YFJT9ZJTEPGQT6Y6KMW44ZN",
+          "apiUrl": "https://api.etherscan.io/v2/api?chainid=97",
+          "family": "etherscan",
+          "name": "BscScan",
+          "url": "https://testnet.bscscan.com"
+        }
+      ],
+      "blocks": {
+        "confirmations": 1,
+        "estimateBlockTime": 3,
+        "reorgPeriod": 9
+      },
+      "chainId": 97,
+      "displayName": "Binance Smart Chain Testnet",
+      "displayNameShort": "Binance Testnet",
+      "domainId": 97,
+      "gasCurrencyCoinGeckoId": "binancecoin",
+      "gnosisSafeTransactionServiceUrl": "https://safe-transaction-bsc.safe.global/",
+      "name": "bsctestnet",
+      "nativeToken": {
+        "decimals": 18,
+        "name": "BNB",
+        "symbol": "BNB"
+      },
+      "protocol": "ethereum",
+      "rpcUrls": [
+        {
+          "http": "https://bsc-testnet.publicnode.com"
+        },
+        {
+          "http": "https://bsc-testnet.drpc.org"
+        }
+      ],
+      "aggregationHook": "0x3d675bB93250Ab7603F40cbb9194bae210784627",
+      "domainRoutingIsm": "0x82A4aac9bED3DFDfb9569031E19d18431204681C",
+      "domainRoutingIsmFactory": "0xD2a0c68ed92D1Eb3C699D2808b06dd7b70367F92",
+      "fallbackRoutingHook": "0x2670ED2EC08cAd135307556685a96bD4c16b007b",
+      "interchainGasPaymaster": "0x0dD20e410bdB95404f71c5a4e7Fa67B892A5f949",
+      "interchainSecurityModule": "0xe4245cCB6427Ba0DC483461bb72318f5DC34d090",
+      "mailbox": "0xF9F6F5646F478d5ab4e20B0F910C92F1CCC9Cc6D",
+      "merkleTreeHook": "0xc6cbF39A747f5E28d1bDc8D9dfDAb2960Abd5A8f",
+      "pausableHook": "0xA71E50eFd93600933650A324AE43d395a8aE4AC7",
+      "pausableIsm": "0xb98B1596897d3c122111ea6b6b9014A95920F459",
+      "protocolFee": "0x3eF0a63B8976b838704Bcc93C78C56b6653E5a39",
+      "proxyAdmin": "0xb12282d2E838Aa5f2A4F9Ee5f624a77b7199A078",
+      "staticAggregationHookFactory": "0xa1145B39F1c7Ef9aA593BC1DB1634b00CC020942",
+      "staticAggregationIsm": "0x8fb481f65d04c590b8507F75D05Ed29594590376",
+      "staticAggregationIsmFactory": "0x40613dE82d672605Ab051C64079022Bb4F8bDE4f",
+      "staticMerkleRootMultisigIsmFactory": "0x3E235B90197E1D6b5DB5ad5aD49f2c1ED6406382",
+      "staticMerkleRootWeightedMultisigIsmFactory": "0xCa152b249791Adf7A09C6c1bdbAb05e4A594966e",
+      "staticMessageIdMultisigIsmFactory": "0x0D96aF0c01c4bbbadaaF989Eb489c8783F35B763",
+      "staticMessageIdWeightedMultisigIsmFactory": "0xaa80d23299861b7D7ab1bE665579029Ed9137BD1",
+      "storageGasOracle": "0x124EBCBC018A5D4Efe639f02ED86f95cdC3f6498",
+      "testRecipient": "0xfbcD1c00a3d809f36cC1A15918694B17B32c0b6c",
+      "testTokenRecipient": "0x260f6024119549a40595d0937471e607411E8ea5",
+      "timelockController": "0x0000000000000000000000000000000000000000",
+      "validatorAnnounce": "0xf09701B0a93210113D175461b6135a96773B5465",
+      "transactionOverrides": {
+        "minGasPrice": "1000000000"
+      },
+      "index": {
+        "from": 64000000,
+        "chunk": 10
+      }
+    },
+    "solanatestnet": {
+      "blockExplorers": [
+        {
+          "apiUrl": "https://explorer.solana.com?cluster=testnet",
+          "family": "other",
+          "name": "Solana Explorer",
+          "url": "https://explorer.solana.com?cluster=testnet"
+        }
+      ],
+      "blocks": {
+        "confirmations": 1,
+        "estimateBlockTime": 0.4,
+        "reorgPeriod": 0
+      },
+      "chainId": 1399811150,
+      "displayName": "Solana Testnet",
+      "displayNameShort": "Solana Testnet",
+      "domainId": 1399811150,
+      "gasCurrencyCoinGeckoId": "solana",
+      "isTestnet": true,
+      "name": "solanatestnet",
+      "nativeToken": {
+        "decimals": 9,
+        "name": "Solana",
+        "symbol": "SOL"
+      },
+      "protocol": "sealevel",
+      "rpcUrls": [
+        {
+          "http": "https://api.testnet.solana.com"
+        }
+      ],
+      "interchainGasPaymaster": "9SQVtTNsbipdMzumhzi6X8GwojiSMwBfqAhS7FgyTcqy",
+      "mailbox": "75HBBLae3ddeneJVrZeyrDfv6vb7SMC3aCpBucSXS5aR",
+      "merkleTreeHook": "75HBBLae3ddeneJVrZeyrDfv6vb7SMC3aCpBucSXS5aR",
+      "validatorAnnounce": "8qNYSi9EP1xSnRjtMpyof88A26GBbdcrsa61uSaHiwx3",
+      "priorityFeeOracle": {
+        "type": "constant",
+        "fee": 10000
+      },
+      "index": {
+        "from": 375964820,
+        "chunk": 10
+      }
+    },
+    "terraclassictestnet": {
+      "blockExplorers": [
+        {
+          "apiUrl": "https://api.terra-classic.hexxagon.io",
+          "family": "other",
+          "name": "Terra Finder Testnet",
+          "url": "https://finder.terraclassic.community/testnet"
+        }
+      ],
+      "slip44": 330,
+      "name": "terraclassictestnet",
+      "domainId": 1325,
+      "chainId": "rebel-2",
+      "protocol": "cosmos",
+      "rpcUrls": [
+        {
+          "http": "https://rpc.luncblaze.com"
+        },
+        {
+          "http": "https://terra-classic-rpc.publicnode.com"
+        },
+        {
+          "http": "https://terraclassic-rpc.publicnode.com"
+        }
+      ],
+      "grpcUrls": [
+        {
+          "http": "https://grpc.terra-classic.hexxagon.dev"
+        }
+      ],
+      "restUrls": [
+        {
+          "http": "https://lcd.luncblaze.com"
+        }
+      ],
+      "canonicalAsset": "uluna",
+      "bech32Prefix": "terra",
+      "gasPrice": {
+        "amount": "28.325",
+        "denom": "uluna"
+      },
+      "index": {
+        "from": 28563839,
+        "chunk": 10
+      },
+      "blocks": {
+        "confirmations": 1,
+        "estimateBlockTime": 3,
+        "reorgPeriod": 1
+      },
+      "contractAddressBytes": 32,
+      "mailbox": "0x8564e4e5ebc744b0a6185d1c293d598189227b3efded874e8d0bea467c8750dd",
+      "validatorAnnounce": "0xe604c0fcb8ddcf5eb2ca20bc73f6c5fd3d7eedae2ce0278dd41fb58cec5969fe",
+      "interchainGasPaymaster": "0xde3a040fd6040a61c41a73f254ab361cb50cddd8c84b0bae10d70e16894383a8",
+      "merkleTreeHook": "0x3e151729e04f4795c761eb6371e669c21116d9205ca963f3077f4fb3697ff166",
+      "gas": {
+        "adjustment": 1.5,
+        "min_gas_amount": 2000000
+      }
+    }
+  }
+}

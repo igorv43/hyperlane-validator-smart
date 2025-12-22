@@ -1,0 +1,47 @@
+version: '2'
+services:
+  relayer:
+    container_name: hpl-relayer
+    image: gcr.io/abacus-labs-dev/hyperlane-agent:1.7.0
+    user: root
+    entrypoint: ['sh', '-c']
+    environment:
+      - RUST_LOG=info,hyperlane=debug,relayer=debug,hyperlane_cosmos=debug
+      - HYP_BASE_TRACING_LEVEL=debug
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=${AWS_REGION:-us-east-1}
+    command:
+      - |
+        rm -rf /app/config/* && \
+        cp "/etc/hyperlane/agent-config.docker-testnet.json" "/app/config/agent-config.json" && \
+        CONFIG_FILES="/etc/hyperlane/relayer-testnet.json" \
+          ./relayer --allowLocalCheckpointSyncers false --metrics 0.0.0.0:9090 --api 0.0.0.0:9090
+    ports:
+      - 9110:9090
+    volumes:
+      - ./hyperlane:/etc/hyperlane
+      - ./relayer:/etc/data
+
+  validator-terraclassic:
+    container_name: hpl-validator-terraclassic
+    image: gcr.io/abacus-labs-dev/hyperlane-agent:1.7.0
+    user: root
+    entrypoint: ['sh', '-c']
+    environment:
+      - RUST_LOG=debug,hyperlane=debug,validator=debug,hyperlane_cosmos=debug
+      - HYP_BASE_TRACING_LEVEL=debug
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=${AWS_REGION:-us-east-1}
+    command:
+      - |
+        rm -rf /app/config/* && \
+        cp "/etc/hyperlane/agent-config.docker-testnet.json" "/app/config/agent-config.json" && \
+        CONFIG_FILES="/etc/hyperlane/validator.terraclassic.json" \
+          ./validator --metrics 0.0.0.0:9090
+    ports:
+      - 9121:9090
+    volumes:
+      - ./hyperlane:/etc/hyperlane
+      - ./validator:/etc/data

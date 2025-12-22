@@ -1,0 +1,18 @@
+# Arquivos de ambiente com credenciais
+.env
+
+# Arquivos de configuração com chaves privadas
+hyperlane/validator.*.json
+hyperlane/relayer.json
+
+# Dados dos agentes
+validator/
+relayer/
+
+# Logs
+*.log
+
+# Docker
+docker-compose.override.yml
+
+solana-keypair.json
