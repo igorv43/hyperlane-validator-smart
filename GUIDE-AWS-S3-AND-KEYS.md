@@ -1,5 +1,9 @@
 # 🔐 Complete Guide: AWS S3 Configuration and Private Key Creation
 
+**Last Updated**: December 22, 2025 at 11:13:59 AM EST (US Eastern Time)
+
+---
+
 This document provides a complete step-by-step guide for:
 1. Configure the S3 bucket on AWS for the Hyperlane validator
 2. Create private keys in hexadecimal format for Terra Classic, BSC, Ethereum, and Solana
