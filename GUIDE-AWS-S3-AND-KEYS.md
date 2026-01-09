@@ -1,6 +1,6 @@
 # 🔐 Complete Guide: AWS S3 Configuration and Private Key Creation
 
-**Last Updated**: January 9, 2026 at 10:08:34 AM EST (US Eastern Time)
+**Last Updated**: January 9, 2026 at 10:52:33 AM EST (US Eastern Time)
 
 ---
 
@@ -1363,13 +1363,93 @@ solana-keygen pubkey ./solana-keypair.json --url https://api.testnet.solana.com
 
 ## 3. JSON File Configuration
 
+### ⚠️ Important: Copy and Configure Example Files
+
+Before configuring the validator and relayer, you need to copy all `.example` files and remove the `.example` extension. These example files are templates that need to be configured with your specific settings.
+
+**All files with `.example` extension must be copied and configured:**
+
+#### Required Configuration Files
+
+**For Testnet:**
+1. `hyperlane/validator.terraclassic-testnet.json.example` → `hyperlane/validator.terraclassic-testnet.json`
+2. `hyperlane/relayer.testnet.json.example` → `hyperlane/relayer-testnet.json`
+
+**For Production (Mainnet):**
+3. `hyperlane/validator.terraclassic.json.example` → `hyperlane/validator.terraclassic.json`
+4. `hyperlane/relayer.mainnet.json.example` → `hyperlane/relayer-mainnet.json`
+
+**Optional (Legacy/Alternative):**
+5. `hyperlane/relayer.json.example` → `hyperlane/relayer.json` (if not using mainnet/testnet specific files)
+
+#### Quick Setup Commands
+
+**Copy all example files at once:**
+
+```bash
+# Navigate to project directory
+cd /path/to/tc-hyperlane-validator
+
+# Copy testnet files
+cp hyperlane/validator.terraclassic-testnet.json.example hyperlane/validator.terraclassic-testnet.json
+cp hyperlane/relayer.testnet.json.example hyperlane/relayer-testnet.json
+
+# Copy production files
+cp hyperlane/validator.terraclassic.json.example hyperlane/validator.terraclassic.json
+cp hyperlane/relayer.mainnet.json.example hyperlane/relayer-mainnet.json
+
+# Optional: Copy legacy relayer.json if needed
+cp hyperlane/relayer.json.example hyperlane/relayer.json
+
+# Set proper permissions (protect files with private keys)
+chmod 600 hyperlane/validator.terraclassic*.json
+chmod 600 hyperlane/relayer*.json
+```
+
+**Or copy individually as you configure each file (recommended):**
+
+```bash
+# Testnet Validator
+cp hyperlane/validator.terraclassic-testnet.json.example hyperlane/validator.terraclassic-testnet.json
+chmod 600 hyperlane/validator.terraclassic-testnet.json
+
+# Testnet Relayer
+cp hyperlane/relayer.testnet.json.example hyperlane/relayer-testnet.json
+chmod 600 hyperlane/relayer-testnet.json
+
+# Production Validator
+cp hyperlane/validator.terraclassic.json.example hyperlane/validator.terraclassic.json
+chmod 600 hyperlane/validator.terraclassic.json
+
+# Production Relayer
+cp hyperlane/relayer.mainnet.json.example hyperlane/relayer-mainnet.json
+chmod 600 hyperlane/relayer-mainnet.json
+```
+
+**⚠️ Important Notes:**
+- Files with `.example` extension are **templates only** and should **NOT** be modified
+- Always copy the example file and remove the `.example` extension
+- The copied files will be ignored by git (see `.gitignore`) to protect your private keys
+- Set file permissions to `600` (read/write for owner only) after copying
+- Configure each file with your specific private keys and S3 bucket name
+
+---
+
 ### 3.1. Configure Validator (Terra Classic)
+
+#### For Production (Mainnet)
 
 Edit the file `hyperlane/validator.terraclassic.json`:
 
 ```bash
+# Copy example file (if not done already)
 cp hyperlane/validator.terraclassic.json.example hyperlane/validator.terraclassic.json
+
+# Edit the configuration
 nano hyperlane/validator.terraclassic.json
+
+# Protect the file
+chmod 600 hyperlane/validator.terraclassic.json
 ```
 
 **Configuration:**
@@ -1403,21 +1483,137 @@ nano hyperlane/validator.terraclassic.json
 - `YOUR-NAME` → Your S3 bucket name
 - `YOUR_PRIVATE_KEY_TERRA` → Generated private key (without the `0x` in the value, but keep it in JSON)
 
+#### For Testnet
+
+Edit the file `hyperlane/validator.terraclassic-testnet.json`:
+
+```bash
+# Copy example file (if not done already)
+cp hyperlane/validator.terraclassic-testnet.json.example hyperlane/validator.terraclassic-testnet.json
+
+# Edit the configuration
+nano hyperlane/validator.terraclassic-testnet.json
+
+# Protect the file
+chmod 600 hyperlane/validator.terraclassic-testnet.json
+```
+
+**Configuration:**
+
+```json
+{
+  "db": "/etc/data/db",
+  "checkpointSyncer": {
+    "type": "s3",
+    "bucket": "hyperlane-validator-signatures-YOUR-NAME",
+    "region": "us-east-1"
+  },
+  "originChainName": "terraclassictestnet",
+  "validator": {
+    "type": "hexKey",
+    "key": "0xYOUR_PRIVATE_KEY_TERRA"
+  },
+  "chains": {
+    "terraclassictestnet": {
+      "signer": {
+        "type": "cosmosKey",
+        "key": "0xYOUR_PRIVATE_KEY_TERRA",
+        "prefix": "terra"
+      }
+    }
+  }
+}
+```
+
+**⚠️ Replace:**
+- `YOUR-NAME` → Your S3 bucket name (can be same or different from production)
+- `YOUR_PRIVATE_KEY_TERRA` → Generated private key for testnet (can be same or different from production)
+
 **Protect file:**
 ```bash
-chmod 600 hyperlane/validator.terraclassic.json
+chmod 600 hyperlane/validator.terraclassic-testnet.json
 ```
 
 ### 3.2. Configure Relayer
 
-Edit the file `hyperlane/relayer.json` or `hyperlane/relayer-testnet.json`:
+#### For Production (Mainnet)
+
+Edit the file `hyperlane/relayer-mainnet.json`:
 
 ```bash
-cp hyperlane/relayer.json.example hyperlane/relayer.json
-nano hyperlane/relayer.json
+# Copy example file (if not done already)
+cp hyperlane/relayer.mainnet.json.example hyperlane/relayer-mainnet.json
+
+# Edit the configuration
+nano hyperlane/relayer-mainnet.json
+
+# Protect the file
+chmod 600 hyperlane/relayer-mainnet.json
 ```
 
-**Configuration example (Terra Classic + BSC + Solana):**
+**Configuration example (Terra Classic + BSC + Solana - Mainnet):**
+
+```json
+{
+  "db": "/etc/data/db",
+  "relayChains": "terraclassic,bsc,solana",
+  "allowLocalCheckpointSyncers": "false",
+  "gasPaymentEnforcement": [{ "type": "none" }],
+  "whitelist": [
+    {
+      "originDomain": [13251],
+      "destinationDomain": [56]
+    },
+    {
+      "originDomain": [56],
+      "destinationDomain": [13251]
+    }
+  ],
+  "chains": {
+    "bsc": {
+      "signer": {
+        "type": "hexKey",
+        "key": "0xYOUR_PRIVATE_KEY_BSC"
+      }
+    },
+    "solana": {
+      "signer": {
+        "type": "hexKey",
+        "key": "0xYOUR_PRIVATE_KEY_SOLANA"
+      }
+    },
+    "terraclassic": {
+      "signer": {
+        "type": "cosmosKey",
+        "key": "0xYOUR_PRIVATE_KEY_TERRA",
+        "prefix": "terra"
+      }
+    }
+  }
+}
+```
+
+**⚠️ Replace:**
+- `YOUR_PRIVATE_KEY_BSC` → Generated BSC private key (mainnet)
+- `YOUR_PRIVATE_KEY_SOLANA` → Generated Solana private key (mainnet)
+- `YOUR_PRIVATE_KEY_TERRA` → Generated Terra Classic private key (mainnet)
+
+#### For Testnet
+
+Edit the file `hyperlane/relayer-testnet.json`:
+
+```bash
+# Copy example file (if not done already)
+cp hyperlane/relayer.testnet.json.example hyperlane/relayer-testnet.json
+
+# Edit the configuration
+nano hyperlane/relayer-testnet.json
+
+# Protect the file
+chmod 600 hyperlane/relayer-testnet.json
+```
+
+**Configuration example (Terra Classic + BSC + Solana - Testnet):**
 
 ```json
 {
@@ -1468,14 +1664,31 @@ nano hyperlane/relayer.json
 ```
 
 **⚠️ Replace:**
-- `YOUR_PRIVATE_KEY_BSC` → Generated BSC private key
-- `YOUR_PRIVATE_KEY_SOLANA` → Generated Solana private key
-- `YOUR_PRIVATE_KEY_TERRA` → Generated Terra Classic private key
+- `YOUR_PRIVATE_KEY_BSC` → Generated BSC private key (testnet)
+- `YOUR_PRIVATE_KEY_SOLANA` → Generated Solana private key (testnet)
+- `YOUR_PRIVATE_KEY_TERRA` → Generated Terra Classic private key (testnet)
 
 **Protect file:**
 ```bash
+chmod 600 hyperlane/relayer-testnet.json
+```
+
+#### Optional: Legacy Relayer Configuration
+
+If you need a generic `relayer.json` file (not mainnet/testnet specific), you can copy:
+
+```bash
+# Copy example file (if not done already)
+cp hyperlane/relayer.json.example hyperlane/relayer.json
+
+# Edit the configuration
+nano hyperlane/relayer.json
+
+# Protect the file
 chmod 600 hyperlane/relayer.json
 ```
+
+**Note:** This file is optional and typically used for custom configurations. The mainnet and testnet specific files (`relayer-mainnet.json` and `relayer-testnet.json`) are recommended for production use.
 
 ---
 
