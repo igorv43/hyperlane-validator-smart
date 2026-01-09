@@ -1422,7 +1422,7 @@ nano hyperlane/relayer.json
 ```json
 {
   "db": "/etc/data/db",
-  "relayChains": "terraclassic,bsctestnet,solanatestnet",
+  "relayChains": "terraclassictestnet,bsctestnet,solanatestnet",
   "allowLocalCheckpointSyncers": "false",
   "gasPaymentEnforcement": [{ "type": "none" }],
   "whitelist": [
