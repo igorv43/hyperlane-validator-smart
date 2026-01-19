@@ -11,6 +11,10 @@ services:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - AWS_REGION=${AWS_REGION:-us-east-1}
+      # Private Keys - Configure estas variáveis no Easypanel
+      - HYP_CHAINS_BSCTESTNET_SIGNER_KEY=${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}
+      - HYP_CHAINS_SOLANATESTNET_SIGNER_KEY=${HYP_CHAINS_SOLANATESTNET_SIGNER_KEY}
+      - HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY=${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}
     command:
       - |
         rm -rf /app/config/* && \
@@ -35,11 +39,25 @@ services:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - AWS_REGION=${AWS_REGION:-us-east-1}
+      # S3 Bucket Configuration - Configure estas variáveis no Easypanel
+      - HYP_CHECKPOINT_SYNCER_BUCKET=${HYP_CHECKPOINT_SYNCER_BUCKET}
+      - HYP_CHECKPOINT_SYNCER_REGION=${HYP_CHECKPOINT_SYNCER_REGION:-${AWS_REGION:-us-east-1}}
+      # Private Keys - Configure estas variáveis no Easypanel
+      - HYP_VALIDATOR_KEY=${HYP_VALIDATOR_KEY}
+      - HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY=${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}
     command:
       - |
         rm -rf /app/config/* && \
         cp "/etc/hyperlane/agent-config.docker-testnet.json" "/app/config/agent-config.json" && \
-        [ ! -f "/etc/hyperlane/validator.terraclassic-testnet.json" ] && cp "/etc/hyperlane/validator.terraclassic-testnet.json.example" "/etc/hyperlane/validator.terraclassic-testnet.json" || true && \
+        if [ ! -f "/etc/hyperlane/validator.terraclassic-testnet.json" ]; then \
+          cp "/etc/hyperlane/validator.terraclassic-testnet.json.example" "/etc/hyperlane/validator.terraclassic-testnet.json"; \
+        fi && \
+        if [ -n "${HYP_CHECKPOINT_SYNCER_BUCKET}" ]; then \
+          sed -i "s|YOUR_S3_BUCKET_NAME|${HYP_CHECKPOINT_SYNCER_BUCKET}|g" "/etc/hyperlane/validator.terraclassic-testnet.json"; \
+        fi && \
+        if [ -n "${HYP_CHECKPOINT_SYNCER_REGION}" ]; then \
+          sed -i "s|YOUR_S3_REGION|${HYP_CHECKPOINT_SYNCER_REGION}|g" "/etc/hyperlane/validator.terraclassic-testnet.json"; \
+        fi && \
         CONFIG_FILES="/etc/hyperlane/validator.terraclassic-testnet.json" \
           ./validator --metrics 0.0.0.0:9090
     ports:
