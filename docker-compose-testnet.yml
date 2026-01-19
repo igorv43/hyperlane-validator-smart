@@ -3,10 +3,8 @@ services:
     image: gcr.io/abacus-labs-dev/hyperlane-agent:1.7.0
     restart: unless-stopped
 
-    entrypoint:
-      - /usr/local/bin/hyperlane-agent
-
     command:
+      - hyperlane-agent
       - relayer
       - --db
       - /data
@@ -28,17 +26,15 @@ services:
 
     volumes:
       - ./hyperlane:/etc/hyperlane
-      - relayer-data:/data
+      - ./relayer-data:/data
 
 
   validator-terraclassic:
     image: gcr.io/abacus-labs-dev/hyperlane-agent:1.7.0
     restart: unless-stopped
 
-    entrypoint:
-      - /usr/local/bin/hyperlane-agent
-
     command:
+      - hyperlane-agent
       - validator
       - --db
       - /data
@@ -56,11 +52,4 @@ services:
 
     volumes:
       - ./hyperlane:/etc/hyperlane
-      - validator-data:/data
-
-
-volumes:
-  relayer-data:
-    driver: local
-  validator-data:
-    driver: local
+      - ./validator-data:/data
