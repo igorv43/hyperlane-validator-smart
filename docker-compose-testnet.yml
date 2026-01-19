@@ -1,53 +1,44 @@
 services:
   relayer:
-    image: ghcr.io/hyperlane-xyz/hyperlane-agent:1.7.0
+    image: ghcr.io/hyperlane-xyz/hyperlane:1.7.0
+    container_name: hyperlane-relayer
     restart: unless-stopped
-
     command:
       - relayer
-      - --db
-      - /data
       - --config
-      - /etc/hyperlane/relayer.testnet.json
+      - /hyperlane/config
+      - --db
+      - /hyperlane/db
       - --allowLocalCheckpointSyncers
       - "false"
       - --metrics
       - 0.0.0.0:9090
       - --api
       - 0.0.0.0:9090
-
-    environment:
-      - RUST_LOG=info,hyperlane=debug,relayer=debug,hyperlane_cosmos=debug
-      - HYP_BASE_TRACING_LEVEL=debug
-
-    expose:
-      - "9090"
-
     volumes:
-      - ./hyperlane:/etc/hyperlane
-      - ./relayer-data:/data
-
+      - ./hyperlane:/hyperlane
+      - relayer-data:/hyperlane/db
+    ports:
+      - "9090:9090"
 
   validator-terraclassic:
-    image: ghcr.io/hyperlane-xyz/hyperlane-agent:1.7.0
+    image: ghcr.io/hyperlane-xyz/hyperlane:1.7.0
+    container_name: hyperlane-validator-terraclassic
     restart: unless-stopped
-
     command:
       - validator
-      - --db
-      - /data
       - --config
-      - /etc/hyperlane/validator.terraclassic-testnet.json
-      - --metrics
-      - 0.0.0.0:9090
-
-    environment:
-      - RUST_LOG=debug,hyperlane=debug,validator=debug,hyperlane_cosmos=debug
-      - HYP_BASE_TRACING_LEVEL=debug
-
-    expose:
-      - "9090"
-
+      - /hyperlane/config
+      - --db
+      - /hyperlane/db
+      - --originChainName
+      - terraclassic
     volumes:
-      - ./hyperlane:/etc/hyperlane
-      - ./validator-data:/data
+      - ./hyperlane:/hyperlane
+      - validator-terraclassic-data:/hyperlane/db
+    ports:
+      - "9091:9090"
+
+volumes:
+  relayer-data:
+  validator-terraclassic-data:
