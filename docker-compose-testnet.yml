@@ -5,6 +5,9 @@ services:
     image: gcr.io/abacus-labs-dev/hyperlane-agent:1.7.0
     restart: unless-stopped
 
+    entrypoint:
+      - /usr/local/bin/hyperlane-agent
+
     command:
       - relayer
       - --db
@@ -33,6 +36,9 @@ services:
   validator-terraclassic:
     image: gcr.io/abacus-labs-dev/hyperlane-agent:1.7.0
     restart: unless-stopped
+
+    entrypoint:
+      - /usr/local/bin/hyperlane-agent
 
     command:
       - validator
