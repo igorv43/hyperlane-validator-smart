@@ -1,10 +1,9 @@
 services:
   relayer:
-    image: gcr.io/abacus-labs-dev/hyperlane-agent:1.7.0
+    image: ghcr.io/hyperlane-xyz/hyperlane-agent:1.7.0
     restart: unless-stopped
 
     command:
-      - hyperlane-agent
       - relayer
       - --db
       - /data
@@ -30,11 +29,10 @@ services:
 
 
   validator-terraclassic:
-    image: gcr.io/abacus-labs-dev/hyperlane-agent:1.7.0
+    image: ghcr.io/hyperlane-xyz/hyperlane-agent:1.7.0
     restart: unless-stopped
 
     command:
-      - hyperlane-agent
       - validator
       - --db
       - /data
