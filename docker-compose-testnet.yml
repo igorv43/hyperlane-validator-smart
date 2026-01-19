@@ -1,41 +1,56 @@
+version: "3.9"
+
 services:
   relayer:
     image: gcr.io/abacus-labs-dev/hyperlane-agent:1.7.0
-    user: root
-    entrypoint: >
-      sh -c "mkdir -p /app/config;
-      rm -rf /app/config/* 2>/dev/null || true;
-      cp /etc/hyperlane/agent-config.docker-testnet.json /app/config/agent-config.json;
-      CONFIG_FILES=/etc/hyperlane/relayer.testnet.json
-      ./relayer --allowLocalCheckpointSyncers false --metrics 0.0.0.0:9090 --api 0.0.0.0:9090"
+    restart: unless-stopped
+
+    command: >
+      sh -c "
+      relayer
+      --db /data
+      --config /etc/hyperlane/relayer.testnet.json
+      --allowLocalCheckpointSyncers false
+      --metrics 0.0.0.0:9090
+      --api 0.0.0.0:9090
+      "
+
     environment:
       - RUST_LOG=info,hyperlane=debug,relayer=debug,hyperlane_cosmos=debug
       - HYP_BASE_TRACING_LEVEL=debug
-    expose:
-      - "9090"
+
+    ports:
+      - 9112:9090
+
     volumes:
-      - hyperlane-config:/etc/hyperlane
-      - relayer-data:/etc/data
+      - ./hyperlane:/etc/hyperlane
+      - relayer-data:/data
+
 
   validator-terraclassic:
     image: gcr.io/abacus-labs-dev/hyperlane-agent:1.7.0
-    user: root
-    entrypoint: >
-      sh -c "mkdir -p /app/config;
-      rm -rf /app/config/* 2>/dev/null || true;
-      cp /etc/hyperlane/agent-config.docker-testnet.json /app/config/agent-config.json;
-      CONFIG_FILES=/etc/hyperlane/validator.terraclassic-testnet.json
-      ./validator --metrics 0.0.0.0:9090"
+    restart: unless-stopped
+
+    command: >
+      sh -c "
+      validator
+      --db /data
+      --config /etc/hyperlane/validator.terraclassic-testnet.json
+      --metrics 0.0.0.0:9090
+      "
+
     environment:
       - RUST_LOG=debug,hyperlane=debug,validator=debug,hyperlane_cosmos=debug
       - HYP_BASE_TRACING_LEVEL=debug
-    expose:
-      - "9090"
+
+    ports:
+      - 9122:9090
+
     volumes:
-      - hyperlane-config:/etc/hyperlane
-      - validator-data:/etc/data
+      - ./hyperlane:/etc/hyperlane
+      - validator-data:/data
+
 
 volumes:
-  hyperlane-config:
   relayer-data:
   validator-data:
