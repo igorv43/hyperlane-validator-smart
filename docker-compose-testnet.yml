@@ -6,14 +6,9 @@ services:
     environment:
       - RUST_LOG=info,hyperlane=debug,relayer=debug,hyperlane_cosmos=debug
       - HYP_BASE_TRACING_LEVEL=debug
-    command: >
-      mkdir -p /app/config &&
-      find /app/config -mindepth 1 -delete || true &&
-      cp /etc/hyperlane/agent-config.docker-testnet.json /app/config/agent-config.json &&
-      CONFIG_FILES="/etc/hyperlane/relayer.testnet.json"
-      ./relayer --allowLocalCheckpointSyncers false --metrics 0.0.0.0:9090 --api 0.0.0.0:9090
+    command: "mkdir -p /app/config; rm -rf /app/config/* 2>/dev/null || true; cp /etc/hyperlane/agent-config.docker-testnet.json /app/config/agent-config.json; CONFIG_FILES=/etc/hyperlane/relayer.testnet.json ./relayer --allowLocalCheckpointSyncers false --metrics 0.0.0.0:9090 --api 0.0.0.0:9090"
     expose:
-      - "9090"
+      - '9090'
     volumes:
       - hyperlane-config:/etc/hyperlane
       - relayer-data:/etc/data
@@ -25,14 +20,9 @@ services:
     environment:
       - RUST_LOG=debug,hyperlane=debug,validator=debug,hyperlane_cosmos=debug
       - HYP_BASE_TRACING_LEVEL=debug
-    command: >
-      mkdir -p /app/config &&
-      find /app/config -mindepth 1 -delete || true &&
-      cp /etc/hyperlane/agent-config.docker-testnet.json /app/config/agent-config.json &&
-      CONFIG_FILES="/etc/hyperlane/validator.terraclassic-testnet.json"
-      ./validator --metrics 0.0.0.0:9090
+    command: "mkdir -p /app/config; rm -rf /app/config/* 2>/dev/null || true; cp /etc/hyperlane/agent-config.docker-testnet.json /app/config/agent-config.json; CONFIG_FILES=/etc/hyperlane/validator.terraclassic-testnet.json ./validator --metrics 0.0.0.0:9090"
     expose:
-      - "9090"
+      - '9090'
     volumes:
       - hyperlane-config:/etc/hyperlane
       - validator-data:/etc/data
