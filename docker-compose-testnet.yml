@@ -49,15 +49,30 @@ services:
       - |
         rm -rf /app/config/* && \
         cp "/etc/hyperlane/agent-config.docker-testnet.json" "/app/config/agent-config.json" && \
-        if [ ! -f "/etc/hyperlane/validator.terraclassic-testnet.json" ]; then \
-          cp "/etc/hyperlane/validator.terraclassic-testnet.json.example" "/etc/hyperlane/validator.terraclassic-testnet.json"; \
-        fi && \
+        echo "Always recreating validator config from example..." && \
+        cp "/etc/hyperlane/validator.terraclassic-testnet.json.example" "/etc/hyperlane/validator.terraclassic-testnet.json" && \
+        echo "Config file created from example" && \
+        echo "Replacing S3 placeholders..." && \
         if [ -n "${HYP_CHECKPOINT_SYNCER_BUCKET}" ]; then \
           sed -i "s|YOUR_S3_BUCKET_NAME|${HYP_CHECKPOINT_SYNCER_BUCKET}|g" "/etc/hyperlane/validator.terraclassic-testnet.json"; \
+          echo "S3 bucket replaced: ${HYP_CHECKPOINT_SYNCER_BUCKET}"; \
+        else \
+          echo "WARNING: HYP_CHECKPOINT_SYNCER_BUCKET not set!"; \
         fi && \
         if [ -n "${HYP_CHECKPOINT_SYNCER_REGION}" ]; then \
           sed -i "s|YOUR_S3_REGION|${HYP_CHECKPOINT_SYNCER_REGION}|g" "/etc/hyperlane/validator.terraclassic-testnet.json"; \
+          echo "S3 region replaced: ${HYP_CHECKPOINT_SYNCER_REGION}"; \
+        else \
+          echo "WARNING: HYP_CHECKPOINT_SYNCER_REGION not set!"; \
         fi && \
+        echo "Validating config file..." && \
+        if ! grep -q "originChainName" "/etc/hyperlane/validator.terraclassic-testnet.json" || ! grep -q "checkpointSyncer" "/etc/hyperlane/validator.terraclassic-testnet.json"; then \
+          echo "ERROR: Config file is still invalid after processing!" && \
+          echo "File contents:" && \
+          cat "/etc/hyperlane/validator.terraclassic-testnet.json" && \
+          exit 1; \
+        fi && \
+        echo "Config file is valid. Starting validator..." && \
         CONFIG_FILES="/etc/hyperlane/validator.terraclassic-testnet.json" \
           ./validator --metrics 0.0.0.0:9090
     ports:
