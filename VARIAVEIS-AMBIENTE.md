@@ -22,6 +22,20 @@ AWS_SECRET_ACCESS_KEY=sua_secret_key_aqui
 AWS_REGION=us-east-1
 ```
 
+### Database Path (Opcional)
+
+Caminho do banco de dados para o validator e relayer.
+
+```bash
+HYP_DB=/etc/data/db
+```
+
+- **HYP_DB**: Caminho do banco de dados
+  - **Obrigatório**: Não (opcional)
+  - **Padrão**: `/etc/data/db` se não especificado
+  - **Exemplo**: `/etc/data/db`
+  - **Nota**: Geralmente você não precisa mudar isso, a menos que queira usar um caminho diferente
+
 ### S3 Bucket Configuration (Obrigatório para Validator)
 
 Configuração do bucket S3 onde os checkpoints serão armazenados.
@@ -166,6 +180,9 @@ Antes de iniciar os serviços, certifique-se de ter configurado:
 - [ ] `AWS_REGION`
 - [ ] `HYP_CHECKPOINT_SYNCER_BUCKET` (apenas para validator)
 - [ ] `HYP_CHECKPOINT_SYNCER_REGION` (apenas para validator)
+
+### Database (Opcional)
+- [ ] `HYP_DB` (opcional, padrão: `/etc/data/db`)
 
 ### Relayer - Chaves Privadas (Obrigatório)
 - [ ] `HYP_CHAINS_BSCTESTNET_SIGNER_KEY`

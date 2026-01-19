@@ -1,5 +1,5 @@
 {
-  "db": "/etc/data/db",
+ 
   "relayChains": "terraclassictestnet,bsctestnet,solanatestnet",
   "allowLocalCheckpointSyncers": "false",
   "gasPaymentEnforcement": [

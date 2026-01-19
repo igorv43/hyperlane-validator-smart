@@ -11,7 +11,9 @@ services:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - AWS_REGION=${AWS_REGION:-us-east-1}
-      # Private Keys - Configure estas variáveis no Easypanel
+      # Database Path - Configure this variable in Easypanel (optional, default: /etc/data/db)
+      - HYP_DB=${HYP_DB:-/etc/data/db}
+      # Private Keys - Configure these variables in Easypanel
       - HYP_CHAINS_BSCTESTNET_SIGNER_KEY=${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}
       - HYP_CHAINS_SOLANATESTNET_SIGNER_KEY=${HYP_CHAINS_SOLANATESTNET_SIGNER_KEY}
       - HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY=${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}
@@ -20,6 +22,10 @@ services:
         rm -rf /app/config/* && \
         cp "/etc/hyperlane/agent-config.docker-testnet.json" "/app/config/agent-config.json" && \
         [ ! -f "/etc/hyperlane/relayer.testnet.json" ] && cp "/etc/hyperlane/relayer.testnet.json.example" "/etc/hyperlane/relayer.testnet.json" || true && \
+        if [ -n "${HYP_DB}" ]; then \
+          sed -i "s|\"db\": \"/etc/data/db\"|\"db\": \"${HYP_DB}\"|g" "/etc/hyperlane/relayer.testnet.json"; \
+          echo "Database path replaced: ${HYP_DB}"; \
+        fi && \
         CONFIG_FILES="/etc/hyperlane/relayer.testnet.json" \
           ./relayer --allowLocalCheckpointSyncers false --metrics 0.0.0.0:9090 --api 0.0.0.0:9090
     ports:
@@ -39,10 +45,12 @@ services:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - AWS_REGION=${AWS_REGION:-us-east-1}
-      # S3 Bucket Configuration - Configure estas variáveis no Easypanel
+      # Database Path - Configure this variable in Easypanel (optional, default: /etc/data/db)
+      - HYP_DB=${HYP_DB:-/etc/data/db}
+      # S3 Bucket Configuration - Configure these variables in Easypanel
       - HYP_CHECKPOINT_SYNCER_BUCKET=${HYP_CHECKPOINT_SYNCER_BUCKET}
       - HYP_CHECKPOINT_SYNCER_REGION=${HYP_CHECKPOINT_SYNCER_REGION:-${AWS_REGION:-us-east-1}}
-      # Private Keys - Configure estas variáveis no Easypanel
+      # Private Keys - Configure these variables in Easypanel
       - HYP_VALIDATOR_KEY=${HYP_VALIDATOR_KEY}
       - HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY=${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}
     command:
@@ -52,6 +60,11 @@ services:
         echo "Always recreating validator config from example..." && \
         cp "/etc/hyperlane/validator.terraclassic-testnet.json.example" "/etc/hyperlane/validator.terraclassic-testnet.json" && \
         echo "Config file created from example" && \
+        echo "Replacing database path..." && \
+        if [ -n "${HYP_DB}" ]; then \
+          sed -i "s|\"db\": \"/etc/data/db\"|\"db\": \"${HYP_DB}\"|g" "/etc/hyperlane/validator.terraclassic-testnet.json"; \
+          echo "Database path replaced: ${HYP_DB}"; \
+        fi && \
         echo "Replacing S3 placeholders..." && \
         if [ -n "${HYP_CHECKPOINT_SYNCER_BUCKET}" ]; then \
           sed -i "s|YOUR_S3_BUCKET_NAME|${HYP_CHECKPOINT_SYNCER_BUCKET}|g" "/etc/hyperlane/validator.terraclassic-testnet.json"; \
