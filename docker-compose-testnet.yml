@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   relayer:
     image: gcr.io/abacus-labs-dev/hyperlane-agent:1.7.0
@@ -25,8 +23,8 @@ services:
       - RUST_LOG=info,hyperlane=debug,relayer=debug,hyperlane_cosmos=debug
       - HYP_BASE_TRACING_LEVEL=debug
 
-    ports:
-      - 9112:9090
+    expose:
+      - "9090"
 
     volumes:
       - ./hyperlane:/etc/hyperlane
@@ -53,14 +51,9 @@ services:
       - RUST_LOG=debug,hyperlane=debug,validator=debug,hyperlane_cosmos=debug
       - HYP_BASE_TRACING_LEVEL=debug
 
-    ports:
-      - 9122:9090
+    expose:
+      - "9090"
 
     volumes:
       - ./hyperlane:/etc/hyperlane
-      - validator-data:/data
-
-
-volumes:
-  relayer-data:
-  validator-data:
+      - va
