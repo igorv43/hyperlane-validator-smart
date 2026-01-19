@@ -1,6 +1,8 @@
 services:
   relayer:
-    image: ghcr.io/hyperlane-xyz/hyperlane:1.7.0
+    build:
+      context: .
+      dockerfile: Dockerfile.hyperlane
     container_name: hyperlane-relayer
     restart: unless-stopped
     command:
@@ -22,7 +24,9 @@ services:
       - "9090:9090"
 
   validator-terraclassic:
-    image: ghcr.io/hyperlane-xyz/hyperlane:1.7.0
+    build:
+      context: .
+      dockerfile: Dockerfile.hyperlane
     container_name: hyperlane-validator-terraclassic
     restart: unless-stopped
     command:
