@@ -1,4 +1,5 @@
 version: '2'
+
 services:
   relayer:
     container_name: hpl-relayer-testnet
@@ -8,20 +9,16 @@ services:
     environment:
       - RUST_LOG=info,hyperlane=debug,relayer=debug,hyperlane_cosmos=debug
       - HYP_BASE_TRACING_LEVEL=debug
-      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-      - AWS_REGION=${AWS_REGION:-us-east-1}
-    command:
-      - |
-        rm -rf /app/config/* && \
-        cp "/etc/hyperlane/agent-config.docker-testnet.json" "/app/config/agent-config.json" && \
-        CONFIG_FILES="/etc/hyperlane/relayer.testnet.json" \
-          ./relayer --allowLocalCheckpointSyncers false --metrics 0.0.0.0:9090 --api 0.0.0.0:9090
+    command: |
+      rm -rf /app/config/* && \
+      cp "/etc/hyperlane/agent-config.docker-testnet.json" "/app/config/agent-config.json" && \
+      CONFIG_FILES="/etc/hyperlane/relayer.testnet.json" \
+      ./relayer --allowLocalCheckpointSyncers false --metrics 0.0.0.0:9090 --api 0.0.0.0:9090
     ports:
       - 9112:9090
     volumes:
-      - ./hyperlane:/etc/hyperlane
-      - ./relayer-testnet:/etc/data
+      - hyperlane-config:/etc/hyperlane
+      - relayer-data:/etc/data
 
   validator-terraclassic:
     container_name: hpl-validator-terraclassic-testnet
@@ -31,17 +28,18 @@ services:
     environment:
       - RUST_LOG=debug,hyperlane=debug,validator=debug,hyperlane_cosmos=debug
       - HYP_BASE_TRACING_LEVEL=debug
-      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-      - AWS_REGION=${AWS_REGION:-us-east-1}
-    command:
-      - |
-        rm -rf /app/config/* && \
-        cp "/etc/hyperlane/agent-config.docker-testnet.json" "/app/config/agent-config.json" && \
-        CONFIG_FILES="/etc/hyperlane/validator.terraclassic-testnet.json" \
-          ./validator --metrics 0.0.0.0:9090
+    command: |
+      rm -rf /app/config/* && \
+      cp "/etc/hyperlane/agent-config.docker-testnet.json" "/app/config/agent-config.json" && \
+      CONFIG_FILES="/etc/hyperlane/validator.terraclassic-testnet.json" \
+      ./validator --metrics 0.0.0.0:9090
     ports:
       - 9122:9090
     volumes:
-      - ./hyperlane:/etc/hyperlane
-      - ./validator-testnet:/etc/data
+      - hyperlane-config:/etc/hyperlane
+      - validator-data:/etc/data
+
+volumes:
+  hyperlane-config:
+  relayer-data:
+  validator-data:
