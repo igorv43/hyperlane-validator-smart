@@ -48,7 +48,7 @@ services:
       - HYP_DB=${HYP_DB:-/etc/data/db}
       # S3 Bucket Configuration - Configure these variables in Easypanel
       - HYP_CHECKPOINT_SYNCER_BUCKET=${HYP_CHECKPOINT_SYNCER_BUCKET}
-      - HYP_CHECKPOINT_SYNCER_REGION=${HYP_CHECKPOINT_SYNCER_REGION:-${AWS_REGION:-us-east-1}}
+      - HYP_CHECKPOINT_SYNCER_REGION=${HYP_CHECKPOINT_SYNCER_REGION}
       # Private Keys - Configure these variables in Easypanel
       - HYP_VALIDATOR_KEY=${HYP_VALIDATOR_KEY}
       - HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY=${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}
@@ -71,14 +71,26 @@ services:
         fi && \
         DB_PATH="${HYP_DB:-/etc/data/db}" && \
         BUCKET="${HYP_CHECKPOINT_SYNCER_BUCKET}" && \
-        REGION="${HYP_CHECKPOINT_SYNCER_REGION:-${AWS_REGION:-us-east-1}}" && \
+        if [ -z "${HYP_CHECKPOINT_SYNCER_REGION}" ]; then \
+          REGION_VAL="${AWS_REGION:-us-east-1}"; \
+        else \
+          REGION_VAL="${HYP_CHECKPOINT_SYNCER_REGION}"; \
+        fi && \
+        if [ -z "$REGION_VAL" ]; then \
+          REGION_VAL="us-east-1"; \
+        fi && \
         VALIDATOR_KEY="${HYP_VALIDATOR_KEY}" && \
         SIGNER_KEY="${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}" && \
-        printf '{\n  "db": "%s",\n  "checkpointSyncer": {\n    "type": "s3",\n    "bucket": "%s",\n    "region": "%s"\n  },\n  "originChainName": "terraclassictestnet",\n  "validator": {\n    "type": "hexKey",\n    "key": "%s"\n  },\n  "chains": {\n    "terraclassictestnet": {\n      "signer": {\n        "type": "cosmosKey",\n        "key": "%s",\n        "prefix": "terra"\n      }\n    }\n  }\n}' "${DB_PATH}" "${BUCKET}" "${REGION}" "${VALIDATOR_KEY}" "${SIGNER_KEY}" > "/etc/hyperlane/validator.terraclassic-testnet.json" && \
+        printf '{\n  "db": "%s",\n  "checkpointSyncer": {\n    "type": "s3",\n    "bucket": "%s",\n    "region": "%s"\n  },\n  "originChainName": "terraclassictestnet",\n  "validator": {\n    "type": "hexKey",\n    "key": "%s"\n  },\n  "chains": {\n    "terraclassictestnet": {\n      "signer": {\n        "type": "cosmosKey",\n        "key": "%s",\n        "prefix": "terra"\n      }\n    }\n  }\n}' \
+          "$DB_PATH" \
+          "$BUCKET" \
+          "$REGION_VAL" \
+          "$VALIDATOR_KEY" \
+          "$SIGNER_KEY" > "/etc/hyperlane/validator.terraclassic-testnet.json" && \
         echo "Validator config file created successfully" && \
-        echo "Database path: ${DB_PATH}" && \
-        echo "S3 bucket: ${BUCKET}" && \
-        echo "S3 region: ${REGION}" && \
+        echo "Database path: $DB_PATH" && \
+        echo "S3 bucket: $BUCKET" && \
+        echo "S3 region: $REGION_VAL" && \
         echo "Validating config file..." && \
         if ! grep -q "originChainName" "/etc/hyperlane/validator.terraclassic-testnet.json" || ! grep -q "checkpointSyncer" "/etc/hyperlane/validator.terraclassic-testnet.json"; then \
           echo "ERROR: Config file is invalid!" && \
