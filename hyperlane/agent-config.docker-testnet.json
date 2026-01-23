@@ -34,6 +34,12 @@
         },
         {
           "http": "https://bsc-testnet.drpc.org"
+        },
+        {
+          "http": "https://data-seed-prebsc-1-s1.binance.org:8545"
+        },
+        {
+          "http": "https://data-seed-prebsc-2-s1.binance.org:8545"
         }
       ],
       "aggregationHook": "0x3d675bB93250Ab7603F40cbb9194bae210784627",
@@ -64,7 +70,7 @@
         "minGasPrice": "1000000000"
       },
       "index": {
-        "from": 64000000,
+        "from": 86000000,
         "chunk": 10
       }
     },
