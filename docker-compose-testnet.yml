@@ -57,30 +57,32 @@ services:
       - |
         rm -rf /app/config/* && \
         cp "/etc/hyperlane/agent-config.docker-testnet.json" "/app/config/agent-config.json" && \
-        echo "Always recreating validator config from example..." && \
-        cp "/etc/hyperlane/validator.terraclassic-testnet.json.example" "/etc/hyperlane/validator.terraclassic-testnet.json" && \
-        echo "Config file created from example" && \
-        echo "Replacing database path..." && \
-        if [ -n "${HYP_DB}" ]; then \
-          sed -i "s|\"db\": \"/etc/data/db\"|\"db\": \"${HYP_DB}\"|g" "/etc/hyperlane/validator.terraclassic-testnet.json"; \
-          echo "Database path replaced: ${HYP_DB}"; \
+        echo "Creating validator config from environment variables..." && \
+        if [ -z "${HYP_VALIDATOR_KEY}" ]; then \
+          echo "ERROR: HYP_VALIDATOR_KEY is required!" && \
+          exit 1; \
         fi && \
-        echo "Replacing S3 placeholders..." && \
-        if [ -n "${HYP_CHECKPOINT_SYNCER_BUCKET}" ]; then \
-          sed -i "s|YOUR_S3_BUCKET_NAME|${HYP_CHECKPOINT_SYNCER_BUCKET}|g" "/etc/hyperlane/validator.terraclassic-testnet.json"; \
-          echo "S3 bucket replaced: ${HYP_CHECKPOINT_SYNCER_BUCKET}"; \
-        else \
-          echo "WARNING: HYP_CHECKPOINT_SYNCER_BUCKET not set!"; \
+        if [ -z "${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}" ]; then \
+          echo "ERROR: HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY is required!" && \
+          exit 1; \
         fi && \
-        if [ -n "${HYP_CHECKPOINT_SYNCER_REGION}" ]; then \
-          sed -i "s|YOUR_S3_REGION|${HYP_CHECKPOINT_SYNCER_REGION}|g" "/etc/hyperlane/validator.terraclassic-testnet.json"; \
-          echo "S3 region replaced: ${HYP_CHECKPOINT_SYNCER_REGION}"; \
-        else \
-          echo "WARNING: HYP_CHECKPOINT_SYNCER_REGION not set!"; \
+        if [ -z "${HYP_CHECKPOINT_SYNCER_BUCKET}" ]; then \
+          echo "ERROR: HYP_CHECKPOINT_SYNCER_BUCKET is required!" && \
+          exit 1; \
         fi && \
+        DB_PATH="${HYP_DB:-/etc/data/db}" && \
+        BUCKET="${HYP_CHECKPOINT_SYNCER_BUCKET}" && \
+        REGION="${HYP_CHECKPOINT_SYNCER_REGION:-${AWS_REGION:-us-east-1}}" && \
+        VALIDATOR_KEY="${HYP_VALIDATOR_KEY}" && \
+        SIGNER_KEY="${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}" && \
+        printf '{\n  "db": "%s",\n  "checkpointSyncer": {\n    "type": "s3",\n    "bucket": "%s",\n    "region": "%s"\n  },\n  "originChainName": "terraclassictestnet",\n  "validator": {\n    "type": "hexKey",\n    "key": "%s"\n  },\n  "chains": {\n    "terraclassictestnet": {\n      "signer": {\n        "type": "cosmosKey",\n        "key": "%s",\n        "prefix": "terra"\n      }\n    }\n  }\n}' "${DB_PATH}" "${BUCKET}" "${REGION}" "${VALIDATOR_KEY}" "${SIGNER_KEY}" > "/etc/hyperlane/validator.terraclassic-testnet.json" && \
+        echo "Validator config file created successfully" && \
+        echo "Database path: ${DB_PATH}" && \
+        echo "S3 bucket: ${BUCKET}" && \
+        echo "S3 region: ${REGION}" && \
         echo "Validating config file..." && \
         if ! grep -q "originChainName" "/etc/hyperlane/validator.terraclassic-testnet.json" || ! grep -q "checkpointSyncer" "/etc/hyperlane/validator.terraclassic-testnet.json"; then \
-          echo "ERROR: Config file is still invalid after processing!" && \
+          echo "ERROR: Config file is invalid!" && \
           echo "File contents:" && \
           cat "/etc/hyperlane/validator.terraclassic-testnet.json" && \
           exit 1; \
