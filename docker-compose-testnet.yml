@@ -10,9 +10,7 @@ services:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - AWS_REGION=${AWS_REGION:-us-east-1}
-      # Database Path - Configure this variable in Easypanel (optional, default: /etc/data/db)
       - HYP_DB=${HYP_DB:-/etc/data/db}
-      # Private Keys - Configure these variables in Easypanel
       - HYP_CHAINS_BSCTESTNET_SIGNER_KEY=${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}
       - HYP_CHAINS_SOLANATESTNET_SIGNER_KEY=${HYP_CHAINS_SOLANATESTNET_SIGNER_KEY}
       - HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY=${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}
@@ -23,6 +21,7 @@ services:
         [ ! -f "/etc/hyperlane/relayer.testnet.json" ] && cp "/etc/hyperlane/relayer.testnet.json.example" "/etc/hyperlane/relayer.testnet.json" || true && \
         if [ -n "${HYP_DB}" ]; then \
           sed -i "s|\"db\": \"/etc/data/db\"|\"db\": \"${HYP_DB}\"|g" "/etc/hyperlane/relayer.testnet.json"; \
+          echo "Database path replaced: ${HYP_DB}"; \
         fi && \
         sed -i "s|0xYOUR_PRIVATE_KEY_HERE|${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}|g" "/etc/hyperlane/relayer.testnet.json" && \
         sed -i "s|0xYOUR_PRIVATE_KEY_HERE|${HYP_CHAINS_SOLANATESTNET_SIGNER_KEY}|g" "/etc/hyperlane/relayer.testnet.json" && \
