@@ -58,8 +58,16 @@ services:
         cp "/etc/hyperlane/agent-config.docker-testnet.json" "/app/config/agent-config.json" && \
         echo "Creating validator config from environment variables..." && \
         echo "DEBUG: Checking environment variables..." && \
-        echo "  HYP_VALIDATOR_KEY: [$${HYP_VALIDATOR_KEY:0:20}...]" && \
-        echo "  HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY: [$${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY:0:20}...]" && \
+        if [ -n "$$HYP_VALIDATOR_KEY" ]; then \
+          echo "  HYP_VALIDATOR_KEY: [SET]" ; \
+        else \
+          echo "  HYP_VALIDATOR_KEY: [NOT SET]" ; \
+        fi && \
+        if [ -n "$$HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY" ]; then \
+          echo "  HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY: [SET]" ; \
+        else \
+          echo "  HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY: [NOT SET]" ; \
+        fi && \
         echo "  HYP_CHECKPOINT_SYNCER_BUCKET: [$$HYP_CHECKPOINT_SYNCER_BUCKET]" && \
         echo "  HYP_CHECKPOINT_SYNCER_REGION: [$$HYP_CHECKPOINT_SYNCER_REGION]" && \
         echo "  AWS_REGION: [$$AWS_REGION]" && \
@@ -91,8 +99,16 @@ services:
         echo "  DB_PATH: [$$DB_PATH]" && \
         echo "  BUCKET: [$$BUCKET]" && \
         echo "  REGION_VAL: [$$REGION_VAL]" && \
-        echo "  VALIDATOR_KEY: [$${VALIDATOR_KEY:0:20}...]" && \
-        echo "  SIGNER_KEY: [$${SIGNER_KEY:0:20}...]" && \
+        if [ -n "$$VALIDATOR_KEY" ]; then \
+          echo "  VALIDATOR_KEY: [SET]" ; \
+        else \
+          echo "  VALIDATOR_KEY: [NOT SET]" ; \
+        fi && \
+        if [ -n "$$SIGNER_KEY" ]; then \
+          echo "  SIGNER_KEY: [SET]" ; \
+        else \
+          echo "  SIGNER_KEY: [NOT SET]" ; \
+        fi && \
         if [ -z "$$BUCKET" ] || [ -z "$$REGION_VAL" ]; then \
           echo "ERROR: BUCKET or REGION_VAL is empty!" && \
           echo "  BUCKET: [$$BUCKET]" && \
