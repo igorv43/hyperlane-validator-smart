@@ -23,15 +23,18 @@ services:
         [ ! -f "/etc/hyperlane/relayer.testnet.json" ] && cp "/etc/hyperlane/relayer.testnet.json.example" "/etc/hyperlane/relayer.testnet.json" || true && \
         if [ -n "${HYP_DB}" ]; then \
           sed -i "s|\"db\": \"/etc/data/db\"|\"db\": \"${HYP_DB}\"|g" "/etc/hyperlane/relayer.testnet.json"; \
-          echo "Database path replaced: ${HYP_DB}"; \
         fi && \
+        sed -i "s|0xYOUR_PRIVATE_KEY_HERE|${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}|g" "/etc/hyperlane/relayer.testnet.json" && \
+        sed -i "s|0xYOUR_PRIVATE_KEY_HERE|${HYP_CHAINS_SOLANATESTNET_SIGNER_KEY}|g" "/etc/hyperlane/relayer.testnet.json" && \
+        sed -i "s|0xYOUR_PRIVATE_KEY_HERE|${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}|g" "/etc/hyperlane/relayer.testnet.json" && \
         CONFIG_FILES="/etc/hyperlane/relayer.testnet.json" \
           ./relayer --allowLocalCheckpointSyncers false --metrics 0.0.0.0:9090 --api 0.0.0.0:9090
     ports:
-      - 19010:9090
+      - "19010:9090"
     volumes:
       - ./hyperlane:/etc/hyperlane
       - ./relayer-testnet:/etc/data
+    restart: unless-stopped
 
   validator-terraclassic:
     container_name: hpl-validator-terraclassic-testnet
@@ -98,7 +101,8 @@ services:
         CONFIG_FILES="/etc/hyperlane/validator.terraclassic-testnet.json" \
           ./validator --metrics 0.0.0.0:9090
     ports:
-      - 19020:9090
+      - "19020:9090"
     volumes:
       - ./hyperlane:/etc/hyperlane
       - ./validator-testnet:/etc/data
+    restart: unless-stopped

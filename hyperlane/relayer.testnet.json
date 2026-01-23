@@ -40,6 +40,27 @@
         1325
       ]
     }
-  ]
+  ],
+  "chains": {
+    "bsctestnet": {
+      "signer": {
+        "type": "hexKey",
+        "key": "0xYOUR_PRIVATE_KEY_HERE"
+      }
+    },
+    "solanatestnet": {
+      "signer": {
+        "type": "hexKey",
+        "key": "0xYOUR_PRIVATE_KEY_HERE"
+      }
+    },
+    "terraclassictestnet": {
+      "signer": {
+        "type": "cosmosKey",
+        "key": "0xYOUR_PRIVATE_KEY_HERE",
+        "prefix": "terra"
+      }
+    }
+  }
   
 }

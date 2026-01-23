@@ -1,0 +1,38 @@
+services:
+  relayer:
+    container_name: hpl-relayer-testnet-local
+    image: gcr.io/abacus-labs-dev/hyperlane-agent:1.7.0
+    user: root
+    entrypoint: ['sh', '-c']
+    env_file:
+      - ../.env
+    environment:
+      - RUST_LOG=info,hyperlane=debug,relayer=debug,hyperlane_cosmos=debug
+      - HYP_BASE_TRACING_LEVEL=debug
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=${AWS_REGION:-us-east-1}
+      - HYP_DB=${HYP_DB:-/etc/data/db}
+      - HYP_CHAINS_BSCTESTNET_SIGNER_KEY=${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}
+      - HYP_CHAINS_SOLANATESTNET_SIGNER_KEY=${HYP_CHAINS_SOLANATESTNET_SIGNER_KEY}
+      - HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY=${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}
+    command:
+      - |
+        rm -rf /app/config/* && \
+        cp "/etc/hyperlane/agent-config.docker-testnet.json" "/app/config/agent-config.json" && \
+        [ ! -f "/etc/hyperlane/relayer.testnet.json" ] && cp "/etc/hyperlane/relayer.testnet.json.example" "/etc/hyperlane/relayer.testnet.json" || true && \
+        if [ -n "${HYP_DB}" ]; then \
+          sed -i "s|\"db\": \"/etc/data/db\"|\"db\": \"${HYP_DB}\"|g" "/etc/hyperlane/relayer.testnet.json"; \
+          echo "Database path replaced: ${HYP_DB}"; \
+        fi && \
+        sed -i "s|0xYOUR_PRIVATE_KEY_HERE|${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}|g" "/etc/hyperlane/relayer.testnet.json" && \
+        sed -i "s|0xYOUR_PRIVATE_KEY_HERE|${HYP_CHAINS_SOLANATESTNET_SIGNER_KEY}|g" "/etc/hyperlane/relayer.testnet.json" && \
+        sed -i "s|0xYOUR_PRIVATE_KEY_HERE|${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}|g" "/etc/hyperlane/relayer.testnet.json" && \
+        CONFIG_FILES="/etc/hyperlane/relayer.testnet.json" \
+          ./relayer --allowLocalCheckpointSyncers false --metrics 0.0.0.0:9090 --api 0.0.0.0:9090
+    ports:
+      - "19010:9090"
+    volumes:
+      - ../hyperlane:/etc/hyperlane
+      - ./relayer-data:/etc/data
+    restart: unless-stopped
