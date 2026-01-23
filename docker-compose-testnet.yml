@@ -56,21 +56,6 @@ services:
       - |
         rm -rf /app/config/* && \
         cp "/etc/hyperlane/agent-config.docker-testnet.json" "/app/config/agent-config.json" && \
-        echo "Creating validator config from environment variables..." && \
-        echo "DEBUG: Checking environment variables..." && \
-        if [ -n "$$HYP_VALIDATOR_KEY" ]; then \
-          echo "  HYP_VALIDATOR_KEY: [SET]" ; \
-        else \
-          echo "  HYP_VALIDATOR_KEY: [NOT SET]" ; \
-        fi && \
-        if [ -n "$$HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY" ]; then \
-          echo "  HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY: [SET]" ; \
-        else \
-          echo "  HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY: [NOT SET]" ; \
-        fi && \
-        echo "  HYP_CHECKPOINT_SYNCER_BUCKET: [$$HYP_CHECKPOINT_SYNCER_BUCKET]" && \
-        echo "  HYP_CHECKPOINT_SYNCER_REGION: [$$HYP_CHECKPOINT_SYNCER_REGION]" && \
-        echo "  AWS_REGION: [$$AWS_REGION]" && \
         if [ -z "${HYP_VALIDATOR_KEY}" ] || [ "${HYP_VALIDATOR_KEY}" = "" ]; then \
           echo "ERROR: HYP_VALIDATOR_KEY is required and cannot be empty!" && \
           exit 1; \
@@ -95,24 +80,8 @@ services:
         fi && \
         VALIDATOR_KEY="${HYP_VALIDATOR_KEY}" && \
         SIGNER_KEY="${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}" && \
-        echo "DEBUG: Values before creating JSON:" && \
-        echo "  DB_PATH: [$$DB_PATH]" && \
-        echo "  BUCKET: [$$BUCKET]" && \
-        echo "  REGION_VAL: [$$REGION_VAL]" && \
-        if [ -n "$$VALIDATOR_KEY" ]; then \
-          echo "  VALIDATOR_KEY: [SET]" ; \
-        else \
-          echo "  VALIDATOR_KEY: [NOT SET]" ; \
-        fi && \
-        if [ -n "$$SIGNER_KEY" ]; then \
-          echo "  SIGNER_KEY: [SET]" ; \
-        else \
-          echo "  SIGNER_KEY: [NOT SET]" ; \
-        fi && \
         if [ -z "$$BUCKET" ] || [ -z "$$REGION_VAL" ]; then \
           echo "ERROR: BUCKET or REGION_VAL is empty!" && \
-          echo "  BUCKET: [$$BUCKET]" && \
-          echo "  REGION_VAL: [$$REGION_VAL]" && \
           exit 1; \
         fi && \
         printf '{\n  "db": "%s",\n  "checkpointSyncer": {\n    "type": "s3",\n    "bucket": "%s",\n    "region": "%s"\n  },\n  "originChainName": "terraclassictestnet",\n  "validator": {\n    "type": "hexKey",\n    "key": "%s"\n  },\n  "chains": {\n    "terraclassictestnet": {\n      "signer": {\n        "type": "cosmosKey",\n        "key": "%s",\n        "prefix": "terra"\n      }\n    }\n  }\n}' \
@@ -121,20 +90,11 @@ services:
           "$$REGION_VAL" \
           "$$VALIDATOR_KEY" \
           "$$SIGNER_KEY" > "/etc/hyperlane/validator.terraclassic-testnet.json" && \
-        echo "DEBUG: JSON file created, verifying contents..." && \
-        cat "/etc/hyperlane/validator.terraclassic-testnet.json" && \
-        echo "Validator config file created successfully" && \
-        echo "Database path: $$DB_PATH" && \
-        echo "S3 bucket: $$BUCKET" && \
-        echo "S3 region: $$REGION_VAL" && \
-        echo "Validating config file..." && \
         if ! grep -q "originChainName" "/etc/hyperlane/validator.terraclassic-testnet.json" || ! grep -q "checkpointSyncer" "/etc/hyperlane/validator.terraclassic-testnet.json"; then \
           echo "ERROR: Config file is invalid!" && \
-          echo "File contents:" && \
           cat "/etc/hyperlane/validator.terraclassic-testnet.json" && \
           exit 1; \
         fi && \
-        echo "Config file is valid. Starting validator..." && \
         CONFIG_FILES="/etc/hyperlane/validator.terraclassic-testnet.json" \
           ./validator --metrics 0.0.0.0:9090
     ports:
