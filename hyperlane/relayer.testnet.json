@@ -45,19 +45,19 @@
     "bsctestnet": {
       "signer": {
         "type": "hexKey",
-        "key": "0xYOUR_PRIVATE_KEY_HERE"
+        "key": ""
       }
     },
     "solanatestnet": {
       "signer": {
         "type": "hexKey",
-        "key": "0xYOUR_PRIVATE_KEY_HERE"
+        "key": ""
       }
     },
     "terraclassictestnet": {
       "signer": {
         "type": "cosmosKey",
-        "key": "0xYOUR_PRIVATE_KEY_HERE",
+        "key": "",
         "prefix": "terra"
       }
     }

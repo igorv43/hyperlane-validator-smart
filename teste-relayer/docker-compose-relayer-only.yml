@@ -5,7 +5,7 @@ services:
     user: root
     entrypoint: ['sh', '-c']
     env_file:
-      - ../.env
+      - .env
     environment:
       - RUST_LOG=info,hyperlane=debug,relayer=debug,hyperlane_cosmos=debug
       - HYP_BASE_TRACING_LEVEL=debug

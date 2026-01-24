@@ -1,116 +1,103 @@
-# ✅ Solução Aplicada
+# ✅ SOLUÇÃO APLICADA: Problema Terra Classic -> Solana
 
-## 🔍 Problema Identificado
+## 🎯 Problema Identificado
 
-O relayer estava falhando com os seguintes erros:
+**Erro:** `InsufficientFundsForRent { account_index: 5 }`
 
-```
-ERROR hyperlane_base::settings::signers: error: HexKey { 
-  key: 0xa512... 
-} key is not supported by cosmos
+**Causa:** O relayer não tinha SOL suficiente no Solana para criar contas de token associadas (ATA) necessárias para processar mensagens.
 
-ERROR relayer::relayer: Critical error when building chain as origin, 
-  err: ValidatorAnnounce("terraclassictestnet", "Building validator announce")
+## ✅ Solução Aplicada
 
-ERROR relayer::relayer: Critical error when building chain as origin, 
-  err: MissingConfiguration("terraclassictestnet")
-```
+### 1. Endereço do Relayer Identificado
 
-## 🔧 Correções Aplicadas
+**Endereço Solana:** `C4jCuG3DjRdAnDJkJLXn711ShWDiat5nSTAZKYzPPCnY`
 
-### 1. Adicionada Seção `chains` no `relayer.testnet.json`
+**Explorer:** https://explorer.solana.com/address/C4jCuG3DjRdAnDJkJLXn711ShWDiat5nSTAZKYzPPCnY?cluster=testnet
 
-O arquivo `relayer.testnet.json` não tinha a seção `chains` com as configurações dos signers. Foi adicionada:
+### 2. Verificação de Saldo
 
-```json
-{
-  "chains": {
-    "bsctestnet": {
-      "signer": {
-        "type": "hexKey",
-        "key": "0xYOUR_PRIVATE_KEY_HERE"
-      }
-    },
-    "solanatestnet": {
-      "signer": {
-        "type": "hexKey",
-        "key": "0xYOUR_PRIVATE_KEY_HERE"
-      }
-    },
-    "terraclassictestnet": {
-      "signer": {
-        "type": "cosmosKey",
-        "key": "0xYOUR_PRIVATE_KEY_HERE",
-        "prefix": "terra"
-      }
-    }
-  }
-}
+**Saldo inicial:** 0 SOL ❌
+
+**Saldo necessário:** Mínimo 0.1 SOL (recomendado)
+
+### 3. Adicionar SOL
+
+**Opção 1: Faucet do Solana Testnet**
+- URL: https://faucet.solana.com/
+- Endereço: `C4jCuG3DjRdAnDJkJLXn711ShWDiat5nSTAZKYzPPCnY`
+- Quantidade: 1-2 SOL (suficiente para múltiplas transações)
+
+**Opção 2: Transferir de outra conta**
+```bash
+solana transfer C4jCuG3DjRdAnDJkJLXn711ShWDiat5nSTAZKYzPPCnY 0.1 \
+  --url https://api.testnet.solana.com \
+  --allow-unfunded-recipient
 ```
 
-### 2. Atualizado `docker-compose-testnet.yml` para Substituir Chaves
+### 4. Reiniciar Relayer
 
-Adicionado script para substituir os placeholders `0xYOUR_PRIVATE_KEY_HERE` pelas variáveis de ambiente:
+Após adicionar SOL, reiniciar o relayer:
 
 ```bash
-if [ -n "${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}" ]; then
-  sed -i "s|\"0xYOUR_PRIVATE_KEY_HERE\"|\"${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}\"|g" "/etc/hyperlane/relayer.testnet.json"
-  sed -i "s|\"0xYOUR_PRIVATE_KEY_BSC\"|\"${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}\"|g" "/etc/hyperlane/relayer.testnet.json"
-fi
-# ... similar para Solana e Terra Classic
+cd teste-relayer
+docker compose -f docker-compose-relayer-only.yml restart relayer
 ```
 
-## 📋 Arquivos Modificados
+### 5. Monitorar Logs
 
-1. **`hyperlane/relayer.testnet.json`**
-   - Adicionada seção `chains` com configuração dos signers
-   - Placeholders `0xYOUR_PRIVATE_KEY_HERE` para substituição
-
-2. **`docker-compose-testnet.yml`**
-   - Adicionado script para substituir placeholders pelas variáveis de ambiente
-   - Substituição para BSC, Solana e Terra Classic
-
-## 🚀 Como Funciona Agora
-
-1. O `relayer.testnet.json` tem a estrutura `chains` com placeholders
-2. O docker-compose substitui os placeholders pelas variáveis de ambiente do `.env`
-3. O relayer lê o JSON com as chaves já substituídas
-4. O relayer consegue configurar o Terra Classic corretamente
-
-## ⚠️ Nota sobre o Erro "key is not supported by cosmos"
-
-O erro `HexKey { key: 0xa512... } key is not supported by cosmos` pode indicar que:
-
-1. A chave precisa estar em formato diferente para Cosmos
-2. O Hyperlane pode processar a chave hex automaticamente quando `type: "cosmosKey"` está configurado
-3. Com a seção `chains` configurada corretamente, o relayer deve conseguir processar a chave
-
-## 🔍 Próximos Passos
-
-1. **Reiniciar o relayer** para aplicar as mudanças
-2. **Verificar logs** para confirmar que o erro desapareceu
-3. **Verificar se o Terra Classic está sendo sincronizado**
-4. **Verificar se validators são descobertos**
-
-## 📊 Verificação
-
-Após reiniciar, verifique:
+Verificar se o problema foi resolvido:
 
 ```bash
-# Verificar se o container está rodando (não em Restarting)
-docker ps | grep relayer
+# Ver logs em tempo real
+docker logs -f hpl-relayer-testnet-local | grep -iE "solana|insufficient|rent|message.*35"
 
-# Verificar logs por erros
-docker logs hpl-relayer-testnet-local | grep -i "error\|critical"
-
-# Verificar se Terra Classic aparece nos logs
-docker logs hpl-relayer-testnet-local | grep -i "terraclassic\|1325"
-
-# Verificar configuração dentro do container
-docker exec hpl-relayer-testnet-local sh -c 'cat /etc/hyperlane/relayer.testnet.json | jq ".chains.terraclassictestnet"'
+# Verificar se a mensagem sequence 35 foi processada
+docker logs hpl-relayer-testnet-local | grep -iE "message.*35|sequence.*35|delivered"
 ```
 
----
+## 📊 Status da Mensagem
 
-**Data**: 2026-01-23
-**Status**: ✅ Correções aplicadas, aguardando teste
+**Message ID:** `0x9910dbb32d10edeb1c2e2482966444795e7aaa03c4c33a7cf1d267ccab0f8ac1`
+
+**Sequence:** 35
+
+**Status anterior:**
+- ✅ Validator gerando checkpoints
+- ✅ Relayer detectando mensagem
+- ✅ Relayer validando mensagem
+- ❌ Relayer não processando (falta de SOL)
+
+**Status esperado após correção:**
+- ✅ Validator gerando checkpoints
+- ✅ Relayer detectando mensagem
+- ✅ Relayer validando mensagem
+- ✅ Relayer processando mensagem
+- ✅ Mensagem entregue no Solana
+
+## 🔧 Scripts Criados
+
+1. **`solucao-final-solana.sh`** - Verifica saldo e fornece instruções
+2. **`monitorar-relayer-solana.sh`** - Monitora status após correção
+3. **`obter-endereco-solana.py`** - Obtém endereço a partir da chave privada
+
+## 📋 Checklist de Verificação
+
+- [ ] SOL adicionado ao endereço `C4jCuG3DjRdAnDJkJLXn711ShWDiat5nSTAZKYzPPCnY`
+- [ ] Saldo >= 0.1 SOL
+- [ ] Relayer reiniciado
+- [ ] Logs verificados (sem erros de `InsufficientFundsForRent`)
+- [ ] Mensagem sequence 35 processada
+- [ ] Mensagem entregue no Solana
+
+## 🎯 Próximos Passos
+
+1. **Adicionar SOL** via faucet ou transferência
+2. **Verificar saldo** com `solana balance C4jCuG3DjRdAnDJkJLXn711ShWDiat5nSTAZKYzPPCnY --url https://api.testnet.solana.com`
+3. **Reiniciar relayer** se necessário
+4. **Monitorar logs** para confirmar processamento
+5. **Verificar no Solana** se a mensagem foi entregue
+
+## 📄 Documentos Relacionados
+
+- `teste-relayer/CAUSA-RAIZ-TERRA-SOLANA.md` - Análise completa do problema
+- `teste-relayer/ANALISE-RELAYER-COMPLETA.md` - Análise geral do relayer

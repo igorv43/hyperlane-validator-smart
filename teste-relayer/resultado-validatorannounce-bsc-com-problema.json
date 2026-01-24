@@ -1,0 +1,144 @@
+{
+  "validatorAnnounce": "0xf09701B0a93210113D175461b6135a96773B5465",
+  "rpc": "https://bsc-testnet.publicnode.com",
+  "timestamp": "2026-01-23T23:22:06Z",
+  "problema": "Os validators estão anunciados mas NÃO têm storage locations (buckets S3) anunciadas",
+  "data": {
+    "totalValidators": 44,
+    "validatorsProcessed": 10,
+    "allAnnouncedValidators": [
+      "0x242d8a855a8c932deC51f7999ae7D1e48b10C95E",
+      "0xf620F5e3D25a3Ae848Fec74bccAE5de3edcd8796",
+      "0x1f030345963c54Ff8229720dD3A711c15C554AEB",
+      "0xBc5B5371dFB44F5D7D6d464a27543B8f1B9DB6eC",
+      "0x6353C7402626054c824BD0eCA721f82b725e2b4d",
+      "0xCB5BE62b19c52b78CD3993c71c3FA74D821475AE",
+      "0xc50DdB8F03133611853b7f03FfE0a8098e08aE15",
+      "0xCe09Ba00085A6DFd28D3CBc02950496EecE1CF4D",
+      "0xDf001a44efb06ADe7A90900Fd5D50d3f3BD08C2d",
+      "0x358bb64C609eDA177f0F305AA7067ff2d9f72a4c",
+      "0x333b8F12FBB20a1158E058FfD70F9f9c246F7545",
+      "0xda1B6431a91Ff74a33ADaaB9F77c4D244222263F",
+      "0xE9c8E103d1750F3fE9bE87f3c2b97c8FeC67aFcE",
+      "0x7Cc8eA1fbCD59F6FA0bE0d34E009999dA9AFb8d3",
+      "0xBB0A960C7678a5550310b94ce1b6dE035927f112",
+      "0x1950498e95274Dc79Fbca238C2BE53684D69886F",
+      "0xD2a8fd999bF4CC30A3fD86f017DeD1c6BF67E78B",
+      "0x6080184Da41682D75562fcae090dD5eB4Fc2E771",
+      "0xBa5D0dd4bF5940ed265134C4a347E273E331E99E",
+      "0x131918c6E5338CDa25E506F4a74a7fFA4F64249B",
+      "0x1364040c80E78b4C706fcAf5f385c4129895324c",
+      "0xe9e3E1E375C769B28F2DE2cb6631b3419aFcD55F",
+      "0x4030bFe51Efc68Dbaf5C3eC95768531a4e8BDd9b",
+      "0x54c60a4B012550A8dDeD7823f96FFc63c6204f7b",
+      "0xCB8114f5A8bC5d1c4504deE4b6c47a1eacA5aC4C",
+      "0x86caf53e474E4a13FD25f8AEb3a837207726DD06",
+      "0xa36E949B0b6824022aeCe20219294bEf631a6E18",
+      "0xb376bc8e8af849CB00fE4Db4BAF71f8D6Ec51E1b",
+      "0x6823333ACf23D7ee08D8f90Ab1466f1121DBC9e7",
+      "0x51A5924505Bfe1eEDd33D711Dc4a3fEd5072e863",
+      "0x34FddEa6337C7F00FEA29a11DaE458F44C8d13a5",
+      "0x6973A5F0450F70494AA3C0FC984C4f28Fc30f3c9",
+      "0xE870E09538e297943efc30A25664eaDC573857A3",
+      "0x3873d2204C272d4b9A69b659AA8e3d11f4ec0422",
+      "0xB996AE84Ef9DcecedDD62837Be97d04A58c04E48",
+      "0x5f2f03b1229E812448371c44b7c5e6E88f63c13C",
+      "0x4d0287E54418CBa150791fF94e546A6Ccd582140",
+      "0xb983a9a7Ce068f546bFB6381cB17DF2171E92810",
+      "0x41Ac01E11CE5d49e384D646b264C7D9755b78585",
+      "0x61eDc578984623104678BdeeAE99A44FC272819d",
+      "0x1e890c32D69C2a83bffDf1f2E90DF0a0b9f3B1fa",
+      "0x5a0a4D7028629Ff0aBD7b007e34fB2a146f258CE",
+      "0x4f0b4c4c23E31f3e5bCCEfFb649AfdE964B7dF50",
+      "0xFEC6A63BC15905011745f9815696Fc9ce2e00316"
+    ],
+    "validatorsWithStorage": [
+      {
+        "validatorAddress": "0x242d8a855a8c932deC51f7999ae7D1e48b10C95E",
+        "storageLocations": [],
+        "hasStorageLocation": false,
+        "problema": "VALIDATOR NÃO ANUNCIOU STORAGE LOCATION - Este é o problema!"
+      },
+      {
+        "validatorAddress": "0xf620F5e3D25a3Ae848Fec74bccAE5de3edcd8796",
+        "storageLocations": [],
+        "hasStorageLocation": false,
+        "problema": "VALIDATOR NÃO ANUNCIOU STORAGE LOCATION - Este é o problema!"
+      },
+      {
+        "validatorAddress": "0x1f030345963c54Ff8229720dD3A711c15C554AEB",
+        "storageLocations": [],
+        "hasStorageLocation": false,
+        "problema": "VALIDATOR NÃO ANUNCIOU STORAGE LOCATION - Este é o problema!"
+      },
+      {
+        "validatorAddress": "0xBc5B5371dFB44F5D7D6d464a27543B8f1B9DB6eC",
+        "storageLocations": [],
+        "hasStorageLocation": false,
+        "problema": "VALIDATOR NÃO ANUNCIOU STORAGE LOCATION - Este é o problema!"
+      },
+      {
+        "validatorAddress": "0x6353C7402626054c824BD0eCA721f82b725e2b4d",
+        "storageLocations": [],
+        "hasStorageLocation": false,
+        "problema": "VALIDATOR NÃO ANUNCIOU STORAGE LOCATION - Este é o problema!"
+      },
+      {
+        "validatorAddress": "0xCB5BE62b19c52b78CD3993c71c3FA74D821475AE",
+        "storageLocations": [],
+        "hasStorageLocation": false,
+        "problema": "VALIDATOR NÃO ANUNCIOU STORAGE LOCATION - Este é o problema!"
+      },
+      {
+        "validatorAddress": "0xc50DdB8F03133611853b7f03FfE0a8098e08aE15",
+        "storageLocations": [],
+        "hasStorageLocation": false,
+        "problema": "VALIDATOR NÃO ANUNCIOU STORAGE LOCATION - Este é o problema!"
+      },
+      {
+        "validatorAddress": "0xCe09Ba00085A6DFd28D3CBc02950496EecE1CF4D",
+        "storageLocations": [],
+        "hasStorageLocation": false,
+        "problema": "VALIDATOR NÃO ANUNCIOU STORAGE LOCATION - Este é o problema!"
+      },
+      {
+        "validatorAddress": "0xDf001a44efb06ADe7A90900Fd5D50d3f3BD08C2d",
+        "storageLocations": [],
+        "hasStorageLocation": false,
+        "problema": "VALIDATOR NÃO ANUNCIOU STORAGE LOCATION - Este é o problema!"
+      },
+      {
+        "validatorAddress": "0x358bb64C609eDA177f0F305AA7067ff2d9f72a4c",
+        "storageLocations": [],
+        "hasStorageLocation": false,
+        "problema": "VALIDATOR NÃO ANUNCIOU STORAGE LOCATION - Este é o problema!"
+      }
+    ],
+    "ismValidators": [
+      {
+        "validatorAddress": "0x242d8a855a8c932dec51f7999ae7d1e48b10c95e",
+        "isAnnounced": true,
+        "storageLocations": [],
+        "hasStorageLocation": false,
+        "status": "PROBLEMA: Sem storage location anunciada no BSC ValidatorAnnounce",
+        "solucao": "Validator precisa anunciar seu bucket S3 no ValidatorAnnounce do BSC usando a função announce()"
+      },
+      {
+        "validatorAddress": "0xf620f5e3d25a3ae848fec74bccae5de3edcd8796",
+        "isAnnounced": true,
+        "storageLocations": [],
+        "hasStorageLocation": false,
+        "status": "PROBLEMA: Sem storage location anunciada no BSC ValidatorAnnounce",
+        "solucao": "Validator precisa anunciar seu bucket S3 no ValidatorAnnounce do BSC usando a função announce()"
+      },
+      {
+        "validatorAddress": "0x1f030345963c54ff8229720dd3a711c15c554aeb",
+        "isAnnounced": true,
+        "storageLocations": [],
+        "hasStorageLocation": false,
+        "status": "PROBLEMA: Sem storage location anunciada no BSC ValidatorAnnounce",
+        "solucao": "Validator precisa anunciar seu bucket S3 no ValidatorAnnounce do BSC usando a função announce()"
+      }
+    ]
+  }
+}

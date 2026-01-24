@@ -1,0 +1,57 @@
+[0;34m╔══════════════════════════════════════════════════════════════╗[0m
+[0;34m║[0m  VERIFICAR VALIDATORS DO BSC PARA MENSAGENS BSC -> TERRA CLASSIC
+[0;34m╚══════════════════════════════════════════════════════════════╝[0m
+
+[0;34mℹ️[0m  Para mensagens BSC -> Terra Classic:
+  [1;33m  • Relayer consulta ValidatorAnnounce do BSC (origem)[0m
+  [1;33m  • Validators do BSC geram checkpoints[0m
+  [1;33m  • Relayer lê checkpoints do S3 dos validators do BSC[0m
+  [1;33m  • Relayer valida usando ISM do Terra Classic (destino)[0m
+
+[0;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;36mPASSO 1: VALIDATORS ANUNCIADOS NO BSC[0m
+[0;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+
+[0;34mℹ️[0m  Consultando ValidatorAnnounce do BSC...
+[0;32m✅[0m  ✅ Total de validators anunciados no BSC: 44
+
+[0;34mℹ️[0m  Verificando validators do ISM no BSC ValidatorAnnounce...
+
+[0;32m✅[0m  ✅ 0x242d8a855a8c932dec51f7999ae7d1e48b10c95e - Anunciado no BSC
+[0;32m✅[0m  ✅ 0xf620f5e3d25a3ae848fec74bccae5de3edcd8796 - Anunciado no BSC
+[0;32m✅[0m  ✅ 0x1f030345963c54ff8229720dd3a711c15c554aeb - Anunciado no BSC
+
+[0;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;36mPASSO 2: STORAGE LOCATIONS NO BSC VALIDATORANNOUNCE[0m
+[0;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+
+[0;34mℹ️[0m  Consultando storage locations dos validators do ISM no BSC...
+
+{
+  "validatorAnnounce": "0xf09701B0a93210113D175461b6135a96773B5465",
+  "rpc": "https://bsc-testnet.publicnode.com",
+  "timestamp": "2026-01-23T23:41:11Z",
+  "note": "Para mensagens BSC -> Terra Classic, relayer consulta ValidatorAnnounce do BSC",
+  "data": {
+    "storage_locations": [
+      [
+        "242d8a855a8c932dec51f7999ae7d1e48b10c95e",
+        [
+[1;33m⚠️[0m    ⚠️  0x242d8a855a8c932dec51f7999ae7d1e48b10c95e - Sem storage location anunciada no BSC
+        ]
+      ],
+      [
+        "f620f5e3d25a3ae848fec74bccae5de3edcd8796",
+        [
+[1;33m⚠️[0m    ⚠️  0xf620f5e3d25a3ae848fec74bccae5de3edcd8796 - Sem storage location anunciada no BSC
+        ]
+      ],
+      [
+        "1f030345963c54ff8229720dd3a711c15c554aeb",
+        [
+[1;33m⚠️[0m    ⚠️  0x1f030345963c54ff8229720dd3a711c15c554aeb - Sem storage location anunciada no BSC
+        ]
+      ]
+    ]
+  }
+}

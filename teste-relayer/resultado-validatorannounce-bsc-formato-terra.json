@@ -1,0 +1,21 @@
+{
+  "validatorAnnounce": "0xf09701B0a93210113D175461b6135a96773B5465",
+  "rpc": "https://bsc-testnet.publicnode.com",
+  "timestamp": "2026-01-23T23:22:06Z",
+  "data": {
+    "storage_locations": [
+      [
+        "242d8a855a8c932dec51f7999ae7d1e48b10c95e",
+        []
+      ],
+      [
+        "f620f5e3d25a3ae848fec74bccae5de3edcd8796",
+        []
+      ],
+      [
+        "1f030345963c54ff8229720dd3a711c15c554aeb",
+        []
+      ]
+    ]
+  }
+}

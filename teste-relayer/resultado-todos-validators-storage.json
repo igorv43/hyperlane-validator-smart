@@ -1,0 +1,290 @@
+🔍 Obtendo TODOS os validators anunciados e suas storage locations...
+
+Total de validators: 44
+
+{
+  "validatorAnnounce": "0xf09701B0a93210113D175461b6135a96773B5465",
+  "rpc": "https://bsc-testnet.publicnode.com",
+  "timestamp": "2026-01-23T23:46:08Z",
+  "method": "getAnnouncedStorageLocations(address[]) - como relayer",
+  "data": {
+    "storage_locations": [
+      [
+        "242d8a855a8c932deC51f7999ae7D1e48b10C95E",
+        [
+  "s3://hyperlane-testnet4-bsctestnet-validator-0/us-east-1"
+]
+      ],
+      [
+        "f620F5e3D25a3Ae848Fec74bccAE5de3edcd8796",
+        [
+  "s3://hyperlane-testnet4-bsctestnet-validator-1/us-east-1"
+]
+      ],
+      [
+        "1f030345963c54Ff8229720dD3A711c15C554AEB",
+        [
+  "s3://hyperlane-testnet4-bsctestnet-validator-2/us-east-1"
+]
+      ],
+      [
+        "Bc5B5371dFB44F5D7D6d464a27543B8f1B9DB6eC",
+        [
+  "file:///Users/ahsan/Desktop/projects/hyperlane-workings"
+]
+      ],
+      [
+        "6353C7402626054c824BD0eCA721f82b725e2b4d",
+        [
+  "s3://rc-testnet4-bsctestnet-validator-0/us-east-1"
+]
+      ],
+      [
+        "CB5BE62b19c52b78CD3993c71c3FA74D821475AE",
+        [
+  "s3://rc-testnet4-bsctestnet-validator-1/us-east-1"
+]
+      ],
+      [
+        "c50DdB8F03133611853b7f03FfE0a8098e08aE15",
+        [
+  "s3://rc-testnet4-bsctestnet-validator-2/us-east-1"
+]
+      ],
+      [
+        "Ce09Ba00085A6DFd28D3CBc02950496EecE1CF4D",
+        [
+  "s3://kurtosis-cloud/us-east-1/cloud-user-2d242e8062de40758bf02e12a0f3b861/97f9d7f6d8cc49c7884c8a387a9254fb",
+  "s3://kurtosis-cloud/us-east-1/cloud-user-2d242e8062de40758bf02e12a0f3b861/7dcaf9848db043ef86352a2319d44ec1"
+]
+      ],
+      [
+        "Df001a44efb06ADe7A90900Fd5D50d3f3BD08C2d",
+        [
+  "s3://kurtosis-cloud/us-east-1/cloud-instance-038b5baabd6e4d168de9b3ee64572498/526ad7478cdc4b73a14842e158a08692"
+]
+      ],
+      [
+        "358bb64C609eDA177f0F305AA7067ff2d9f72a4c",
+        [
+  "file://bsctestnet-signatures"
+]
+      ],
+      [
+        "333b8F12FBB20a1158E058FfD70F9f9c246F7545",
+        [
+  "s3://kurtosis-cloud/us-east-1/cloud-instance-caba58979fe74ff59435c5db20e9c4cb/30865c0adbdf4f04935ade8925a99394"
+]
+      ],
+      [
+        "da1B6431a91Ff74a33ADaaB9F77c4D244222263F",
+        [
+  "s3://hyperlane-validator-signature-bsctestnet/us-east-1",
+  "s3://signatures-bsctestnet/us-east-1"
+]
+      ],
+      [
+        "E9c8E103d1750F3fE9bE87f3c2b97c8FeC67aFcE",
+        [
+  "s3://kurtosis-cloud/us-east-1/cloud-instance-1a5c8363c9e948d0a489261de7ed9423/1ad24cda37c84581aebd71ecf30c4d64",
+  "s3://kurtosis-cloud/us-east-1/cloud-instance-1a5c8363c9e948d0a489261de7ed9423/442e3756d07b40439da6a3e287011928",
+  "s3://kurtosis-cloud/us-east-1/cloud-instance-1a5c8363c9e948d0a489261de7ed9423/b47ac837d4e44d3990a93a804ded0d46",
+  "s3://kurtosis-cloud/us-east-1/cloud-instance-1a5c8363c9e948d0a489261de7ed9423/dd28f3e2c68c4946b52f48db38e51e8d",
+  "s3://kurtosis-cloud/us-east-1/cloud-instance-1a5c8363c9e948d0a489261de7ed9423/9dcccec0e91f4ab299e37e0093d642ff"
+]
+      ],
+      [
+        "7Cc8eA1fbCD59F6FA0bE0d34E009999dA9AFb8d3",
+        [
+  "s3://kurtosis-cloud/us-east-1/cloud-instance-fd3a946107a14b6a99e51b61434f4af5/53d3d87886d84011b25a33d5f51b3188"
+]
+      ],
+      [
+        "BB0A960C7678a5550310b94ce1b6dE035927f112",
+        [
+  "file:///tmp/validator-signatures"
+]
+      ],
+      [
+        "1950498e95274Dc79Fbca238C2BE53684D69886F",
+        [
+  "s3://kurtosis-cloud/us-east-1/cloud-instance-6fb804b6397347748077de40788ebb69/704a6d085377476781587b4f8da27ebe"
+]
+      ],
+      [
+        "D2a8fd999bF4CC30A3fD86f017DeD1c6BF67E78B",
+        [
+  "file://VALIDATOR_SIGNATURES_DIR"
+]
+      ],
+      [
+        "6080184Da41682D75562fcae090dD5eB4Fc2E771",
+        [
+  "file://tmp/hyperlane-validator-signatures-oort",
+  "file://"
+]
+      ],
+      [
+        "Ba5D0dd4bF5940ed265134C4a347E273E331E99E",
+        [
+  "file:///tmp/hyperlane-validator-signatures-bsctestnet"
+]
+      ],
+      [
+        "131918c6E5338CDa25E506F4a74a7fFA4F64249B",
+        [
+  "file:///tmp/validator-signatures"
+]
+      ],
+      [
+        "1364040c80E78b4C706fcAf5f385c4129895324c",
+        [
+  "s3://avs-hyperlane-bsctestnet-signatures/ap-northeast-1"
+]
+      ],
+      [
+        "e9e3E1E375C769B28F2DE2cb6631b3419aFcD55F",
+        [
+  "file://./"
+]
+      ],
+      [
+        "4030bFe51Efc68Dbaf5C3eC95768531a4e8BDd9b",
+        [
+  "file:///app/syncer"
+]
+      ],
+      [
+        "54c60a4B012550A8dDeD7823f96FFc63c6204f7b",
+        [
+  "file:///tmp/hyperlane-signatures-bsctestnet"
+]
+      ],
+      [
+        "CB8114f5A8bC5d1c4504deE4b6c47a1eacA5aC4C",
+        [
+  "file:///hyperlane_db_bsctestnet/bsctestnet_checkpoints"
+]
+      ],
+      [
+        "86caf53e474E4a13FD25f8AEb3a837207726DD06",
+        [
+  "file:///hyperlane_db/bsctestnet_checkpoints"
+]
+      ],
+      [
+        "a36E949B0b6824022aeCe20219294bEf631a6E18",
+        [
+  "file:///hyperlane_db/bsctestnet_checkpoints"
+]
+      ],
+      [
+        "b376bc8e8af849CB00fE4Db4BAF71f8D6Ec51E1b",
+        [
+  "file:///hyperlane_db/bsctestnet_checkpoints"
+]
+      ],
+      [
+        "6823333ACf23D7ee08D8f90Ab1466f1121DBC9e7",
+        [
+  "file:///hyperlane_db/bsctestnet_checkpoints"
+]
+      ],
+      [
+        "51A5924505Bfe1eEDd33D711Dc4a3fEd5072e863",
+        [
+  "file:///hyperlane_db/bsctestnet_checkpoints"
+]
+      ],
+      [
+        "34FddEa6337C7F00FEA29a11DaE458F44C8d13a5",
+        [
+  "file:///hyperlane_db/bsctestnet_checkpoints"
+]
+      ],
+      [
+        "6973A5F0450F70494AA3C0FC984C4f28Fc30f3c9",
+        [
+  "file:///hyperlane_db/bsctestnet_checkpoints"
+]
+      ],
+      [
+        "E870E09538e297943efc30A25664eaDC573857A3",
+        [
+  "file:///hyperlane_db/bsctestnet_checkpoints"
+]
+      ],
+      [
+        "3873d2204C272d4b9A69b659AA8e3d11f4ec0422",
+        [
+  "s3://hyperlane-validator-signatures-bsc-1/eu-west-2"
+]
+      ],
+      [
+        "B996AE84Ef9DcecedDD62837Be97d04A58c04E48",
+        [
+  "s3://hyperlane-validator-signatures-val1-bsctestnet/eu-west-2"
+]
+      ],
+      [
+        "5f2f03b1229E812448371c44b7c5e6E88f63c13C",
+        [
+  "s3://hyperlane-validator-signatures-bsc1/eu-west-2"
+]
+      ],
+      [
+        "4d0287E54418CBa150791fF94e546A6Ccd582140",
+        [
+  "file:///hyperlane_db_bsctestnet/bsctestnet_checkpoints"
+]
+      ],
+      [
+        "b983a9a7Ce068f546bFB6381cB17DF2171E92810",
+        [
+  "file://"
+]
+      ],
+      [
+        "41Ac01E11CE5d49e384D646b264C7D9755b78585",
+        [
+  "file://",
+  "file://tmp/hyperlane-validator-signatures-bsctestnet",
+  "file://./../../../tmp/hyperlane-validator-signatures-bsctestnet",
+  "file:///tmp/hyperlane-validator-signatures-bsctestnet"
+]
+      ],
+      [
+        "61eDc578984623104678BdeeAE99A44FC272819d",
+        [
+  "file:///validator-signatures-data",
+  "file:///hyperlane-validator-signatures-bsctestnet"
+]
+      ],
+      [
+        "1e890c32D69C2a83bffDf1f2E90DF0a0b9f3B1fa",
+        [
+  "file:///tmp/hyperlane-validator-signatures-bsctestnet"
+]
+      ],
+      [
+        "5a0a4D7028629Ff0aBD7b007e34fB2a146f258CE",
+        [
+  "s3://vana-hyperlane-bridge-signatures-646970212387-us-east-1/us-east-1/signatures-bsctestnet",
+  "s3://vana-hyperlane-bridge-signatures-646970212387-us-east-1/us-east-1/signatures-bsctestnet1"
+]
+      ],
+      [
+        "4f0b4c4c23E31f3e5bCCEfFb649AfdE964B7dF50",
+        [
+  "file:///app/hyperlane-validator-signatures-bsctestnet"
+]
+      ],
+      [
+        "FEC6A63BC15905011745f9815696Fc9ce2e00316",
+        [
+  "file:///hyperlane_db/checkpoints"
+]
+      ]
+    ]
+  }
+}
