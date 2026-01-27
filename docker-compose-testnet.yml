@@ -1,6 +1,5 @@
 services:
   relayer:
-    container_name: hpl-relayer-testnet
     image: gcr.io/abacus-labs-dev/hyperlane-agent:1.7.0
     user: root
     entrypoint: ['sh', '-c']
@@ -14,6 +13,7 @@ services:
       - HYP_CHAINS_BSCTESTNET_SIGNER_KEY=${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}
       - HYP_CHAINS_SOLANATESTNET_SIGNER_KEY=${HYP_CHAINS_SOLANATESTNET_SIGNER_KEY}
       - HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY=${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}
+      - RELAYER_PORT=${RELAYER_PORT:-19010}
     command:
       - |
         rm -rf /app/config/* && \
@@ -29,14 +29,15 @@ services:
         CONFIG_FILES="/etc/hyperlane/relayer.testnet.json" \
           ./relayer --allowLocalCheckpointSyncers false --metrics 0.0.0.0:9090 --api 0.0.0.0:9090
     ports:
-      - "19010:9090"
+      - "${RELAYER_PORT:-19010}:9090"
     volumes:
       - ./hyperlane:/etc/hyperlane
       - ./relayer-testnet:/etc/data
     restart: unless-stopped
+    networks:
+      - default
 
   validator-terraclassic:
-    container_name: hpl-validator-terraclassic-testnet
     image: gcr.io/abacus-labs-dev/hyperlane-agent:1.7.0
     user: root
     entrypoint: ['sh', '-c']
@@ -54,6 +55,7 @@ services:
       # Private Keys - Configure these variables in Easypanel
       - HYP_VALIDATOR_KEY=${HYP_VALIDATOR_KEY}
       - HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY=${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}
+      - VALIDATOR_PORT=${VALIDATOR_PORT:-19020}
     command:
       - |
         rm -rf /app/config/* && \
@@ -100,8 +102,14 @@ services:
         CONFIG_FILES="/etc/hyperlane/validator.terraclassic-testnet.json" \
           ./validator --metrics 0.0.0.0:9090
     ports:
-      - "19020:9090"
+      - "${VALIDATOR_PORT:-19020}:9090"
     volumes:
       - ./hyperlane:/etc/hyperlane
       - ./validator-testnet:/etc/data
     restart: unless-stopped
+    networks:
+      - default
+
+networks:
+  default:
+    driver: bridge
