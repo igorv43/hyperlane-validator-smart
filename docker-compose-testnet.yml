@@ -19,13 +19,28 @@ services:
         rm -rf /app/config/* && \
         cp "/etc/hyperlane/agent-config.docker-testnet.json" "/app/config/agent-config.json" && \
         [ ! -f "/etc/hyperlane/relayer.testnet.json" ] && cp "/etc/hyperlane/relayer.testnet.json.example" "/etc/hyperlane/relayer.testnet.json" || true && \
+        if [ -z "${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}" ] || [ "${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}" = "" ]; then \
+          echo "ERROR: HYP_CHAINS_BSCTESTNET_SIGNER_KEY is required and cannot be empty!" && \
+          exit 1; \
+        fi && \
+        if [ -z "${HYP_CHAINS_SOLANATESTNET_SIGNER_KEY}" ] || [ "${HYP_CHAINS_SOLANATESTNET_SIGNER_KEY}" = "" ]; then \
+          echo "ERROR: HYP_CHAINS_SOLANATESTNET_SIGNER_KEY is required and cannot be empty!" && \
+          exit 1; \
+        fi && \
+        if [ -z "${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}" ] || [ "${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}" = "" ]; then \
+          echo "ERROR: HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY is required and cannot be empty!" && \
+          exit 1; \
+        fi && \
         if [ -n "${HYP_DB}" ]; then \
           sed -i "s|\"db\": \"/etc/data/db\"|\"db\": \"${HYP_DB}\"|g" "/etc/hyperlane/relayer.testnet.json"; \
           echo "Database path replaced: ${HYP_DB}"; \
         fi && \
-        sed -i "s|0xYOUR_PRIVATE_KEY_HERE|${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}|g" "/etc/hyperlane/relayer.testnet.json" && \
-        sed -i "s|0xYOUR_PRIVATE_KEY_HERE|${HYP_CHAINS_SOLANATESTNET_SIGNER_KEY}|g" "/etc/hyperlane/relayer.testnet.json" && \
-        sed -i "s|0xYOUR_PRIVATE_KEY_HERE|${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}|g" "/etc/hyperlane/relayer.testnet.json" && \
+        sed -i '/"bsctestnet":/,/"key":/ { /"key":/ s|"key": ""|"key": "'"${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}"'"| }' "/etc/hyperlane/relayer.testnet.json" && \
+        sed -i '/"bsctestnet":/,/"key":/ { /"key":/ s|0xYOUR_PRIVATE_KEY_HERE|'"${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}"'|g }' "/etc/hyperlane/relayer.testnet.json" && \
+        sed -i '/"solanatestnet":/,/"key":/ { /"key":/ s|"key": ""|"key": "'"${HYP_CHAINS_SOLANATESTNET_SIGNER_KEY}"'"| }' "/etc/hyperlane/relayer.testnet.json" && \
+        sed -i '/"solanatestnet":/,/"key":/ { /"key":/ s|0xYOUR_PRIVATE_KEY_HERE|'"${HYP_CHAINS_SOLANATESTNET_SIGNER_KEY}"'|g }' "/etc/hyperlane/relayer.testnet.json" && \
+        sed -i '/"terraclassictestnet":/,/"key":/ { /"key":/ s|"key": ""|"key": "'"${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}"'"| }' "/etc/hyperlane/relayer.testnet.json" && \
+        sed -i '/"terraclassictestnet":/,/"key":/ { /"key":/ s|0xYOUR_PRIVATE_KEY_HERE|'"${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}"'|g }' "/etc/hyperlane/relayer.testnet.json" && \
         CONFIG_FILES="/etc/hyperlane/relayer.testnet.json" \
           ./relayer --allowLocalCheckpointSyncers false --metrics 0.0.0.0:9090 --api 0.0.0.0:9090
     ports:
