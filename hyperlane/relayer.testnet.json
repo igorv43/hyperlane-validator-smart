@@ -1,7 +1,6 @@
 {
- 
   "relayChains": "terraclassictestnet,bsctestnet,solanatestnet",
-  "allowLocalCheckpointSyncers": "false",
+  "allowLocalCheckpointSyncers": "true",
   "gasPaymentEnforcement": [
     {
       "type": "none"
@@ -9,36 +8,20 @@
   ],
   "whitelist": [
     {
-      "originDomain": [
-        1325
-      ],
-      "destinationDomain": [
-        97
-      ]
+      "originDomain": [1325],
+      "destinationDomain": [97]
     },
     {
-      "originDomain": [
-        97
-      ],
-      "destinationDomain": [
-        1325
-      ]
+      "originDomain": [97],
+      "destinationDomain": [1325]
     },
     {
-      "originDomain": [
-        1325
-      ],
-      "destinationDomain": [
-        1399811150
-      ]
+      "originDomain": [1325],
+      "destinationDomain": [1399811150]
     },
     {
-      "originDomain": [
-        1399811150
-      ],
-      "destinationDomain": [
-        1325
-      ]
+      "originDomain": [1399811150],
+      "destinationDomain": [1325]
     }
   ],
   "chains": {
@@ -62,5 +45,4 @@
       }
     }
   }
-  
 }

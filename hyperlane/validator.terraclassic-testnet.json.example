@@ -1,0 +1,22 @@
+{
+  "db": "/etc/data/db",
+  "checkpointSyncer": {
+    "type": "s3",
+    "bucket": "hyperlane-validator-signatures-igorverasvalidador-terraclassic",
+    "region": "us-east-1"
+  },
+  "originChainName": "terraclassictestnet",
+  "validator": {
+    "type": "hexKey",
+    "key": ""
+  },
+  "chains": {
+    "terraclassictestnet": {
+      "signer": {
+        "type": "cosmosKey",
+        "key": "",
+        "prefix": "terra"
+      }
+    }
+  }
+}

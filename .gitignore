@@ -1,11 +1,17 @@
 # Arquivos de ambiente com credenciais
 .env
+.env.local
+.env.*.local
 
-# Arquivos de configuração com chaves privadas
-# hyperlane/validator.*.json
-# hyperlane/relayer*.json
-# hyperlane/relayer-mainnet.json
-# hyperlane/relayer-testnet.json
+# Arquivos de configuração com chaves privadas (CRÍTICO)
+# Validator configs (gerados dinamicamente, NÃO commitar)
+hyperlane/validator*.json
+!hyperlane/validator*.json.example
+
+# Relayer configs 
+# NOTA: relayer.testnet.json e relayer.mainnet.json são commitados,
+#       mas devem SEMPRE ter chaves vazias ("key": "")
+#       O docker-compose injeta as chaves em runtime
 
 # Dados dos agentes
 validator/

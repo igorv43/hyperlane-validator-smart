@@ -1,0 +1,11 @@
+{
+  "warp": "0x2144Be4477202ba2d50c9A8be3181241878cf7D8",
+  "chain": "bsctestnet",
+  "ism": "0x2b31a08d397b7e508cbE0F5830E8a9182C88b6cA",
+  "igp": "0x0dD20e410bdB95404f71c5a4e7Fa67B892A5f949",
+  "mailbox": "0xF9F6F5646F478d5ab4e20B0F910C92F1CCC9Cc6D",
+  "hook": "0xdFb118e0a9B4a4c523A2297F73a87b58E9795E6E",
+  "defaultHook": "0x2670ED2EC08cAd135307556685a96bD4c16b007b",
+  "token": "NATIVE",
+  "rpcUrl": "https://bsc-testnet.publicnode.com"
+}

@@ -1,7 +1,7 @@
 {
  
   "relayChains": "terraclassictestnet,bsctestnet,solanatestnet",
-  "allowLocalCheckpointSyncers": "false",
+  "allowLocalCheckpointSyncers": "true",
   "gasPaymentEnforcement": [
     {
       "type": "none"
@@ -41,6 +41,26 @@
       ]
     }
   ],
-  
+  "chains": {
+    "bsctestnet": {
+      "signer": {
+        "type": "hexKey",
+        "key": ""
+      }
+    },
+    "solanatestnet": {
+      "signer": {
+        "type": "hexKey",
+        "key": ""
+      }
+    },
+    "terraclassictestnet": {
+      "signer": {
+        "type": "cosmosKey",
+        "key": "",
+        "prefix": "terra"
+      }
+    }
+  }
   
 }
