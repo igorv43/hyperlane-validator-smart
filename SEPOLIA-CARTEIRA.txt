@@ -1,0 +1,28 @@
+CARTEIRA SEPOLIA - INFORMAÇÕES
+================================
+
+Data de Criação: 2026-01-29 13:14:11
+
+Endereço: 0x133fD7F7094DBd17b576907d052a5aCBd48dB526
+
+Chave Privada: Armazenada em .env (HYP_CHAINS_SEPOLIA_SIGNER_KEY)
+
+⚠️  IMPORTANTE - SEGURANÇA:
+- Esta carteira é para TESTNET apenas
+- A chave privada está no arquivo .env (NÃO commitada no Git)
+- Mantenha o arquivo .env seguro
+
+🔗 Links Úteis:
+- Etherscan Sepolia: https://sepolia.etherscan.io/address/0x133fD7F7094DBd17b576907d052a5aCBd48dB526
+- Faucet 1: https://sepoliafaucet.com/
+- Faucet 2: https://faucet.quicknode.com/ethereum/sepolia
+- Faucet 3: https://www.alchemy.com/faucets/ethereum-sepolia
+
+📊 Verificar Saldo:
+cast balance 0x133fD7F7094DBd17b576907d052a5aCBd48dB526 --rpc-url https://ethereum-sepolia.publicnode.com
+
+📝 Notas:
+- Esta carteira é usada pelo relayer para processar mensagens em Sepolia
+- Precisa de ETH para pagar gas fees
+- Recomendado: mínimo 0.1 ETH Sepolia
+

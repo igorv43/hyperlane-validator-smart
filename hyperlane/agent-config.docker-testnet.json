@@ -70,7 +70,7 @@
         "minGasPrice": "1000000000"
       },
       "index": {
-        "from": 86149783,
+        "from": 87295507,
         "chunk": 10
       }
     },
@@ -115,7 +115,7 @@
         "fee": 10000
       },
       "index": {
-        "from": 375964820,
+        "from": 384872978,
         "chunk": 10
       }
     },
@@ -161,7 +161,7 @@
         "denom": "uluna"
       },
       "index": {
-        "from": 29139000,
+        "from": 20731645,
         "chunk": 10
       },
       "blocks": {
@@ -177,6 +177,59 @@
       "gas": {
         "adjustment": 1.5,
         "min_gas_amount": 2000000
+      }
+    },
+    "sepolia": {
+      "chainId": 11155111,
+      "domainId": 11155111,
+      "name": "sepolia",
+      "protocol": "ethereum",
+      "displayName": "Sepolia",
+      "nativeToken": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpcUrls": [
+        {
+          "http": "https://1rpc.io/sepolia"
+        },
+        {
+          "http": "https://sepolia.drpc.org"
+        },
+        {
+          "http": "https://rpc.ankr.com/eth_sepolia"
+        },
+        {
+          "http": "https://eth-sepolia-public.unifra.io"
+        }
+      ],
+      "blockExplorers": [
+        {
+          "name": "Etherscan",
+          "url": "https://sepolia.etherscan.io",
+          "apiUrl": "https://api-sepolia.etherscan.io/api",
+          "apiKey": "CYUPN3Q66JIMRGQWYUDXJKQH4SX8YIYZMW",
+          "family": "etherscan"
+        }
+      ],
+      "blocks": {
+        "confirmations": 1,
+        "reorgPeriod": 2,
+        "estimateBlockTime": 13
+      },
+      "transactionOverrides": {
+        "maxFeePerGas": 150000000000,
+        "maxPriorityFeePerGas": 5000000000
+      },
+      "mailbox": "0xfFAEF09B3cd11D9b20d1a19bECca54EEC2884766",
+      "interchainGasPaymaster": "0x6f2756380FD49228ae25Aa7F2817993cB74Ecc56",
+      "validatorAnnounce": "0xE6105C59480a1B7DD3E4f28153aFdbE12F4CfCD9",
+      "merkleTreeHook": "0x4917a9746A7B6E0A57159cCb7F5a6744247f2d0d",
+      "interchainSecurityModule": "0x81c12361c6f7024E6f67f7284B361Ed59003cFB1",
+      "index": {
+        "from": 10150017,
+        "chunk": 10
       }
     }
   }

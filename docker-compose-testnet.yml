@@ -14,24 +14,28 @@ services:
       - HYP_CHAINS_BSCTESTNET_SIGNER_KEY=${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}
       - HYP_CHAINS_SOLANATESTNET_SIGNER_KEY=${HYP_CHAINS_SOLANATESTNET_SIGNER_KEY}
       - HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY=${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}
+      - HYP_CHAINS_SEPOLIA_SIGNER_KEY=${HYP_CHAINS_SEPOLIA_SIGNER_KEY}
     command:
       - |
         rm -rf /app/config/* && \
         cp "/etc/hyperlane/agent-config.docker-testnet.json" "/app/config/agent-config.json" && \
-        if [ -z "${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}" ] || [ -z "${HYP_CHAINS_SOLANATESTNET_SIGNER_KEY}" ] || [ -z "${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}" ]; then \
+        if [ -z "${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}" ] || [ -z "${HYP_CHAINS_SOLANATESTNET_SIGNER_KEY}" ] || [ -z "${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}" ] || [ -z "${HYP_CHAINS_SEPOLIA_SIGNER_KEY}" ]; then \
           echo "ERROR: Signer keys are required!" && \
           exit 1; \
         fi && \
         awk -v bsc="${HYP_CHAINS_BSCTESTNET_SIGNER_KEY}" \
             -v sol="${HYP_CHAINS_SOLANATESTNET_SIGNER_KEY}" \
             -v terra="${HYP_CHAINS_TERRACLASSICTESTNET_SIGNER_KEY}" \
+            -v sep="${HYP_CHAINS_SEPOLIA_SIGNER_KEY}" \
             '{
-              if ($0 ~ /"bsctestnet"/) { in_bsc=1; in_sol=0; in_terra=0 }
-              else if ($0 ~ /"solanatestnet"/) { in_bsc=0; in_sol=1; in_terra=0 }
-              else if ($0 ~ /"terraclassictestnet"/) { in_bsc=0; in_sol=0; in_terra=1 }
+              if ($0 ~ /"bsctestnet"/) { in_bsc=1; in_sol=0; in_terra=0; in_sep=0 }
+              else if ($0 ~ /"solanatestnet"/) { in_bsc=0; in_sol=1; in_terra=0; in_sep=0 }
+              else if ($0 ~ /"terraclassictestnet"/) { in_bsc=0; in_sol=0; in_terra=1; in_sep=0 }
+              else if ($0 ~ /"sepolia"/) { in_bsc=0; in_sol=0; in_terra=0; in_sep=1 }
               if ($0 ~ /"key": ""/ && in_bsc) { sub(/"key": ""/, "\"key\": \"" bsc "\""); in_bsc=0 }
               else if ($0 ~ /"key": ""/ && in_sol) { sub(/"key": ""/, "\"key\": \"" sol "\""); in_sol=0 }
-              else if ($0 ~ /"key": "",/ && in_terra) { sub(/"key": "",/, "\"key\": \"" terra "\","); in_terra=0 }
+              else if ($0 ~ /"key": ""/ && in_terra) { sub(/"key": ""/, "\"key\": \"" terra "\""); in_terra=0 }
+              else if ($0 ~ /"key": ""/ && in_sep) { sub(/"key": ""/, "\"key\": \"" sep "\""); in_sep=0 }
               print
             }' "/etc/hyperlane/relayer.testnet.json" > "/tmp/relayer.testnet.json" && \
         echo "✅ Relayer config loaded from file and keys injected from .env" && \

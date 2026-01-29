@@ -1,5 +1,5 @@
 {
-  "relayChains": "terraclassictestnet,bsctestnet,solanatestnet",
+  "relayChains": "terraclassictestnet,bsctestnet,solanatestnet,sepolia",
   "allowLocalCheckpointSyncers": "true",
   "gasPaymentEnforcement": [
     {
@@ -22,6 +22,14 @@
     {
       "originDomain": [1399811150],
       "destinationDomain": [1325]
+    },
+    {
+      "originDomain": [1325],
+      "destinationDomain": [11155111]
+    },
+    {
+      "originDomain": [11155111],
+      "destinationDomain": [1325]
     }
   ],
   "chains": {
@@ -42,6 +50,12 @@
         "type": "cosmosKey",
         "key": "",
         "prefix": "terra"
+      }
+    },
+    "sepolia": {
+      "signer": {
+        "type": "hexKey",
+        "key": ""
       }
     }
   }
