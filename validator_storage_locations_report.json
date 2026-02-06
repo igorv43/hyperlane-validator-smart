@@ -1,0 +1,164 @@
+{
+  "timestamp": "2026-02-04T12:36:50.346225Z",
+  "contract": {
+    "address": "0xE6105C59480a1B7DD3E4f28153aFdbE12F4CfCD9",
+    "chain": "Sepolia Testnet",
+    "chainId": 11155111,
+    "function": "getAnnouncedStorageLocations(address)",
+    "etherscan_url": "https://sepolia.etherscan.io/address/0xE6105C59480a1B7DD3E4f28153aFdbE12F4CfCD9#readContract"
+  },
+  "validators": [
+    {
+      "index": 1,
+      "address": "0xb22b65f202558adf86a8bb2847b76ae1036686a5",
+      "checksum_address": "0xb22B65F202558ADF86A8BB2847B76AE1036686a5",
+      "etherscan_url": "https://sepolia.etherscan.io/address/0xb22b65f202558adf86a8bb2847b76ae1036686a5",
+      "rpc_attempts": [
+        {
+          "rpc_name": "drpc.org",
+          "rpc_url": "https://sepolia.drpc.org",
+          "timestamp": "2026-02-04T12:36:50.356600Z",
+          "success": false,
+          "error": "('execution reverted', '0x')",
+          "error_type": "ContractLogicError"
+        },
+        {
+          "rpc_name": "ankr",
+          "rpc_url": "https://rpc.ankr.com/eth_sepolia",
+          "timestamp": "2026-02-04T12:36:51.238499Z",
+          "success": false,
+          "error": "Falha ao conectar ao RPC: https://rpc.ankr.com/eth_sepolia",
+          "error_type": null
+        },
+        {
+          "rpc_name": "unifra",
+          "rpc_url": "https://eth-sepolia-public.unifra.io",
+          "timestamp": "2026-02-04T12:36:51.931021Z",
+          "success": false,
+          "error": "Falha ao conectar ao RPC: https://eth-sepolia-public.unifra.io",
+          "error_type": null
+        },
+        {
+          "rpc_name": "1rpc.io",
+          "rpc_url": "https://1rpc.io/sepolia",
+          "timestamp": "2026-02-04T12:36:52.058259Z",
+          "success": false,
+          "error": "Falha ao conectar ao RPC: https://1rpc.io/sepolia",
+          "error_type": null
+        }
+      ],
+      "final_result": null,
+      "storage_locations": [],
+      "success": false,
+      "error": "Falha ao conectar ao RPC: https://1rpc.io/sepolia",
+      "error_type": null
+    },
+    {
+      "index": 2,
+      "address": "0x469f0940684d147defc44f3647146cb90dd0bc8e",
+      "checksum_address": "0x469F0940684D147Defc44F3647146CB90Dd0BC8E",
+      "etherscan_url": "https://sepolia.etherscan.io/address/0x469f0940684d147defc44f3647146cb90dd0bc8e",
+      "rpc_attempts": [
+        {
+          "rpc_name": "drpc.org",
+          "rpc_url": "https://sepolia.drpc.org",
+          "timestamp": "2026-02-04T12:36:52.744465Z",
+          "success": false,
+          "error": "('execution reverted', '0x')",
+          "error_type": "ContractLogicError"
+        },
+        {
+          "rpc_name": "ankr",
+          "rpc_url": "https://rpc.ankr.com/eth_sepolia",
+          "timestamp": "2026-02-04T12:36:53.605011Z",
+          "success": false,
+          "error": "Falha ao conectar ao RPC: https://rpc.ankr.com/eth_sepolia",
+          "error_type": null
+        },
+        {
+          "rpc_name": "unifra",
+          "rpc_url": "https://eth-sepolia-public.unifra.io",
+          "timestamp": "2026-02-04T12:36:54.288179Z",
+          "success": false,
+          "error": "Falha ao conectar ao RPC: https://eth-sepolia-public.unifra.io",
+          "error_type": null
+        },
+        {
+          "rpc_name": "1rpc.io",
+          "rpc_url": "https://1rpc.io/sepolia",
+          "timestamp": "2026-02-04T12:36:54.408330Z",
+          "success": false,
+          "error": "Falha ao conectar ao RPC: https://1rpc.io/sepolia",
+          "error_type": null
+        }
+      ],
+      "final_result": null,
+      "storage_locations": [],
+      "success": false,
+      "error": "Falha ao conectar ao RPC: https://1rpc.io/sepolia",
+      "error_type": null
+    },
+    {
+      "index": 3,
+      "address": "0xd3c75dcf15056012a4d74c483a0c6ea11d8c2b83",
+      "checksum_address": "0xd3C75Dcf15056012a4d74C483A0C6ea11d8c2b83",
+      "etherscan_url": "https://sepolia.etherscan.io/address/0xd3c75dcf15056012a4d74c483a0c6ea11d8c2b83",
+      "rpc_attempts": [
+        {
+          "rpc_name": "drpc.org",
+          "rpc_url": "https://sepolia.drpc.org",
+          "timestamp": "2026-02-04T12:36:55.103285Z",
+          "success": false,
+          "error": "('execution reverted', 'no data')",
+          "error_type": "ContractLogicError"
+        },
+        {
+          "rpc_name": "ankr",
+          "rpc_url": "https://rpc.ankr.com/eth_sepolia",
+          "timestamp": "2026-02-04T12:36:56.096836Z",
+          "success": false,
+          "error": "Falha ao conectar ao RPC: https://rpc.ankr.com/eth_sepolia",
+          "error_type": null
+        },
+        {
+          "rpc_name": "unifra",
+          "rpc_url": "https://eth-sepolia-public.unifra.io",
+          "timestamp": "2026-02-04T12:36:56.768495Z",
+          "success": false,
+          "error": "Falha ao conectar ao RPC: https://eth-sepolia-public.unifra.io",
+          "error_type": null
+        },
+        {
+          "rpc_name": "1rpc.io",
+          "rpc_url": "https://1rpc.io/sepolia",
+          "timestamp": "2026-02-04T12:36:56.894760Z",
+          "success": false,
+          "error": "Falha ao conectar ao RPC: https://1rpc.io/sepolia",
+          "error_type": null
+        }
+      ],
+      "final_result": null,
+      "storage_locations": [],
+      "success": false,
+      "error": "Falha ao conectar ao RPC: https://1rpc.io/sepolia",
+      "error_type": null
+    }
+  ],
+  "summary": {
+    "total_validators": 3,
+    "validators_with_storage_locations": 0,
+    "validators_without_storage_locations": 3,
+    "total_storage_locations": 0,
+    "interpretation": {
+      "execution_reverted": "Indica que o validator não anunciou storage locations ou não está registrado no contrato",
+      "quorum_impact": "Sem storage locations anunciadas, o relayer não consegue buscar checkpoints, causando 'Unable to reach quorum'",
+      "required_threshold": "2 de 3 validators precisam assinar checkpoints para processar mensagens",
+      "next_steps": [
+        "Verificar se os validators de Sepolia estão rodando",
+        "Verificar se os validators executaram o comando 'announce' para registrar seus buckets S3",
+        "Verificar logs dos validators para erros de anúncio",
+        "Confirmar que os buckets S3 estão configurados corretamente nos validators"
+      ]
+    }
+  }
+}

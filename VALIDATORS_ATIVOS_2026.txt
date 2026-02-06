@@ -1,0 +1,43 @@
+================================================================================
+RELATÓRIO: VALIDATORS GERANDO CHECKPOINTS EM 2026
+================================================================================
+
+Data da análise: $(date)
+Período verificado: Desde 1º de janeiro de 2026 (últimos 35 dias)
+
+RESUMO:
+- Total de validators anunciados: 793
+- Validators com storage locations: 81
+- ✅ Validators ATIVOS (gerando checkpoints este ano): 1
+- Buckets verificados: 139
+
+================================================================================
+🎯 VALIDATOR ATIVO (2026)
+================================================================================
+
+Validator: 0x01227B3361d200722c3656f899b48dE187A32494
+
+Bucket: hyperlane-validator-signatures-mitocateth
+Região: us-east-1
+S3 Path: s3://hyperlane-validator-signatures-mitocateth/us-east-1
+Último checkpoint: 2026-01-29T07:32:25.000Z
+Idade: ~6 dias
+URL: https://hyperlane-validator-signatures-mitocateth.s3.amazonaws.com/checkpoint_0_with_id.json
+
+================================================================================
+💡 CONCLUSÃO
+================================================================================
+
+Apenas 1 validator está gerando checkpoints este ano (2026).
+
+Este validator pode ser usado, mas é importante notar que:
+- Há apenas 1 validator ativo de 81 com storage
+- Isso pode não ser suficiente para atingir quorum (geralmente precisa de 2 de 3)
+
+Recomendações:
+1. Verificar se este validator está configurado no seu ISM
+2. Verificar se há outros validators não anunciados
+3. Verificar se há validators usando storage local (não S3)
+4. Considerar usar validators oficiais do Hyperlane
+
+================================================================================

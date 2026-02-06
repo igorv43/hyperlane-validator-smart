@@ -18,6 +18,66 @@ Native Token: ETH
 
 ---
 
+## 🔍 FERRAMENTAS DE DIAGNÓSTICO
+
+### Script de Consulta ao ValidatorAnnounce
+
+Script Python para consultar todas as funções do contrato `validatorAnnounce` e gerar relatório completo em JSON sobre validators e seus buckets S3.
+
+**Localização:** `scripts/query_validator_announce.py`
+
+**Uso:**
+```bash
+# Executar o script e salvar o resultado
+python3 scripts/query_validator_announce.py > validator_announce_report.json
+
+# Visualizar o JSON
+cat validator_announce_report.json | jq .
+```
+
+**O que o script consulta:**
+- `localDomain()` - Domain ID do Sepolia (11155111)
+- `mailbox()` - Endereço do contrato Mailbox
+- `getAnnouncedValidators()` - Lista de todos os validators que fizeram anúncios
+- `getAnnouncedStorageLocations(address[])` - Buckets S3 anunciados por cada validator
+
+**Informações retornadas:**
+- Informações do contrato (domain, mailbox)
+- Lista completa de todos os validators anunciados
+- Storage locations (buckets S3) para cada validator consultado
+- Resumo estatístico (total de validators, validators com anúncios, etc.)
+
+**Exemplo de saída:**
+```json
+{
+  "contract_info": {
+    "localDomain": {"value": "11155111"},
+    "mailbox": {"value": "0xfFAEF09B3cd11D9b20d1a19bECca54EEC2884766"}
+  },
+  "validators": [
+    {
+      "address": "0xb22b65f202558adf86a8bb2847b76ae1036686a5",
+      "storage_locations": ["s3://hyperlane-testnet4-sepolia-validator-0/us-east-1"]
+    }
+  ]
+}
+```
+
+**Requisitos:**
+```bash
+pip install web3
+```
+
+**Configuração:**
+O script está pré-configurado com:
+- Contrato: `0xE6105C59480a1B7DD3E4f28153aFdbE12F4CfCD9` (Sepolia)
+- Validators padrão: Os 3 validators do ISM Multisig Sepolia
+- RPCs: Múltiplos endpoints com fallback automático
+
+Para modificar os validators consultados, edite a variável `VALIDATORS` no script.
+
+---
+
 ## 📋 CONFIGURAÇÕES APLICADAS
 
 ### 1. agent-config.docker-testnet.json

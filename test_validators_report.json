@@ -1,0 +1,310 @@
+{
+  "timestamp": "2026-02-04T13:15:45.703818Z",
+  "config": {
+    "recent_days": 30,
+    "validator_announce": "0xE6105C59480a1B7DD3E4f28153aFdbE12F4CfCD9"
+  },
+  "summary": {
+    "total_validators_announced": 3,
+    "validators_with_storage": 3,
+    "validators_with_recent_checkpoints": 0,
+    "total_buckets_checked": 3
+  },
+  "active_validators": [],
+  "all_validators": [
+    {
+      "validator": "0xb22B65F202558ADF86A8BB2847B76AE1036686a5",
+      "storage_locations": [
+        "s3://hyperlane-testnet4-sepolia-validator-0/us-east-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://hyperlane-testnet4-sepolia-validator-0/us-east-1",
+          "bucket": "hyperlane-testnet4-sepolia-validator-0",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 1000,
+          "recent_checkpoints": 0,
+          "latest_checkpoint": {
+            "key": "checkpoint_100894_with_id.json",
+            "last_modified": "2024-03-10T19:26:20.000Z",
+            "date": "2024-03-10 19:26:20+00:00",
+            "size": 732,
+            "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100894_with_id.json"
+          },
+          "is_recent": false,
+          "age_days": 695,
+          "all_checkpoints": [
+            {
+              "key": "checkpoint_100894_with_id.json",
+              "last_modified": "2024-03-10T19:26:20.000Z",
+              "date": "2024-03-10 19:26:20+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100894_with_id.json"
+            },
+            {
+              "key": "checkpoint_100895_with_id.json",
+              "last_modified": "2024-03-10T19:26:20.000Z",
+              "date": "2024-03-10 19:26:20+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100895_with_id.json"
+            },
+            {
+              "key": "checkpoint_100896_with_id.json",
+              "last_modified": "2024-03-10T19:26:20.000Z",
+              "date": "2024-03-10 19:26:20+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100896_with_id.json"
+            },
+            {
+              "key": "checkpoint_100897_with_id.json",
+              "last_modified": "2024-03-10T19:26:20.000Z",
+              "date": "2024-03-10 19:26:20+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100897_with_id.json"
+            },
+            {
+              "key": "checkpoint_100889_with_id.json",
+              "last_modified": "2024-03-10T19:26:19.000Z",
+              "date": "2024-03-10 19:26:19+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100889_with_id.json"
+            },
+            {
+              "key": "checkpoint_100890_with_id.json",
+              "last_modified": "2024-03-10T19:26:19.000Z",
+              "date": "2024-03-10 19:26:19+00:00",
+              "size": 731,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100890_with_id.json"
+            },
+            {
+              "key": "checkpoint_100891_with_id.json",
+              "last_modified": "2024-03-10T19:26:19.000Z",
+              "date": "2024-03-10 19:26:19+00:00",
+              "size": 731,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100891_with_id.json"
+            },
+            {
+              "key": "checkpoint_100892_with_id.json",
+              "last_modified": "2024-03-10T19:26:19.000Z",
+              "date": "2024-03-10 19:26:19+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100892_with_id.json"
+            },
+            {
+              "key": "checkpoint_100893_with_id.json",
+              "last_modified": "2024-03-10T19:26:19.000Z",
+              "date": "2024-03-10 19:26:19+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100893_with_id.json"
+            },
+            {
+              "key": "checkpoint_100885_with_id.json",
+              "last_modified": "2024-03-10T19:26:18.000Z",
+              "date": "2024-03-10 19:26:18+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100885_with_id.json"
+            }
+          ]
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x469F0940684D147Defc44F3647146CB90Dd0BC8E",
+      "storage_locations": [
+        "s3://hyperlane-testnet4-sepolia-validator-1/us-east-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://hyperlane-testnet4-sepolia-validator-1/us-east-1",
+          "bucket": "hyperlane-testnet4-sepolia-validator-1",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 1000,
+          "recent_checkpoints": 0,
+          "latest_checkpoint": {
+            "key": "checkpoint_100895_with_id.json",
+            "last_modified": "2024-03-10T19:26:18.000Z",
+            "date": "2024-03-10 19:26:18+00:00",
+            "size": 732,
+            "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100895_with_id.json"
+          },
+          "is_recent": false,
+          "age_days": 695,
+          "all_checkpoints": [
+            {
+              "key": "checkpoint_100895_with_id.json",
+              "last_modified": "2024-03-10T19:26:18.000Z",
+              "date": "2024-03-10 19:26:18+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100895_with_id.json"
+            },
+            {
+              "key": "checkpoint_100896_with_id.json",
+              "last_modified": "2024-03-10T19:26:18.000Z",
+              "date": "2024-03-10 19:26:18+00:00",
+              "size": 730,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100896_with_id.json"
+            },
+            {
+              "key": "checkpoint_100897_with_id.json",
+              "last_modified": "2024-03-10T19:26:18.000Z",
+              "date": "2024-03-10 19:26:18+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100897_with_id.json"
+            },
+            {
+              "key": "checkpoint_100890_with_id.json",
+              "last_modified": "2024-03-10T19:26:17.000Z",
+              "date": "2024-03-10 19:26:17+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100890_with_id.json"
+            },
+            {
+              "key": "checkpoint_100891_with_id.json",
+              "last_modified": "2024-03-10T19:26:17.000Z",
+              "date": "2024-03-10 19:26:17+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100891_with_id.json"
+            },
+            {
+              "key": "checkpoint_100892_with_id.json",
+              "last_modified": "2024-03-10T19:26:17.000Z",
+              "date": "2024-03-10 19:26:17+00:00",
+              "size": 731,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100892_with_id.json"
+            },
+            {
+              "key": "checkpoint_100893_with_id.json",
+              "last_modified": "2024-03-10T19:26:17.000Z",
+              "date": "2024-03-10 19:26:17+00:00",
+              "size": 731,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100893_with_id.json"
+            },
+            {
+              "key": "checkpoint_100894_with_id.json",
+              "last_modified": "2024-03-10T19:26:17.000Z",
+              "date": "2024-03-10 19:26:17+00:00",
+              "size": 731,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100894_with_id.json"
+            },
+            {
+              "key": "checkpoint_100886_with_id.json",
+              "last_modified": "2024-03-10T19:26:16.000Z",
+              "date": "2024-03-10 19:26:16+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100886_with_id.json"
+            },
+            {
+              "key": "checkpoint_100887_with_id.json",
+              "last_modified": "2024-03-10T19:26:16.000Z",
+              "date": "2024-03-10 19:26:16+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100887_with_id.json"
+            }
+          ]
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xd3C75Dcf15056012a4d74C483A0C6ea11d8c2b83",
+      "storage_locations": [
+        "s3://hyperlane-testnet4-sepolia-validator-2/us-east-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://hyperlane-testnet4-sepolia-validator-2/us-east-1",
+          "bucket": "hyperlane-testnet4-sepolia-validator-2",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 1000,
+          "recent_checkpoints": 0,
+          "latest_checkpoint": {
+            "key": "checkpoint_100896_with_id.json",
+            "last_modified": "2024-03-10T19:26:21.000Z",
+            "date": "2024-03-10 19:26:21+00:00",
+            "size": 732,
+            "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100896_with_id.json"
+          },
+          "is_recent": false,
+          "age_days": 695,
+          "all_checkpoints": [
+            {
+              "key": "checkpoint_100896_with_id.json",
+              "last_modified": "2024-03-10T19:26:21.000Z",
+              "date": "2024-03-10 19:26:21+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100896_with_id.json"
+            },
+            {
+              "key": "checkpoint_100897_with_id.json",
+              "last_modified": "2024-03-10T19:26:21.000Z",
+              "date": "2024-03-10 19:26:21+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100897_with_id.json"
+            },
+            {
+              "key": "checkpoint_100891_with_id.json",
+              "last_modified": "2024-03-10T19:26:20.000Z",
+              "date": "2024-03-10 19:26:20+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100891_with_id.json"
+            },
+            {
+              "key": "checkpoint_100892_with_id.json",
+              "last_modified": "2024-03-10T19:26:20.000Z",
+              "date": "2024-03-10 19:26:20+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100892_with_id.json"
+            },
+            {
+              "key": "checkpoint_100893_with_id.json",
+              "last_modified": "2024-03-10T19:26:20.000Z",
+              "date": "2024-03-10 19:26:20+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100893_with_id.json"
+            },
+            {
+              "key": "checkpoint_100894_with_id.json",
+              "last_modified": "2024-03-10T19:26:20.000Z",
+              "date": "2024-03-10 19:26:20+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100894_with_id.json"
+            },
+            {
+              "key": "checkpoint_100895_with_id.json",
+              "last_modified": "2024-03-10T19:26:20.000Z",
+              "date": "2024-03-10 19:26:20+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100895_with_id.json"
+            },
+            {
+              "key": "checkpoint_100888_with_id.json",
+              "last_modified": "2024-03-10T19:26:19.000Z",
+              "date": "2024-03-10 19:26:19+00:00",
+              "size": 731,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100888_with_id.json"
+            },
+            {
+              "key": "checkpoint_100889_with_id.json",
+              "last_modified": "2024-03-10T19:26:19.000Z",
+              "date": "2024-03-10 19:26:19+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100889_with_id.json"
+            },
+            {
+              "key": "checkpoint_100890_with_id.json",
+              "last_modified": "2024-03-10T19:26:19.000Z",
+              "date": "2024-03-10 19:26:19+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100890_with_id.json"
+            }
+          ]
+        }
+      ],
+      "has_recent_checkpoints": false
+    }
+  ]
+}

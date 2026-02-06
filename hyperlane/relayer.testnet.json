@@ -1,6 +1,6 @@
 {
   "relayChains": "terraclassictestnet,bsctestnet,solanatestnet,sepolia",
-  "allowLocalCheckpointSyncers": "true",
+  "allowLocalCheckpointSyncers": false,
   "gasPaymentEnforcement": [
     {
       "type": "none"

@@ -1,0 +1,32 @@
+{
+  "timestamp": "2026-02-04T12:51:28.712034Z",
+  "source": "validator_announce_complete_report.json (linhas 860-868)",
+  "validators": [
+    {
+      "validator": "0xb22b65f202558adf86a8bb2847b76ae1036686a5",
+      "bucket": "hyperlane-testnet4-sepolia-validator-0",
+      "accessible": false,
+      "error": "AccessDenied",
+      "message": "Bucket privado"
+    },
+    {
+      "validator": "0x469f0940684d147defc44f3647146cb90dd0bc8e",
+      "bucket": "hyperlane-testnet4-sepolia-validator-1",
+      "accessible": false,
+      "error": "AccessDenied",
+      "message": "Bucket privado"
+    },
+    {
+      "validator": "0xd3c75dcf15056012a4d74c483a0c6ea11d8c2b83",
+      "bucket": "hyperlane-testnet4-sepolia-validator-2",
+      "accessible": false,
+      "error": "AccessDenied",
+      "message": "Bucket privado"
+    }
+  ],
+  "summary": {
+    "total_validators": 3,
+    "buckets_accessible": 0,
+    "note": "Buckets s\u00e3o privados e pertencem a outros validators"
+  }
+}

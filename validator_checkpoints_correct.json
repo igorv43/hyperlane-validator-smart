@@ -1,0 +1,123 @@
+{
+  "timestamp": "2026-02-04T12:56:01.882777Z",
+  "note": "Formato s3://bucket/region \u00e9 interpretado como: bucket=bucket, region=region, folder=None (raiz do bucket)",
+  "validators": [
+    {
+      "validator": "0xb22b65f202558adf86a8bb2847b76ae1036686a5",
+      "bucket": "hyperlane-testnet4-sepolia-validator-0",
+      "s3_path": "s3://hyperlane-testnet4-sepolia-validator-0/us-east-1",
+      "interpretation": "bucket=bucket, region=us-east-1, folder=None (raiz)",
+      "checkpoints_found": 1000,
+      "last_checkpoint": {
+        "key": "checkpoint_100894_with_id.json",
+        "last_modified": "2024-03-10T19:26:20.000Z",
+        "size": 732
+      },
+      "recent_checkpoints": [
+        {
+          "key": "checkpoint_100894_with_id.json",
+          "last_modified": "2024-03-10T19:26:20.000Z",
+          "size": 732
+        },
+        {
+          "key": "checkpoint_100895_with_id.json",
+          "last_modified": "2024-03-10T19:26:20.000Z",
+          "size": 732
+        },
+        {
+          "key": "checkpoint_100896_with_id.json",
+          "last_modified": "2024-03-10T19:26:20.000Z",
+          "size": 732
+        },
+        {
+          "key": "checkpoint_100897_with_id.json",
+          "last_modified": "2024-03-10T19:26:20.000Z",
+          "size": 732
+        },
+        {
+          "key": "checkpoint_100889_with_id.json",
+          "last_modified": "2024-03-10T19:26:19.000Z",
+          "size": 732
+        }
+      ]
+    },
+    {
+      "validator": "0x469f0940684d147defc44f3647146cb90dd0bc8e",
+      "bucket": "hyperlane-testnet4-sepolia-validator-1",
+      "s3_path": "s3://hyperlane-testnet4-sepolia-validator-1/us-east-1",
+      "interpretation": "bucket=bucket, region=us-east-1, folder=None (raiz)",
+      "checkpoints_found": 1000,
+      "last_checkpoint": {
+        "key": "checkpoint_100895_with_id.json",
+        "last_modified": "2024-03-10T19:26:18.000Z",
+        "size": 732
+      },
+      "recent_checkpoints": [
+        {
+          "key": "checkpoint_100895_with_id.json",
+          "last_modified": "2024-03-10T19:26:18.000Z",
+          "size": 732
+        },
+        {
+          "key": "checkpoint_100896_with_id.json",
+          "last_modified": "2024-03-10T19:26:18.000Z",
+          "size": 730
+        },
+        {
+          "key": "checkpoint_100897_with_id.json",
+          "last_modified": "2024-03-10T19:26:18.000Z",
+          "size": 732
+        },
+        {
+          "key": "checkpoint_100890_with_id.json",
+          "last_modified": "2024-03-10T19:26:17.000Z",
+          "size": 732
+        },
+        {
+          "key": "checkpoint_100891_with_id.json",
+          "last_modified": "2024-03-10T19:26:17.000Z",
+          "size": 732
+        }
+      ]
+    },
+    {
+      "validator": "0xd3c75dcf15056012a4d74c483a0c6ea11d8c2b83",
+      "bucket": "hyperlane-testnet4-sepolia-validator-2",
+      "s3_path": "s3://hyperlane-testnet4-sepolia-validator-2/us-east-1",
+      "interpretation": "bucket=bucket, region=us-east-1, folder=None (raiz)",
+      "checkpoints_found": 1000,
+      "last_checkpoint": {
+        "key": "checkpoint_100896_with_id.json",
+        "last_modified": "2024-03-10T19:26:21.000Z",
+        "size": 732
+      },
+      "recent_checkpoints": [
+        {
+          "key": "checkpoint_100896_with_id.json",
+          "last_modified": "2024-03-10T19:26:21.000Z",
+          "size": 732
+        },
+        {
+          "key": "checkpoint_100897_with_id.json",
+          "last_modified": "2024-03-10T19:26:21.000Z",
+          "size": 732
+        },
+        {
+          "key": "checkpoint_100891_with_id.json",
+          "last_modified": "2024-03-10T19:26:20.000Z",
+          "size": 732
+        },
+        {
+          "key": "checkpoint_100892_with_id.json",
+          "last_modified": "2024-03-10T19:26:20.000Z",
+          "size": 732
+        },
+        {
+          "key": "checkpoint_100893_with_id.json",
+          "last_modified": "2024-03-10T19:26:20.000Z",
+          "size": 732
+        }
+      ]
+    }
+  ]
+}

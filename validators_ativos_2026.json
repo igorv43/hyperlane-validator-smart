@@ -1,0 +1,2985 @@
+{
+  "timestamp": "2026-02-04T13:19:53.938085Z",
+  "config": {
+    "recent_days": 35,
+    "validator_announce": "0xE6105C59480a1B7DD3E4f28153aFdbE12F4CfCD9"
+  },
+  "summary": {
+    "total_validators_announced": 793,
+    "validators_with_storage": 81,
+    "validators_with_recent_checkpoints": 1,
+    "total_buckets_checked": 139
+  },
+  "active_validators": [
+    "0x01227B3361d200722c3656f899b48dE187A32494"
+  ],
+  "all_validators": [
+    {
+      "validator": "0xb22B65F202558ADF86A8BB2847B76AE1036686a5",
+      "storage_locations": [
+        "s3://hyperlane-testnet4-sepolia-validator-0/us-east-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://hyperlane-testnet4-sepolia-validator-0/us-east-1",
+          "bucket": "hyperlane-testnet4-sepolia-validator-0",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 1000,
+          "recent_checkpoints": 0,
+          "latest_checkpoint": {
+            "key": "checkpoint_100894_with_id.json",
+            "last_modified": "2024-03-10T19:26:20.000Z",
+            "date": "2024-03-10 19:26:20+00:00",
+            "size": 732,
+            "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100894_with_id.json"
+          },
+          "is_recent": false,
+          "age_days": 695,
+          "all_checkpoints": [
+            {
+              "key": "checkpoint_100894_with_id.json",
+              "last_modified": "2024-03-10T19:26:20.000Z",
+              "date": "2024-03-10 19:26:20+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100894_with_id.json"
+            },
+            {
+              "key": "checkpoint_100895_with_id.json",
+              "last_modified": "2024-03-10T19:26:20.000Z",
+              "date": "2024-03-10 19:26:20+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100895_with_id.json"
+            },
+            {
+              "key": "checkpoint_100896_with_id.json",
+              "last_modified": "2024-03-10T19:26:20.000Z",
+              "date": "2024-03-10 19:26:20+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100896_with_id.json"
+            },
+            {
+              "key": "checkpoint_100897_with_id.json",
+              "last_modified": "2024-03-10T19:26:20.000Z",
+              "date": "2024-03-10 19:26:20+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100897_with_id.json"
+            },
+            {
+              "key": "checkpoint_100889_with_id.json",
+              "last_modified": "2024-03-10T19:26:19.000Z",
+              "date": "2024-03-10 19:26:19+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100889_with_id.json"
+            },
+            {
+              "key": "checkpoint_100890_with_id.json",
+              "last_modified": "2024-03-10T19:26:19.000Z",
+              "date": "2024-03-10 19:26:19+00:00",
+              "size": 731,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100890_with_id.json"
+            },
+            {
+              "key": "checkpoint_100891_with_id.json",
+              "last_modified": "2024-03-10T19:26:19.000Z",
+              "date": "2024-03-10 19:26:19+00:00",
+              "size": 731,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100891_with_id.json"
+            },
+            {
+              "key": "checkpoint_100892_with_id.json",
+              "last_modified": "2024-03-10T19:26:19.000Z",
+              "date": "2024-03-10 19:26:19+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100892_with_id.json"
+            },
+            {
+              "key": "checkpoint_100893_with_id.json",
+              "last_modified": "2024-03-10T19:26:19.000Z",
+              "date": "2024-03-10 19:26:19+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100893_with_id.json"
+            },
+            {
+              "key": "checkpoint_100885_with_id.json",
+              "last_modified": "2024-03-10T19:26:18.000Z",
+              "date": "2024-03-10 19:26:18+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_100885_with_id.json"
+            }
+          ]
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x469F0940684D147Defc44F3647146CB90Dd0BC8E",
+      "storage_locations": [
+        "s3://hyperlane-testnet4-sepolia-validator-1/us-east-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://hyperlane-testnet4-sepolia-validator-1/us-east-1",
+          "bucket": "hyperlane-testnet4-sepolia-validator-1",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 1000,
+          "recent_checkpoints": 0,
+          "latest_checkpoint": {
+            "key": "checkpoint_100895_with_id.json",
+            "last_modified": "2024-03-10T19:26:18.000Z",
+            "date": "2024-03-10 19:26:18+00:00",
+            "size": 732,
+            "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100895_with_id.json"
+          },
+          "is_recent": false,
+          "age_days": 695,
+          "all_checkpoints": [
+            {
+              "key": "checkpoint_100895_with_id.json",
+              "last_modified": "2024-03-10T19:26:18.000Z",
+              "date": "2024-03-10 19:26:18+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100895_with_id.json"
+            },
+            {
+              "key": "checkpoint_100896_with_id.json",
+              "last_modified": "2024-03-10T19:26:18.000Z",
+              "date": "2024-03-10 19:26:18+00:00",
+              "size": 730,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100896_with_id.json"
+            },
+            {
+              "key": "checkpoint_100897_with_id.json",
+              "last_modified": "2024-03-10T19:26:18.000Z",
+              "date": "2024-03-10 19:26:18+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100897_with_id.json"
+            },
+            {
+              "key": "checkpoint_100890_with_id.json",
+              "last_modified": "2024-03-10T19:26:17.000Z",
+              "date": "2024-03-10 19:26:17+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100890_with_id.json"
+            },
+            {
+              "key": "checkpoint_100891_with_id.json",
+              "last_modified": "2024-03-10T19:26:17.000Z",
+              "date": "2024-03-10 19:26:17+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100891_with_id.json"
+            },
+            {
+              "key": "checkpoint_100892_with_id.json",
+              "last_modified": "2024-03-10T19:26:17.000Z",
+              "date": "2024-03-10 19:26:17+00:00",
+              "size": 731,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100892_with_id.json"
+            },
+            {
+              "key": "checkpoint_100893_with_id.json",
+              "last_modified": "2024-03-10T19:26:17.000Z",
+              "date": "2024-03-10 19:26:17+00:00",
+              "size": 731,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100893_with_id.json"
+            },
+            {
+              "key": "checkpoint_100894_with_id.json",
+              "last_modified": "2024-03-10T19:26:17.000Z",
+              "date": "2024-03-10 19:26:17+00:00",
+              "size": 731,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100894_with_id.json"
+            },
+            {
+              "key": "checkpoint_100886_with_id.json",
+              "last_modified": "2024-03-10T19:26:16.000Z",
+              "date": "2024-03-10 19:26:16+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100886_with_id.json"
+            },
+            {
+              "key": "checkpoint_100887_with_id.json",
+              "last_modified": "2024-03-10T19:26:16.000Z",
+              "date": "2024-03-10 19:26:16+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_100887_with_id.json"
+            }
+          ]
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xd3C75Dcf15056012a4d74C483A0C6ea11d8c2b83",
+      "storage_locations": [
+        "s3://hyperlane-testnet4-sepolia-validator-2/us-east-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://hyperlane-testnet4-sepolia-validator-2/us-east-1",
+          "bucket": "hyperlane-testnet4-sepolia-validator-2",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 1000,
+          "recent_checkpoints": 0,
+          "latest_checkpoint": {
+            "key": "checkpoint_100896_with_id.json",
+            "last_modified": "2024-03-10T19:26:21.000Z",
+            "date": "2024-03-10 19:26:21+00:00",
+            "size": 732,
+            "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100896_with_id.json"
+          },
+          "is_recent": false,
+          "age_days": 695,
+          "all_checkpoints": [
+            {
+              "key": "checkpoint_100896_with_id.json",
+              "last_modified": "2024-03-10T19:26:21.000Z",
+              "date": "2024-03-10 19:26:21+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100896_with_id.json"
+            },
+            {
+              "key": "checkpoint_100897_with_id.json",
+              "last_modified": "2024-03-10T19:26:21.000Z",
+              "date": "2024-03-10 19:26:21+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100897_with_id.json"
+            },
+            {
+              "key": "checkpoint_100891_with_id.json",
+              "last_modified": "2024-03-10T19:26:20.000Z",
+              "date": "2024-03-10 19:26:20+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100891_with_id.json"
+            },
+            {
+              "key": "checkpoint_100892_with_id.json",
+              "last_modified": "2024-03-10T19:26:20.000Z",
+              "date": "2024-03-10 19:26:20+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100892_with_id.json"
+            },
+            {
+              "key": "checkpoint_100893_with_id.json",
+              "last_modified": "2024-03-10T19:26:20.000Z",
+              "date": "2024-03-10 19:26:20+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100893_with_id.json"
+            },
+            {
+              "key": "checkpoint_100894_with_id.json",
+              "last_modified": "2024-03-10T19:26:20.000Z",
+              "date": "2024-03-10 19:26:20+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100894_with_id.json"
+            },
+            {
+              "key": "checkpoint_100895_with_id.json",
+              "last_modified": "2024-03-10T19:26:20.000Z",
+              "date": "2024-03-10 19:26:20+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100895_with_id.json"
+            },
+            {
+              "key": "checkpoint_100888_with_id.json",
+              "last_modified": "2024-03-10T19:26:19.000Z",
+              "date": "2024-03-10 19:26:19+00:00",
+              "size": 731,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100888_with_id.json"
+            },
+            {
+              "key": "checkpoint_100889_with_id.json",
+              "last_modified": "2024-03-10T19:26:19.000Z",
+              "date": "2024-03-10 19:26:19+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100889_with_id.json"
+            },
+            {
+              "key": "checkpoint_100890_with_id.json",
+              "last_modified": "2024-03-10T19:26:19.000Z",
+              "date": "2024-03-10 19:26:19+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_100890_with_id.json"
+            }
+          ]
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xBbefc461F6D944932EEea9C6d4c26C21e9cCeFB8",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-33c880c971ef422b88c45621bb2e805b/b2c3be0d4eae43c2b837df66f07a9168",
+        "s3://kurtosis-cloud/us-east-1/cloud-user-83844b78783041aeb67c6c45e962878b/3c791bfdbbbb4e7aad6e855908e8d688"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-33c880c971ef422b88c45621bb2e805b/b2c3be0d4eae43c2b837df66f07a9168",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-83844b78783041aeb67c6c45e962878b/3c791bfdbbbb4e7aad6e855908e8d688",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x01cDA63260A045762a3796e152B05a95a667746b",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-cf60ab63956247e6b6a0ca2c6929bbdf/9e51359923324117bfa41ccbf4e62fdf"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-cf60ab63956247e6b6a0ca2c6929bbdf/9e51359923324117bfa41ccbf4e62fdf",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x32d25197eBcB83737Fcc8175aA2653aAE7dF3C25",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-20669b11aab742ae8c3e56677cea644d/8a618737ce754732ace88b736292539d",
+        "s3://kurtosis-cloud/us-east-1/cloud-user-20669b11aab742ae8c3e56677cea644d/c97dddef41284b9f87dd528024f3c495",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-352fd1e2c4504bc6bd2cb1b5b4a0a05b/4272fc00483b44b1bfed73309c60ee95",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-352fd1e2c4504bc6bd2cb1b5b4a0a05b/5ec9d04dbf8f4f459dab45c207500f72",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-352fd1e2c4504bc6bd2cb1b5b4a0a05b/3dcae995d7874feca6cdf6109dc02a77"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-20669b11aab742ae8c3e56677cea644d/8a618737ce754732ace88b736292539d",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-20669b11aab742ae8c3e56677cea644d/c97dddef41284b9f87dd528024f3c495",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-352fd1e2c4504bc6bd2cb1b5b4a0a05b/4272fc00483b44b1bfed73309c60ee95",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-352fd1e2c4504bc6bd2cb1b5b4a0a05b/5ec9d04dbf8f4f459dab45c207500f72",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-352fd1e2c4504bc6bd2cb1b5b4a0a05b/3dcae995d7874feca6cdf6109dc02a77",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xe5A099baa851D788Ca9b8329aCbbab3e5BCcFA36",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-3a2415443b8b40aa9c19ac6464471379/8f9a6494fe294cf3a62b5cf47cb320b8"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-3a2415443b8b40aa9c19ac6464471379/8f9a6494fe294cf3a62b5cf47cb320b8",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x66704B9a361fb7529C145D4a00DD0c042A01a213",
+      "storage_locations": [
+        "s3://hyperlane-validator-signatures-sepolia-stonemac65/ap-southeast-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://hyperlane-validator-signatures-sepolia-stonemac65/ap-southeast-1",
+          "bucket": "hyperlane-validator-signatures-sepolia-stonemac65",
+          "region": "ap-southeast-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x49F253C0dAB33BE1573D6c2769b3d9e584D91F82",
+      "storage_locations": [
+        "s3://rc-testnet4-sepolia-validator-0/us-east-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://rc-testnet4-sepolia-validator-0/us-east-1",
+          "bucket": "rc-testnet4-sepolia-validator-0",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 1000,
+          "recent_checkpoints": 0,
+          "latest_checkpoint": {
+            "key": "checkpoint_1899_with_id.json",
+            "last_modified": "2024-01-30T11:26:22.000Z",
+            "date": "2024-01-30 11:26:22+00:00",
+            "size": 729,
+            "url": "https://rc-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_1899_with_id.json"
+          },
+          "is_recent": false,
+          "age_days": 736,
+          "all_checkpoints": [
+            {
+              "key": "checkpoint_1899_with_id.json",
+              "last_modified": "2024-01-30T11:26:22.000Z",
+              "date": "2024-01-30 11:26:22+00:00",
+              "size": 729,
+              "url": "https://rc-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_1899_with_id.json"
+            },
+            {
+              "key": "checkpoint_1895_with_id.json",
+              "last_modified": "2024-01-30T11:26:21.000Z",
+              "date": "2024-01-30 11:26:21+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_1895_with_id.json"
+            },
+            {
+              "key": "checkpoint_1896_with_id.json",
+              "last_modified": "2024-01-30T11:26:21.000Z",
+              "date": "2024-01-30 11:26:21+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_1896_with_id.json"
+            },
+            {
+              "key": "checkpoint_1897_with_id.json",
+              "last_modified": "2024-01-30T11:26:21.000Z",
+              "date": "2024-01-30 11:26:21+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_1897_with_id.json"
+            },
+            {
+              "key": "checkpoint_1898_with_id.json",
+              "last_modified": "2024-01-30T11:26:21.000Z",
+              "date": "2024-01-30 11:26:21+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_1898_with_id.json"
+            },
+            {
+              "key": "checkpoint_1890_with_id.json",
+              "last_modified": "2024-01-30T11:26:20.000Z",
+              "date": "2024-01-30 11:26:20+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_1890_with_id.json"
+            },
+            {
+              "key": "checkpoint_1891_with_id.json",
+              "last_modified": "2024-01-30T11:26:20.000Z",
+              "date": "2024-01-30 11:26:20+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_1891_with_id.json"
+            },
+            {
+              "key": "checkpoint_1892_with_id.json",
+              "last_modified": "2024-01-30T11:26:20.000Z",
+              "date": "2024-01-30 11:26:20+00:00",
+              "size": 729,
+              "url": "https://rc-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_1892_with_id.json"
+            },
+            {
+              "key": "checkpoint_1893_with_id.json",
+              "last_modified": "2024-01-30T11:26:20.000Z",
+              "date": "2024-01-30 11:26:20+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_1893_with_id.json"
+            },
+            {
+              "key": "checkpoint_1894_with_id.json",
+              "last_modified": "2024-01-30T11:26:20.000Z",
+              "date": "2024-01-30 11:26:20+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-0.s3.amazonaws.com/checkpoint_1894_with_id.json"
+            }
+          ]
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x13b51805E9Af68e154778d973165F32E10B7446B",
+      "storage_locations": [
+        "s3://rc-testnet4-sepolia-validator-1/us-east-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://rc-testnet4-sepolia-validator-1/us-east-1",
+          "bucket": "rc-testnet4-sepolia-validator-1",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 1000,
+          "recent_checkpoints": 0,
+          "latest_checkpoint": {
+            "key": "checkpoint_1898_with_id.json",
+            "last_modified": "2024-01-30T11:25:11.000Z",
+            "date": "2024-01-30 11:25:11+00:00",
+            "size": 730,
+            "url": "https://rc-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_1898_with_id.json"
+          },
+          "is_recent": false,
+          "age_days": 736,
+          "all_checkpoints": [
+            {
+              "key": "checkpoint_1898_with_id.json",
+              "last_modified": "2024-01-30T11:25:11.000Z",
+              "date": "2024-01-30 11:25:11+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_1898_with_id.json"
+            },
+            {
+              "key": "checkpoint_1899_with_id.json",
+              "last_modified": "2024-01-30T11:25:11.000Z",
+              "date": "2024-01-30 11:25:11+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_1899_with_id.json"
+            },
+            {
+              "key": "checkpoint_1893_with_id.json",
+              "last_modified": "2024-01-30T11:25:10.000Z",
+              "date": "2024-01-30 11:25:10+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_1893_with_id.json"
+            },
+            {
+              "key": "checkpoint_1894_with_id.json",
+              "last_modified": "2024-01-30T11:25:10.000Z",
+              "date": "2024-01-30 11:25:10+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_1894_with_id.json"
+            },
+            {
+              "key": "checkpoint_1895_with_id.json",
+              "last_modified": "2024-01-30T11:25:10.000Z",
+              "date": "2024-01-30 11:25:10+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_1895_with_id.json"
+            },
+            {
+              "key": "checkpoint_1896_with_id.json",
+              "last_modified": "2024-01-30T11:25:10.000Z",
+              "date": "2024-01-30 11:25:10+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_1896_with_id.json"
+            },
+            {
+              "key": "checkpoint_1897_with_id.json",
+              "last_modified": "2024-01-30T11:25:10.000Z",
+              "date": "2024-01-30 11:25:10+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_1897_with_id.json"
+            },
+            {
+              "key": "checkpoint_1889_with_id.json",
+              "last_modified": "2024-01-30T11:25:09.000Z",
+              "date": "2024-01-30 11:25:09+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_1889_with_id.json"
+            },
+            {
+              "key": "checkpoint_1890_with_id.json",
+              "last_modified": "2024-01-30T11:25:09.000Z",
+              "date": "2024-01-30 11:25:09+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_1890_with_id.json"
+            },
+            {
+              "key": "checkpoint_1891_with_id.json",
+              "last_modified": "2024-01-30T11:25:09.000Z",
+              "date": "2024-01-30 11:25:09+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-1.s3.amazonaws.com/checkpoint_1891_with_id.json"
+            }
+          ]
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x7F699C3fc3de4928F1C0abFBa1EaC3fbB5a00D1B",
+      "storage_locations": [
+        "s3://rc-testnet4-sepolia-validator-2/us-east-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://rc-testnet4-sepolia-validator-2/us-east-1",
+          "bucket": "rc-testnet4-sepolia-validator-2",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 1000,
+          "recent_checkpoints": 0,
+          "latest_checkpoint": {
+            "key": "checkpoint_1896_with_id.json",
+            "last_modified": "2024-01-30T11:24:19.000Z",
+            "date": "2024-01-30 11:24:19+00:00",
+            "size": 730,
+            "url": "https://rc-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_1896_with_id.json"
+          },
+          "is_recent": false,
+          "age_days": 736,
+          "all_checkpoints": [
+            {
+              "key": "checkpoint_1896_with_id.json",
+              "last_modified": "2024-01-30T11:24:19.000Z",
+              "date": "2024-01-30 11:24:19+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_1896_with_id.json"
+            },
+            {
+              "key": "checkpoint_1897_with_id.json",
+              "last_modified": "2024-01-30T11:24:19.000Z",
+              "date": "2024-01-30 11:24:19+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_1897_with_id.json"
+            },
+            {
+              "key": "checkpoint_1898_with_id.json",
+              "last_modified": "2024-01-30T11:24:19.000Z",
+              "date": "2024-01-30 11:24:19+00:00",
+              "size": 729,
+              "url": "https://rc-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_1898_with_id.json"
+            },
+            {
+              "key": "checkpoint_1899_with_id.json",
+              "last_modified": "2024-01-30T11:24:19.000Z",
+              "date": "2024-01-30 11:24:19+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_1899_with_id.json"
+            },
+            {
+              "key": "checkpoint_1891_with_id.json",
+              "last_modified": "2024-01-30T11:24:18.000Z",
+              "date": "2024-01-30 11:24:18+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_1891_with_id.json"
+            },
+            {
+              "key": "checkpoint_1892_with_id.json",
+              "last_modified": "2024-01-30T11:24:18.000Z",
+              "date": "2024-01-30 11:24:18+00:00",
+              "size": 729,
+              "url": "https://rc-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_1892_with_id.json"
+            },
+            {
+              "key": "checkpoint_1893_with_id.json",
+              "last_modified": "2024-01-30T11:24:18.000Z",
+              "date": "2024-01-30 11:24:18+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_1893_with_id.json"
+            },
+            {
+              "key": "checkpoint_1894_with_id.json",
+              "last_modified": "2024-01-30T11:24:18.000Z",
+              "date": "2024-01-30 11:24:18+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_1894_with_id.json"
+            },
+            {
+              "key": "checkpoint_1895_with_id.json",
+              "last_modified": "2024-01-30T11:24:18.000Z",
+              "date": "2024-01-30 11:24:18+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_1895_with_id.json"
+            },
+            {
+              "key": "checkpoint_1887_with_id.json",
+              "last_modified": "2024-01-30T11:24:17.000Z",
+              "date": "2024-01-30 11:24:17+00:00",
+              "size": 730,
+              "url": "https://rc-testnet4-sepolia-validator-2.s3.amazonaws.com/checkpoint_1887_with_id.json"
+            }
+          ]
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x49Fb4a4Ef95e7E04Da854e702A13c010449fc5C5",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-b9c3eb3ad1c64408bebf1d91eab12be0/03bc1c731cac4cfcb09572b702d623d5"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-b9c3eb3ad1c64408bebf1d91eab12be0/03bc1c731cac4cfcb09572b702d623d5",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xF7d791DCFD184e2Dfc534DdC086820e264ba019F",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-b9c3eb3ad1c64408bebf1d91eab12be0/200b242f03d440d09f03b2039c817440"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-b9c3eb3ad1c64408bebf1d91eab12be0/200b242f03d440d09f03b2039c817440",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x091b364808a0059Da4043646C75421AC4a940282",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-5553190a59bf404f94beddf983201660/6b1d974925c64e4ebb6008e88df45e1b"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-5553190a59bf404f94beddf983201660/6b1d974925c64e4ebb6008e88df45e1b",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x6E723653f181e690Be07A5B3Da5cd463d778fDCd",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-c0500bf7e52148e69d4865dcf1b1fa3b/bfeb63383a1b42f69d0f4c59fa2de192"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-c0500bf7e52148e69d4865dcf1b1fa3b/bfeb63383a1b42f69d0f4c59fa2de192",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x1BA1b8FE6b275D8E0788727F544dddB228C71d17",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-77e62a37e8fe4a329f5c7587e1c1d743/eff9324fe22e47e99721d46fe44f07a9"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-77e62a37e8fe4a329f5c7587e1c1d743/eff9324fe22e47e99721d46fe44f07a9",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xF357f5870088987420C1Ff276E660DD8b39e141B",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-31e0729c6fbf45c5b077c3dec98facb1/3987d6d834054a6aa9fb50104fe7b0bc"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-31e0729c6fbf45c5b077c3dec98facb1/3987d6d834054a6aa9fb50104fe7b0bc",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x4d85660C721135Bed3548089B4c346e976D1c560",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-70479e84b5f1492f9020a36144e29224/83318c1f5e854cc7991f9a0c02113b10"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-70479e84b5f1492f9020a36144e29224/83318c1f5e854cc7991f9a0c02113b10",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xc45A67e53e64718F9d65A60ec3672905a5763B62",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-58735be6ef304f32867e7fc6c3ae3698/152704ec778d4115b830969388a6d806"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-58735be6ef304f32867e7fc6c3ae3698/152704ec778d4115b830969388a6d806",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x8D33B952412065c8d3996951a171b9C502cD7ad7",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-1a0b0632f80a46a490657b37f5c4f094/3f8e17e5e97840e69cec936854e95b30"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-1a0b0632f80a46a490657b37f5c4f094/3f8e17e5e97840e69cec936854e95b30",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x858831ff0b465BC353A7B93554B9801012361544",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-d48652a32da24713bcd0e7d58d485609/4dfa4565b5cf4fa896f9380cc148fe22"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-d48652a32da24713bcd0e7d58d485609/4dfa4565b5cf4fa896f9380cc148fe22",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x7Fe3d7FcA6A52D3D45bfE16379f2782a7A596A80",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-7493d2f72d044b4d859a52b393ae9c67/b2fb65884cd14cae903295472d13ee41"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-7493d2f72d044b4d859a52b393ae9c67/b2fb65884cd14cae903295472d13ee41",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xD7A02c27f72d16706befCb51324e4cE2eA0A36F7",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-79c22dfe90534f7f917484ab83aed446/f2fd71c56d054d498e9a3195d3499a04"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-79c22dfe90534f7f917484ab83aed446/f2fd71c56d054d498e9a3195d3499a04",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x4B2b606A3eE5AC652009C2E389EE8fAD9753Acfb",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-d3dfb01f4e154cebada3162b1c97cef7/560ba22ddb5f4100bc2c1b8c5a8cf579"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-d3dfb01f4e154cebada3162b1c97cef7/560ba22ddb5f4100bc2c1b8c5a8cf579",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xbbbF6CAe738DeD700b260048AA9C22CFEd1f0b72",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-4b1df9516058494e8e3a59fd7cd6aac0/11bc4404eb27419fa3962b747c8c7e6c"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-4b1df9516058494e8e3a59fd7cd6aac0/11bc4404eb27419fa3962b747c8c7e6c",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xA67d16EFe1354a8eA1F8231CB73be4BF1bD85b9C",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-bd4b542ab6b94aac95d8576f4ad68faa/20a31801410f4fd88d14557fbad672df"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-bd4b542ab6b94aac95d8576f4ad68faa/20a31801410f4fd88d14557fbad672df",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x0cD6BDca2c334eBE7153EB2583E86DFEfe0FC614",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-70b5161037ea4192ab99adc51d5922d6/581748f7891e4bc088ed845a31a64736"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-70b5161037ea4192ab99adc51d5922d6/581748f7891e4bc088ed845a31a64736",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xb190342faA49A5377279D3682742D1419EaA7B93",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-38ab73f8c00c4a4db44b0dbdeba13e8a/e1f3cffb94b5425eb1a7f64259fd37f0"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-38ab73f8c00c4a4db44b0dbdeba13e8a/e1f3cffb94b5425eb1a7f64259fd37f0",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x2A81031e49e0299e74533EDff5b8A9AC7a6CBF4b",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-af858d1bf4b94d9e8b781ef17b4ee7be/aafa5a0f69a34af0a90ef3769a33843d"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-af858d1bf4b94d9e8b781ef17b4ee7be/aafa5a0f69a34af0a90ef3769a33843d",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x214A088c96f44bfEba563a6125C80b3f0F60e562",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-8766bd8662e748d283b9207ea1a90c53/36e8a0459af4480796889adb6a6585be"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-8766bd8662e748d283b9207ea1a90c53/36e8a0459af4480796889adb6a6585be",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x28Ef9F1087D9A526C319Da96fdd05363bEF906d6",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-user-c66f6cdbf3ca4feab2478dc82e83b66d/ad7574c8afe7400b835e02fd8be19885"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-user-c66f6cdbf3ca4feab2478dc82e83b66d/ad7574c8afe7400b835e02fd8be19885",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xa5558cA30cd9952Ab0e2349C274a3736698bD60e",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-08b3807b7f3a448ea547be118b6e4378/c331611f2a6647cdbeef568d9a837531",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-08b3807b7f3a448ea547be118b6e4378/ddeb3ff45b9a4872a28aea2d43a1a5e3"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-08b3807b7f3a448ea547be118b6e4378/c331611f2a6647cdbeef568d9a837531",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-08b3807b7f3a448ea547be118b6e4378/ddeb3ff45b9a4872a28aea2d43a1a5e3",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x3e62Dff1cb16F2902BC7E7400d611cCfc1368981",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-21a96b2ed59d469e899ec3d9cbdee75c/efed9e74ae5a428db74e6959fa5bafe6",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-21a96b2ed59d469e899ec3d9cbdee75c/e08c18f5d44c47beac6259e28b253bed"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-21a96b2ed59d469e899ec3d9cbdee75c/efed9e74ae5a428db74e6959fa5bafe6",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-21a96b2ed59d469e899ec3d9cbdee75c/e08c18f5d44c47beac6259e28b253bed",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xd79e919215c5e9B6eb6935940f460EB35BdA6CB8",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-5ef63b30fac6412facc3131e269fe6a2/f8efc222f5184c8280d1e50f6f3360fd"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-5ef63b30fac6412facc3131e269fe6a2/f8efc222f5184c8280d1e50f6f3360fd",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xf243a4e789952FC49047Ed59be378816dBF930c8",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-14cff867074640fc84562606c410b121/58c1468a44ea431f95bd568b991ceda6",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-14cff867074640fc84562606c410b121/f90917bd9b8149e99e812bd2e4905a58"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-14cff867074640fc84562606c410b121/58c1468a44ea431f95bd568b991ceda6",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-14cff867074640fc84562606c410b121/f90917bd9b8149e99e812bd2e4905a58",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xe92F5f01abe73e92D2De84C3Fd19ab913CFBDa59",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-14cff867074640fc84562606c410b121/150b5cabf0f74e26b94a6cc9712aa1a7",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-14cff867074640fc84562606c410b121/89ab8a4a335343f080c52055b66f17ad",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-14cff867074640fc84562606c410b121/6fd6d7b85bae4ef8a31b5718c946e2a2"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-14cff867074640fc84562606c410b121/150b5cabf0f74e26b94a6cc9712aa1a7",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-14cff867074640fc84562606c410b121/89ab8a4a335343f080c52055b66f17ad",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-14cff867074640fc84562606c410b121/6fd6d7b85bae4ef8a31b5718c946e2a2",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xC79fFFdeafeA78385fF6fb94816F5FEa440784F1",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-b524edf7b4c048b1a634735c3d867edc/d61d86934d944a3c876ea3e3ffb1625f",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-b524edf7b4c048b1a634735c3d867edc/c59f231a96ab41188542bc7a461bfadd"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-b524edf7b4c048b1a634735c3d867edc/d61d86934d944a3c876ea3e3ffb1625f",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-b524edf7b4c048b1a634735c3d867edc/c59f231a96ab41188542bc7a461bfadd",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x14868f93aBf1c7A1fE12503542289E1c84a28f29",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-b5159406a6fe4eb294cb6b713a6572fb/f9f331f6211e41c08cabdf8537128ddb"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-b5159406a6fe4eb294cb6b713a6572fb/f9f331f6211e41c08cabdf8537128ddb",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xb4d34e589daF5674d8aF58E12DC3db079dbFcB43",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-d69fdfec46ab427d8998b17822b3a6f7/833e03707df94be9aef8912c799898e4",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-d69fdfec46ab427d8998b17822b3a6f7/f2d6f62a0b8f4b24a586392df27ebd3c"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-d69fdfec46ab427d8998b17822b3a6f7/833e03707df94be9aef8912c799898e4",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-d69fdfec46ab427d8998b17822b3a6f7/f2d6f62a0b8f4b24a586392df27ebd3c",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x72F42649fEc77a26A34a6538d625E2B7EDB1D00E",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-d69fdfec46ab427d8998b17822b3a6f7/f2d6f62a0b8f4b24a586392df27ebd3c",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-30972b10effa4c77b47c48fea96aa4ee/edaf41f59e554b13ba71735cc1d99a37",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-44e0dc19acc1437a8621bc1c80dc6cc6/97e19556cf024d3d8bfbf536cfd08bb1",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-44e0dc19acc1437a8621bc1c80dc6cc6/7bc283d1299e4c329da58e13036b9385"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-d69fdfec46ab427d8998b17822b3a6f7/f2d6f62a0b8f4b24a586392df27ebd3c",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-30972b10effa4c77b47c48fea96aa4ee/edaf41f59e554b13ba71735cc1d99a37",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-44e0dc19acc1437a8621bc1c80dc6cc6/97e19556cf024d3d8bfbf536cfd08bb1",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-44e0dc19acc1437a8621bc1c80dc6cc6/7bc283d1299e4c329da58e13036b9385",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xAa80451c25E954f7e6B5aDE13fc3657C48edBafD",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-de2ed5cecf244f649f9e23df59f0a700/9a451feefcbf4609bb5e6f31b80035ae",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-a6082593a6654a9fa2d808b21172cc16/eaa8c40713044b1886310a24204fb53b"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-de2ed5cecf244f649f9e23df59f0a700/9a451feefcbf4609bb5e6f31b80035ae",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-a6082593a6654a9fa2d808b21172cc16/eaa8c40713044b1886310a24204fb53b",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x843A180ae15B1DA7A4b291cf778dA5ACf9aCD5Ff",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-03d113fe2a514060b7bde472086b5136/dc90a004d0524fa29c287e1de4ae3abf"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-03d113fe2a514060b7bde472086b5136/dc90a004d0524fa29c287e1de4ae3abf",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xaf54e9BD29c20A11cFe40B9aC333412CBCe4648e",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-7e192ea7903e4ee39114b8a12588b2ce/2885b8687b9c4a88b6eb32da5ea6f7d7",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-16a61dbad1534eee9cbfa4b7fb56db6e/73f1974b889247c2aa172d065fd2981f",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-16a61dbad1534eee9cbfa4b7fb56db6e/92c7bedef7f14ccaa98f10dddfa0346d"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-7e192ea7903e4ee39114b8a12588b2ce/2885b8687b9c4a88b6eb32da5ea6f7d7",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-16a61dbad1534eee9cbfa4b7fb56db6e/73f1974b889247c2aa172d065fd2981f",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-16a61dbad1534eee9cbfa4b7fb56db6e/92c7bedef7f14ccaa98f10dddfa0346d",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x0bf7DfA172728CE90ec7CF468F00833E2fb823F2",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-7c1a354477824be18715907ac101d30b/337be70c5ef84e22a33f684a8a53cba3"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-7c1a354477824be18715907ac101d30b/337be70c5ef84e22a33f684a8a53cba3",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xc24ca171A00A11650BD5634335e9b4b8C2239c9a",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-8683c35bff14429fa2b45014e33596ee/e745b6e0020348d4bba4c44ce8c51b10"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-8683c35bff14429fa2b45014e33596ee/e745b6e0020348d4bba4c44ce8c51b10",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x806ad8B19C5a49C7fBc51ac4d9B4e0899C2Bf5C2",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-3de01c9726db407383449704631653cd/e88f35ff8ead4e16bb9852d44ae16259",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-6ef3f12849f445198c57ac350b408346/10a9cd15d6d5496a867b8763f1dfbabd"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-3de01c9726db407383449704631653cd/e88f35ff8ead4e16bb9852d44ae16259",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-6ef3f12849f445198c57ac350b408346/10a9cd15d6d5496a867b8763f1dfbabd",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xdE8995C8562E62620a9Cbd741dCd1b1F162Aef0F",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-97e3a43c101d47b3b3518e8528ec2f08/75d74aa3357344b4a4e2fba29c9b6014",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-96772fd16437412e90fe7ae13e26a38d/a1df7aedce7d4639b9a026ea6b755aeb",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-0ce522413b8a4616b48d2668a59421fc/2b88723f8a5847df80c03c396f47c9d0",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-0ce522413b8a4616b48d2668a59421fc/0f4de9c591fe4015a5de81c6705d8792",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-28d409bfc52e46b6ada8d5f5a20250fe/eb3dc25fb467404f85fc917b2288b34e",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-a6cfdcf933e3497788e03164387e58bf/cd9eb933bd73473f8ed130845ee7371a",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-285b0d13ee9e42b498eb9ae610c92d71/2aa65b24cbca41858ca012462d975abc"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-97e3a43c101d47b3b3518e8528ec2f08/75d74aa3357344b4a4e2fba29c9b6014",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-96772fd16437412e90fe7ae13e26a38d/a1df7aedce7d4639b9a026ea6b755aeb",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-0ce522413b8a4616b48d2668a59421fc/2b88723f8a5847df80c03c396f47c9d0",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-0ce522413b8a4616b48d2668a59421fc/0f4de9c591fe4015a5de81c6705d8792",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-28d409bfc52e46b6ada8d5f5a20250fe/eb3dc25fb467404f85fc917b2288b34e",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-a6cfdcf933e3497788e03164387e58bf/cd9eb933bd73473f8ed130845ee7371a",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-285b0d13ee9e42b498eb9ae610c92d71/2aa65b24cbca41858ca012462d975abc",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x96C7e8EE38d1cF1d25499BabC70DEB620A0445C2",
+      "storage_locations": [
+        "s3://notional-2-signatures/ap-northeast-1",
+        "s3://notional-sepolia-signatures/ap-northeast-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://notional-2-signatures/ap-northeast-1",
+          "bucket": "notional-2-signatures",
+          "region": "ap-northeast-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://notional-sepolia-signatures/ap-northeast-1",
+          "bucket": "notional-sepolia-signatures",
+          "region": "ap-northeast-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x7aEE9a631Fc016E5d6d7df8e6030326E95870665",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-0ce522413b8a4616b48d2668a59421fc/13772bb9573b4791820ac33065cadee4"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-0ce522413b8a4616b48d2668a59421fc/13772bb9573b4791820ac33065cadee4",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xC8bD5B1aD2FD42Ef9D92B32F38E9b0DFAC875Be4",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-e8d38b8fc2fb4411b058a940ef71845b/460c6f1d18dd4bce8226bd621e08bec2",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-fdbc744be47446989dd07b2626938227/da778fcd831c4074b9678cb34ac8bf12"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-e8d38b8fc2fb4411b058a940ef71845b/460c6f1d18dd4bce8226bd621e08bec2",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-fdbc744be47446989dd07b2626938227/da778fcd831c4074b9678cb34ac8bf12",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x9d08908eB6A345EE6e9722168f7f8b09d0C5685f",
+      "storage_locations": [
+        "s3://hyperlane-validator-sepolia-scrollsepolia/us-west-2/s3://hyperlane-validator-sepolia-scrollsepolia/419/",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-653cc5f0bc3f4231b24971f2f5be2bd6/e8afd34e31244d5784219ee01cf69451"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://hyperlane-validator-sepolia-scrollsepolia/us-west-2/s3://hyperlane-validator-sepolia-scrollsepolia/419/",
+          "bucket": "hyperlane-validator-sepolia-scrollsepolia",
+          "region": "us-west-2",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-653cc5f0bc3f4231b24971f2f5be2bd6/e8afd34e31244d5784219ee01cf69451",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x4bf0EBBE588fe6a695dF4dD4abedf29e5017D99A",
+      "storage_locations": [
+        "s3://hyperlane-validator-test/us-west-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://hyperlane-validator-test/us-west-1",
+          "bucket": "hyperlane-validator-test",
+          "region": "us-west-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x4878d2700EF247B7bd0Ae4F0120E8130dfc1083d",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-80e499762a6f4b9db1226bcabf7d95cc/9ac3c728fb984d0e9c29f0cfa05c2e59"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-80e499762a6f4b9db1226bcabf7d95cc/9ac3c728fb984d0e9c29f0cfa05c2e59",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x8c648786763195b711398D960a5d4B7668C7A7e0",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-93f6b4433e0c4b76ae6dd98ea8ff9270/a018e39f1e404a9ca59c67b4a76854e7",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-0eddee8d01ed4c31938b26c3c3fd7715/565760789d0c485aa87631b055d3d8df"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-93f6b4433e0c4b76ae6dd98ea8ff9270/a018e39f1e404a9ca59c67b4a76854e7",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-0eddee8d01ed4c31938b26c3c3fd7715/565760789d0c485aa87631b055d3d8df",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xA5Fb4293fe4EEbbc0b7946c4D61B85fd75C4abb8",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-86cc79f7721645cc84d636e03dee3255/f90131aa32cb44ea813eae14864ed7d8"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-86cc79f7721645cc84d636e03dee3255/f90131aa32cb44ea813eae14864ed7d8",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xdFB4fbbaf602C76E5B30d0E97F01654D71F23e54",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-9f76fa442e6742e49c4506a80c06dd31/f2dc78e8a21c4158a500693c549da9eb",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-a56be93f4ec042259643f3b0972e6a64/7ec3b9afcf7e464f88a6a7625da1c294"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-9f76fa442e6742e49c4506a80c06dd31/f2dc78e8a21c4158a500693c549da9eb",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-a56be93f4ec042259643f3b0972e6a64/7ec3b9afcf7e464f88a6a7625da1c294",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xAf8Ad63D23159C3c8767EdDd25bd1C262C0B387F",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-7b501c3a63864b338693218a652cc0a1/fcc514398b6b416a83d27e78edf05611"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-7b501c3a63864b338693218a652cc0a1/fcc514398b6b416a83d27e78edf05611",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x2FCCba2f198066c5Ea3e414dD50F78E25c3aF552",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-de507b6007814cffb91690bafc1c4d2d/1eab98fa1303404d873593264e6c672f"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-de507b6007814cffb91690bafc1c4d2d/1eab98fa1303404d873593264e6c672f",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xb3B0601aeC5A363C535A709585Ad3cDD9965CC94",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-d647e47b4ff3408693ff6f88a30f9114/338aec67b21f476f86a5fe860edb3953",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-7aeaf4e261624a6d8fc4436d9d1e531e/5ee2eabc30ea4ca3b405016c2137e7a8",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-7aeaf4e261624a6d8fc4436d9d1e531e/ace31feed9cd44a290b70a200e353986",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-0665714c833548dda675dbed42b20613/ed982ec67b454d21b742b696cf1a79d9"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-d647e47b4ff3408693ff6f88a30f9114/338aec67b21f476f86a5fe860edb3953",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-7aeaf4e261624a6d8fc4436d9d1e531e/5ee2eabc30ea4ca3b405016c2137e7a8",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-7aeaf4e261624a6d8fc4436d9d1e531e/ace31feed9cd44a290b70a200e353986",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-0665714c833548dda675dbed42b20613/ed982ec67b454d21b742b696cf1a79d9",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xC908E76871406DF6f866b068bEB0100eA678d9F6",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-71fd3243e37c4854b54f83d6a7c0e139/569702cf5e714de8b0d2f4eb58299642",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-fadafb52acb3423c857c4404cfd1ebf4/9217235ef03042fa8fdc55389d4c884e",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-fadafb52acb3423c857c4404cfd1ebf4/b1fd74109ce043c4b9ad77ea5f574064",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-fadafb52acb3423c857c4404cfd1ebf4/3748dbfb864c49bc9a49bc9d88d07b2b",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-fadafb52acb3423c857c4404cfd1ebf4/672f0ce9fa6842a4bbbceb73b40e2825",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-dbd95f6269f24df8a8cc9690836ebe15/92c0f998755c47b6b52fe33c9ad194b9",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-3a26f37b9d864e63bd11ee809eb40d1f/65158b882eb1478c91131cbd9d03a07b",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-3a26f37b9d864e63bd11ee809eb40d1f/34f0491496f34004a589f76b6925b92b",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-3a26f37b9d864e63bd11ee809eb40d1f/94a09048d663483b82aa3259e26288e4",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-19f2563ca5174f9797ead06ef767d3a0/233bbb95133b4c5c9cbf8741993467ec",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-f2e1bb10bb604ae99c8043aa292e05e7/17680d3fc14943e2bcb0b297b8756a0f",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-174bca15a1a04b7d880668c872e1c9d8/1a8cbf8fae8e4e219e7181331cec4708",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-174bca15a1a04b7d880668c872e1c9d8/d1471f1bb9634a26a4a49ad348e2d2a0",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-174bca15a1a04b7d880668c872e1c9d8/9c96e1b0b4ef466e88aa3715d6b4ed10",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-033b433e02b747079cd86c9d9718909d/ad90bd7b14784c9e993e08d0ee0047c3",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-1b249db928eb4c43b65f444d618bbdc0/9c0dcffce5e1421cb2b234d88fb3cf18",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-74ff19d92f9e4f0bbec0250467441188/dd7049767f784cce950693bf85a3e398",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-c4d40ca5bcb1493592be4fa6444f8f85/98c7f7e18c464bfe82a96167f04e5c43"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-71fd3243e37c4854b54f83d6a7c0e139/569702cf5e714de8b0d2f4eb58299642",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-fadafb52acb3423c857c4404cfd1ebf4/9217235ef03042fa8fdc55389d4c884e",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-fadafb52acb3423c857c4404cfd1ebf4/b1fd74109ce043c4b9ad77ea5f574064",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-fadafb52acb3423c857c4404cfd1ebf4/3748dbfb864c49bc9a49bc9d88d07b2b",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-fadafb52acb3423c857c4404cfd1ebf4/672f0ce9fa6842a4bbbceb73b40e2825",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-dbd95f6269f24df8a8cc9690836ebe15/92c0f998755c47b6b52fe33c9ad194b9",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-3a26f37b9d864e63bd11ee809eb40d1f/65158b882eb1478c91131cbd9d03a07b",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-3a26f37b9d864e63bd11ee809eb40d1f/34f0491496f34004a589f76b6925b92b",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-3a26f37b9d864e63bd11ee809eb40d1f/94a09048d663483b82aa3259e26288e4",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-19f2563ca5174f9797ead06ef767d3a0/233bbb95133b4c5c9cbf8741993467ec",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-f2e1bb10bb604ae99c8043aa292e05e7/17680d3fc14943e2bcb0b297b8756a0f",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-174bca15a1a04b7d880668c872e1c9d8/1a8cbf8fae8e4e219e7181331cec4708",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-174bca15a1a04b7d880668c872e1c9d8/d1471f1bb9634a26a4a49ad348e2d2a0",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-174bca15a1a04b7d880668c872e1c9d8/9c96e1b0b4ef466e88aa3715d6b4ed10",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-033b433e02b747079cd86c9d9718909d/ad90bd7b14784c9e993e08d0ee0047c3",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-1b249db928eb4c43b65f444d618bbdc0/9c0dcffce5e1421cb2b234d88fb3cf18",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-74ff19d92f9e4f0bbec0250467441188/dd7049767f784cce950693bf85a3e398",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-c4d40ca5bcb1493592be4fa6444f8f85/98c7f7e18c464bfe82a96167f04e5c43",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x48BD7b91B0d459f54cABe2228e3e4D0CcC920346",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-7aeaf4e261624a6d8fc4436d9d1e531e/5ee2eabc30ea4ca3b405016c2137e7a8"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-7aeaf4e261624a6d8fc4436d9d1e531e/5ee2eabc30ea4ca3b405016c2137e7a8",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xE154280046030e4219c45872Fa42BE0450444444",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-9756640ed83e4cd5a80bea836a6fca52/254ad5cf1c124c47b74ee5761a62bb1e"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-9756640ed83e4cd5a80bea836a6fca52/254ad5cf1c124c47b74ee5761a62bb1e",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x1950498e95274Dc79Fbca238C2BE53684D69886F",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-6fb804b6397347748077de40788ebb69/881c83caf161437687f489dd5983530f",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-6fb804b6397347748077de40788ebb69/2b2aea658d7b4be894bbf38cb0813189",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-6fb804b6397347748077de40788ebb69/b9b317f818894423a48cf36ae37a4c15",
+        "s3://hyperlane-validator-signatures-sudeep-linea/us-east-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-6fb804b6397347748077de40788ebb69/881c83caf161437687f489dd5983530f",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-6fb804b6397347748077de40788ebb69/2b2aea658d7b4be894bbf38cb0813189",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-6fb804b6397347748077de40788ebb69/b9b317f818894423a48cf36ae37a4c15",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://hyperlane-validator-signatures-sudeep-linea/us-east-1",
+          "bucket": "hyperlane-validator-signatures-sudeep-linea",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 1000,
+          "recent_checkpoints": 0,
+          "latest_checkpoint": {
+            "key": "checkpoint_100897_with_id.json",
+            "last_modified": "2024-08-09T16:26:08.000Z",
+            "date": "2024-08-09 16:26:08+00:00",
+            "size": 731,
+            "url": "https://hyperlane-validator-signatures-sudeep-linea.s3.amazonaws.com/checkpoint_100897_with_id.json"
+          },
+          "is_recent": false,
+          "age_days": 543,
+          "all_checkpoints": [
+            {
+              "key": "checkpoint_100897_with_id.json",
+              "last_modified": "2024-08-09T16:26:08.000Z",
+              "date": "2024-08-09 16:26:08+00:00",
+              "size": 731,
+              "url": "https://hyperlane-validator-signatures-sudeep-linea.s3.amazonaws.com/checkpoint_100897_with_id.json"
+            },
+            {
+              "key": "checkpoint_100898_with_id.json",
+              "last_modified": "2024-08-09T16:26:08.000Z",
+              "date": "2024-08-09 16:26:08+00:00",
+              "size": 732,
+              "url": "https://hyperlane-validator-signatures-sudeep-linea.s3.amazonaws.com/checkpoint_100898_with_id.json"
+            },
+            {
+              "key": "checkpoint_100899_with_id.json",
+              "last_modified": "2024-08-09T16:26:08.000Z",
+              "date": "2024-08-09 16:26:08+00:00",
+              "size": 732,
+              "url": "https://hyperlane-validator-signatures-sudeep-linea.s3.amazonaws.com/checkpoint_100899_with_id.json"
+            },
+            {
+              "key": "checkpoint_100895_with_id.json",
+              "last_modified": "2024-08-09T16:26:07.000Z",
+              "date": "2024-08-09 16:26:07+00:00",
+              "size": 732,
+              "url": "https://hyperlane-validator-signatures-sudeep-linea.s3.amazonaws.com/checkpoint_100895_with_id.json"
+            },
+            {
+              "key": "checkpoint_100896_with_id.json",
+              "last_modified": "2024-08-09T16:26:07.000Z",
+              "date": "2024-08-09 16:26:07+00:00",
+              "size": 732,
+              "url": "https://hyperlane-validator-signatures-sudeep-linea.s3.amazonaws.com/checkpoint_100896_with_id.json"
+            },
+            {
+              "key": "checkpoint_100892_with_id.json",
+              "last_modified": "2024-08-09T16:26:06.000Z",
+              "date": "2024-08-09 16:26:06+00:00",
+              "size": 731,
+              "url": "https://hyperlane-validator-signatures-sudeep-linea.s3.amazonaws.com/checkpoint_100892_with_id.json"
+            },
+            {
+              "key": "checkpoint_100893_with_id.json",
+              "last_modified": "2024-08-09T16:26:06.000Z",
+              "date": "2024-08-09 16:26:06+00:00",
+              "size": 732,
+              "url": "https://hyperlane-validator-signatures-sudeep-linea.s3.amazonaws.com/checkpoint_100893_with_id.json"
+            },
+            {
+              "key": "checkpoint_100894_with_id.json",
+              "last_modified": "2024-08-09T16:26:06.000Z",
+              "date": "2024-08-09 16:26:06+00:00",
+              "size": 732,
+              "url": "https://hyperlane-validator-signatures-sudeep-linea.s3.amazonaws.com/checkpoint_100894_with_id.json"
+            },
+            {
+              "key": "checkpoint_100890_with_id.json",
+              "last_modified": "2024-08-09T16:26:05.000Z",
+              "date": "2024-08-09 16:26:05+00:00",
+              "size": 731,
+              "url": "https://hyperlane-validator-signatures-sudeep-linea.s3.amazonaws.com/checkpoint_100890_with_id.json"
+            },
+            {
+              "key": "checkpoint_100891_with_id.json",
+              "last_modified": "2024-08-09T16:26:05.000Z",
+              "date": "2024-08-09 16:26:05+00:00",
+              "size": 732,
+              "url": "https://hyperlane-validator-signatures-sudeep-linea.s3.amazonaws.com/checkpoint_100891_with_id.json"
+            }
+          ]
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x42d00554423B7374B2eF12fd70E6504BEf1AEA01",
+      "storage_locations": [
+        "s3://hyperlane-validator-signatures-hieu-sepolia/ap-southeast-1",
+        "s3://hyperlane-signatures-sepolia/ap-southeast-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://hyperlane-validator-signatures-hieu-sepolia/ap-southeast-1",
+          "bucket": "hyperlane-validator-signatures-hieu-sepolia",
+          "region": "ap-southeast-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://hyperlane-signatures-sepolia/ap-southeast-1",
+          "bucket": "hyperlane-signatures-sepolia",
+          "region": "ap-southeast-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xda1B6431a91Ff74a33ADaaB9F77c4D244222263F",
+      "storage_locations": [
+        "s3://signatures-sepolia/us-east-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://signatures-sepolia/us-east-1",
+          "bucket": "signatures-sepolia",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x0f2163CE5209Fdc97710Bcee1C0d201b019242f4",
+      "storage_locations": [
+        "s3://hyperlane-validator-signatures-bit2-sepolia/us-east-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://hyperlane-validator-signatures-bit2-sepolia/us-east-1",
+          "bucket": "hyperlane-validator-signatures-bit2-sepolia",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x1960b5B3e1883aec655931a09F49524f1e3F9b77",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-2ff1048e191d46378af0d26611ae6d28/cb4b0b181311496c92e0da8d96afae16",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-2ff1048e191d46378af0d26611ae6d28/1647947fbaf04736818c9fbea1b1c439",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-2ff1048e191d46378af0d26611ae6d28/7fc586d981b44a619934ed67b9df0543"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-2ff1048e191d46378af0d26611ae6d28/cb4b0b181311496c92e0da8d96afae16",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-2ff1048e191d46378af0d26611ae6d28/1647947fbaf04736818c9fbea1b1c439",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-2ff1048e191d46378af0d26611ae6d28/7fc586d981b44a619934ed67b9df0543",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xa92e8a43D15Fb19F966eBfeB84981311c220899d",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-0d1378e7e4224c6f84a45e85323c2922/0ae72ce058e24e1cb4746d88eec5af74"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-0d1378e7e4224c6f84a45e85323c2922/0ae72ce058e24e1cb4746d88eec5af74",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x1364040c80E78b4C706fcAf5f385c4129895324c",
+      "storage_locations": [
+        "s3://avs-hyperlane-sepolia-signatures/ap-northeast-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://avs-hyperlane-sepolia-signatures/ap-northeast-1",
+          "bucket": "avs-hyperlane-sepolia-signatures",
+          "region": "ap-northeast-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xba1A058B7f452e626e768724189e20E03b3831fF",
+      "storage_locations": [
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-b072254f455b4f41a417e28b590ecbb5/547875a6249a41dc92aa1ec88bd77798",
+        "s3://kurtosis-cloud/us-east-1/cloud-instance-c44a5ea49f9c42f19d05d8d9ae59cc21/ab56e6410a1f4fa387ef664e039f6b25"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-b072254f455b4f41a417e28b590ecbb5/547875a6249a41dc92aa1ec88bd77798",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://kurtosis-cloud/us-east-1/cloud-instance-c44a5ea49f9c42f19d05d8d9ae59cc21/ab56e6410a1f4fa387ef664e039f6b25",
+          "bucket": "kurtosis-cloud",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xCC54851Cf769d30AaeAd0ACeF6cDFf77B7f4288E",
+      "storage_locations": [
+        "s3://avs-hyperlane-kelp-sepolia-signatures/ap-northeast-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://avs-hyperlane-kelp-sepolia-signatures/ap-northeast-1",
+          "bucket": "avs-hyperlane-kelp-sepolia-signatures",
+          "region": "ap-northeast-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x6BB959F80b562d66CB182d2FcD1bA0F274838945",
+      "storage_locations": [
+        "s3://henez-prod--berrahenez--sepolia-signatures/us-east-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://henez-prod--berrahenez--sepolia-signatures/us-east-1",
+          "bucket": "henez-prod--berrahenez--sepolia-signatures",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 1000,
+          "recent_checkpoints": 0,
+          "latest_checkpoint": {
+            "key": "checkpoint_0_with_id.json",
+            "last_modified": "2024-08-30T23:24:36.000Z",
+            "date": "2024-08-30 23:24:36+00:00",
+            "size": 725,
+            "url": "https://henez-prod--berrahenez--sepolia-signatures.s3.amazonaws.com/checkpoint_0_with_id.json"
+          },
+          "is_recent": false,
+          "age_days": 522,
+          "all_checkpoints": [
+            {
+              "key": "checkpoint_0_with_id.json",
+              "last_modified": "2024-08-30T23:24:36.000Z",
+              "date": "2024-08-30 23:24:36+00:00",
+              "size": 725,
+              "url": "https://henez-prod--berrahenez--sepolia-signatures.s3.amazonaws.com/checkpoint_0_with_id.json"
+            },
+            {
+              "key": "checkpoint_1000_with_id.json",
+              "last_modified": "2024-08-30T23:21:56.000Z",
+              "date": "2024-08-30 23:21:56+00:00",
+              "size": 730,
+              "url": "https://henez-prod--berrahenez--sepolia-signatures.s3.amazonaws.com/checkpoint_1000_with_id.json"
+            },
+            {
+              "key": "checkpoint_1001_with_id.json",
+              "last_modified": "2024-08-30T23:21:56.000Z",
+              "date": "2024-08-30 23:21:56+00:00",
+              "size": 730,
+              "url": "https://henez-prod--berrahenez--sepolia-signatures.s3.amazonaws.com/checkpoint_1001_with_id.json"
+            },
+            {
+              "key": "checkpoint_1002_with_id.json",
+              "last_modified": "2024-08-30T23:21:56.000Z",
+              "date": "2024-08-30 23:21:56+00:00",
+              "size": 730,
+              "url": "https://henez-prod--berrahenez--sepolia-signatures.s3.amazonaws.com/checkpoint_1002_with_id.json"
+            },
+            {
+              "key": "checkpoint_1003_with_id.json",
+              "last_modified": "2024-08-30T23:21:56.000Z",
+              "date": "2024-08-30 23:21:56+00:00",
+              "size": 730,
+              "url": "https://henez-prod--berrahenez--sepolia-signatures.s3.amazonaws.com/checkpoint_1003_with_id.json"
+            },
+            {
+              "key": "checkpoint_1004_with_id.json",
+              "last_modified": "2024-08-30T23:21:56.000Z",
+              "date": "2024-08-30 23:21:56+00:00",
+              "size": 730,
+              "url": "https://henez-prod--berrahenez--sepolia-signatures.s3.amazonaws.com/checkpoint_1004_with_id.json"
+            },
+            {
+              "key": "checkpoint_1005_with_id.json",
+              "last_modified": "2024-08-30T23:21:56.000Z",
+              "date": "2024-08-30 23:21:56+00:00",
+              "size": 730,
+              "url": "https://henez-prod--berrahenez--sepolia-signatures.s3.amazonaws.com/checkpoint_1005_with_id.json"
+            },
+            {
+              "key": "checkpoint_1006_with_id.json",
+              "last_modified": "2024-08-30T23:21:56.000Z",
+              "date": "2024-08-30 23:21:56+00:00",
+              "size": 730,
+              "url": "https://henez-prod--berrahenez--sepolia-signatures.s3.amazonaws.com/checkpoint_1006_with_id.json"
+            },
+            {
+              "key": "checkpoint_1007_with_id.json",
+              "last_modified": "2024-08-30T23:21:55.000Z",
+              "date": "2024-08-30 23:21:55+00:00",
+              "size": 730,
+              "url": "https://henez-prod--berrahenez--sepolia-signatures.s3.amazonaws.com/checkpoint_1007_with_id.json"
+            },
+            {
+              "key": "checkpoint_1008_with_id.json",
+              "last_modified": "2024-08-30T23:21:55.000Z",
+              "date": "2024-08-30 23:21:55+00:00",
+              "size": 730,
+              "url": "https://henez-prod--berrahenez--sepolia-signatures.s3.amazonaws.com/checkpoint_1008_with_id.json"
+            }
+          ]
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x33A37c6A25E50c41fe987f4986273DfD24C4fff1",
+      "storage_locations": [
+        "s3://hyperlane-testnet4-zksyncsepolia-sepolia-validator-0/us-east-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://hyperlane-testnet4-zksyncsepolia-sepolia-validator-0/us-east-1",
+          "bucket": "hyperlane-testnet4-zksyncsepolia-sepolia-validator-0",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 1000,
+          "recent_checkpoints": 0,
+          "latest_checkpoint": {
+            "key": "checkpoint_832277_with_id.json",
+            "last_modified": "2024-10-08T20:59:20.000Z",
+            "date": "2024-10-08 20:59:20+00:00",
+            "size": 731,
+            "url": "https://hyperlane-testnet4-zksyncsepolia-sepolia-validator-0.s3.amazonaws.com/checkpoint_832277_with_id.json"
+          },
+          "is_recent": false,
+          "age_days": 483,
+          "all_checkpoints": [
+            {
+              "key": "checkpoint_832277_with_id.json",
+              "last_modified": "2024-10-08T20:59:20.000Z",
+              "date": "2024-10-08 20:59:20+00:00",
+              "size": 731,
+              "url": "https://hyperlane-testnet4-zksyncsepolia-sepolia-validator-0.s3.amazonaws.com/checkpoint_832277_with_id.json"
+            },
+            {
+              "key": "checkpoint_832278_with_id.json",
+              "last_modified": "2024-10-08T20:59:20.000Z",
+              "date": "2024-10-08 20:59:20+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-zksyncsepolia-sepolia-validator-0.s3.amazonaws.com/checkpoint_832278_with_id.json"
+            },
+            {
+              "key": "checkpoint_832279_with_id.json",
+              "last_modified": "2024-10-08T20:59:19.000Z",
+              "date": "2024-10-08 20:59:19+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-zksyncsepolia-sepolia-validator-0.s3.amazonaws.com/checkpoint_832279_with_id.json"
+            },
+            {
+              "key": "checkpoint_832280_with_id.json",
+              "last_modified": "2024-10-08T20:59:19.000Z",
+              "date": "2024-10-08 20:59:19+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-zksyncsepolia-sepolia-validator-0.s3.amazonaws.com/checkpoint_832280_with_id.json"
+            },
+            {
+              "key": "checkpoint_832281_with_id.json",
+              "last_modified": "2024-10-08T20:59:19.000Z",
+              "date": "2024-10-08 20:59:19+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-zksyncsepolia-sepolia-validator-0.s3.amazonaws.com/checkpoint_832281_with_id.json"
+            },
+            {
+              "key": "checkpoint_832282_with_id.json",
+              "last_modified": "2024-10-08T20:59:19.000Z",
+              "date": "2024-10-08 20:59:19+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-zksyncsepolia-sepolia-validator-0.s3.amazonaws.com/checkpoint_832282_with_id.json"
+            },
+            {
+              "key": "checkpoint_832283_with_id.json",
+              "last_modified": "2024-10-08T20:59:18.000Z",
+              "date": "2024-10-08 20:59:18+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-zksyncsepolia-sepolia-validator-0.s3.amazonaws.com/checkpoint_832283_with_id.json"
+            },
+            {
+              "key": "checkpoint_832284_with_id.json",
+              "last_modified": "2024-10-08T20:59:18.000Z",
+              "date": "2024-10-08 20:59:18+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-zksyncsepolia-sepolia-validator-0.s3.amazonaws.com/checkpoint_832284_with_id.json"
+            },
+            {
+              "key": "checkpoint_832285_with_id.json",
+              "last_modified": "2024-10-08T20:59:18.000Z",
+              "date": "2024-10-08 20:59:18+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-zksyncsepolia-sepolia-validator-0.s3.amazonaws.com/checkpoint_832285_with_id.json"
+            },
+            {
+              "key": "checkpoint_832286_with_id.json",
+              "last_modified": "2024-10-08T20:59:17.000Z",
+              "date": "2024-10-08 20:59:17+00:00",
+              "size": 732,
+              "url": "https://hyperlane-testnet4-zksyncsepolia-sepolia-validator-0.s3.amazonaws.com/checkpoint_832286_with_id.json"
+            }
+          ]
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xA6c998F0DB2b56D7a63FAF30a9B677C8B9b6faab",
+      "storage_locations": [
+        "s3://pops-hyperlane-signatures/us-west-1/sepolia"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://pops-hyperlane-signatures/us-west-1/sepolia",
+          "bucket": "pops-hyperlane-signatures",
+          "region": "us-west-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xECc385f83Bd82Cc3C9b6C6645B92E2A92fdBD7e8",
+      "storage_locations": [
+        "s3://hyperlane-validator-signatures-1-lukso-testnet/eu-central-1/lukso-testnet"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://hyperlane-validator-signatures-1-lukso-testnet/eu-central-1/lukso-testnet",
+          "bucket": "hyperlane-validator-signatures-1-lukso-testnet",
+          "region": "eu-central-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xB41dcB3De7b9b6Bf2Fe7B40F1A45EC895400617C",
+      "storage_locations": [
+        "s3://hyperlane-validator-signatures-sjc-2-sepolia/us-east-2/sepolia"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://hyperlane-validator-signatures-sjc-2-sepolia/us-east-2/sepolia",
+          "bucket": "hyperlane-validator-signatures-sjc-2-sepolia",
+          "region": "us-east-2",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0x01227B3361d200722c3656f899b48dE187A32494",
+      "storage_locations": [
+        "s3://hyperlane-validator-signatures-mitocateth/ap-northeast-2"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://hyperlane-validator-signatures-mitocateth/ap-northeast-2",
+          "bucket": "hyperlane-validator-signatures-mitocateth",
+          "region": "ap-northeast-2",
+          "success": true,
+          "total_checkpoints": 624,
+          "recent_checkpoints": 624,
+          "latest_checkpoint": {
+            "key": "checkpoint_0_with_id.json",
+            "last_modified": "2026-01-29T07:32:25.000Z",
+            "date": "2026-01-29 07:32:25+00:00",
+            "size": 727,
+            "url": "https://hyperlane-validator-signatures-mitocateth.s3.amazonaws.com/checkpoint_0_with_id.json"
+          },
+          "is_recent": true,
+          "age_days": 6,
+          "all_checkpoints": [
+            {
+              "key": "checkpoint_0_with_id.json",
+              "last_modified": "2026-01-29T07:32:25.000Z",
+              "date": "2026-01-29 07:32:25+00:00",
+              "size": 727,
+              "url": "https://hyperlane-validator-signatures-mitocateth.s3.amazonaws.com/checkpoint_0_with_id.json"
+            },
+            {
+              "key": "checkpoint_latest_index.json",
+              "last_modified": "2026-01-29T07:32:25.000Z",
+              "date": "2026-01-29 07:32:25+00:00",
+              "size": 3,
+              "url": "https://hyperlane-validator-signatures-mitocateth.s3.amazonaws.com/checkpoint_latest_index.json"
+            },
+            {
+              "key": "checkpoint_1_with_id.json",
+              "last_modified": "2026-01-29T07:32:24.000Z",
+              "date": "2026-01-29 07:32:24+00:00",
+              "size": 727,
+              "url": "https://hyperlane-validator-signatures-mitocateth.s3.amazonaws.com/checkpoint_1_with_id.json"
+            },
+            {
+              "key": "checkpoint_2_with_id.json",
+              "last_modified": "2026-01-29T07:32:24.000Z",
+              "date": "2026-01-29 07:32:24+00:00",
+              "size": 726,
+              "url": "https://hyperlane-validator-signatures-mitocateth.s3.amazonaws.com/checkpoint_2_with_id.json"
+            },
+            {
+              "key": "checkpoint_3_with_id.json",
+              "last_modified": "2026-01-29T07:32:24.000Z",
+              "date": "2026-01-29 07:32:24+00:00",
+              "size": 726,
+              "url": "https://hyperlane-validator-signatures-mitocateth.s3.amazonaws.com/checkpoint_3_with_id.json"
+            },
+            {
+              "key": "checkpoint_4_with_id.json",
+              "last_modified": "2026-01-29T07:32:23.000Z",
+              "date": "2026-01-29 07:32:23+00:00",
+              "size": 727,
+              "url": "https://hyperlane-validator-signatures-mitocateth.s3.amazonaws.com/checkpoint_4_with_id.json"
+            },
+            {
+              "key": "checkpoint_5_with_id.json",
+              "last_modified": "2026-01-29T07:32:23.000Z",
+              "date": "2026-01-29 07:32:23+00:00",
+              "size": 727,
+              "url": "https://hyperlane-validator-signatures-mitocateth.s3.amazonaws.com/checkpoint_5_with_id.json"
+            },
+            {
+              "key": "checkpoint_6_with_id.json",
+              "last_modified": "2026-01-29T07:32:22.000Z",
+              "date": "2026-01-29 07:32:22+00:00",
+              "size": 727,
+              "url": "https://hyperlane-validator-signatures-mitocateth.s3.amazonaws.com/checkpoint_6_with_id.json"
+            },
+            {
+              "key": "checkpoint_7_with_id.json",
+              "last_modified": "2026-01-29T07:32:22.000Z",
+              "date": "2026-01-29 07:32:22+00:00",
+              "size": 727,
+              "url": "https://hyperlane-validator-signatures-mitocateth.s3.amazonaws.com/checkpoint_7_with_id.json"
+            },
+            {
+              "key": "checkpoint_8_with_id.json",
+              "last_modified": "2026-01-29T07:32:22.000Z",
+              "date": "2026-01-29 07:32:22+00:00",
+              "size": 727,
+              "url": "https://hyperlane-validator-signatures-mitocateth.s3.amazonaws.com/checkpoint_8_with_id.json"
+            }
+          ]
+        }
+      ],
+      "has_recent_checkpoints": true
+    },
+    {
+      "validator": "0x91c2d257A45Bcb29B5c1D127f33Cb0389Bb2d49B",
+      "storage_locations": [
+        "s3://hyperlane-validator-signatures-sovereign-sovstarter/us-east-1/signatures",
+        "s3://sovereign-hyperlane-signatures-2/us-east-1/signatures"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://hyperlane-validator-signatures-sovereign-sovstarter/us-east-1/signatures",
+          "bucket": "hyperlane-validator-signatures-sovereign-sovstarter",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        },
+        {
+          "s3_path": "s3://sovereign-hyperlane-signatures-2/us-east-1/signatures",
+          "bucket": "sovereign-hyperlane-signatures-2",
+          "region": "us-east-1",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xCf03dfD3D27E1D284837b523E6fcbb33a3A54817",
+      "storage_locations": [
+        "s3://hyperlane-signatures-testnet/ap-southeast-2/validator-sepolia-2"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://hyperlane-signatures-testnet/ap-southeast-2/validator-sepolia-2",
+          "bucket": "hyperlane-signatures-testnet",
+          "region": "ap-southeast-2",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xA350A791C59442A596a246b787A40b918a1483F6",
+      "storage_locations": [
+        "s3://hyperlane-signatures-testnet/ap-southeast-2/validator-sepolia-1"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://hyperlane-signatures-testnet/ap-southeast-2/validator-sepolia-1",
+          "bucket": "hyperlane-signatures-testnet",
+          "region": "ap-southeast-2",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    },
+    {
+      "validator": "0xeA1015c6d35498d18229E0c39DEA7aA412E7612b",
+      "storage_locations": [
+        "s3://hyperlane-signatures-testnet/ap-southeast-2/validator-sepolia-3"
+      ],
+      "buckets": [
+        {
+          "s3_path": "s3://hyperlane-signatures-testnet/ap-southeast-2/validator-sepolia-3",
+          "bucket": "hyperlane-signatures-testnet",
+          "region": "ap-southeast-2",
+          "success": true,
+          "total_checkpoints": 0,
+          "recent_checkpoints": 0,
+          "is_recent": false,
+          "error": "Nenhum checkpoint encontrado"
+        }
+      ],
+      "has_recent_checkpoints": false
+    }
+  ]
+}
