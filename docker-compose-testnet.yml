@@ -5,7 +5,7 @@ services:
     user: root
     entrypoint: ['sh', '-c']
     environment:
-      - RUST_LOG=info,hyperlane=debug,relayer=debug,hyperlane_cosmos=debug
+      - RUST_LOG=info,hyperlane=debug,relayer=trace,hyperlane_cosmos=debug,lander=debug,multisig=trace
       - HYP_BASE_TRACING_LEVEL=debug
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
